@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>{E5F15A26-C1F5-4E22-94E3-7484D84DA71F}</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>ThoughtsAndPrayersThree</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)AboutPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MainPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)MyPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ThoughtsAndPrayersApp.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)CustomRenderers\CustomNavigationPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\PrayerRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\Base\BaseContentPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\ViewCells\PrayerViewCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\PrayerListPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\Base\BaseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PrayerListViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Constants\ASampleAppConstants.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModels\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Pages\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Models\" />
+    <Folder Include="$(MSBuildThisFileDirectory)CustomRenderers\" />
+    <Folder Include="$(MSBuildThisFileDirectory)ViewModels\Base\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Pages\Base\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Pages\ViewCells\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Constants\" />
+  </ItemGroup>
+</Project>
