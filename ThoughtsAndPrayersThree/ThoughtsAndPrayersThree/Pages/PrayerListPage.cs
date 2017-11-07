@@ -169,6 +169,26 @@ namespace ThoughtsAndPrayersThree.Pages
 			//    }
 			//};
 		}
-    }
+
+		protected override void OnAppearing()
+		{
+			base.OnAppearing();
+			MyViewModel.ThoughtButtonPressed += MyViewModel_ThoughtButtonPressed;
+		}
+
+        private void MyViewModel_ThoughtButtonPressed(object sender, PrayerListViewModel.ThoughtButtonPressedEventArgs e)
+        {
+            _animation.Play();
+//            throw new NotImplementedException();
+        }
+
+        protected override void OnDisappearing()
+		{
+			base.OnDisappearing();
+			MyViewModel.ThoughtButtonPressed -= MyViewModel_ThoughtButtonPressed;
+		}
+
+
+	}
 }
 

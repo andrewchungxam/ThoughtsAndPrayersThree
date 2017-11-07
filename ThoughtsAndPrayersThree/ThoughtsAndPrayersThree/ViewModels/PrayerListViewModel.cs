@@ -34,6 +34,13 @@ namespace ThoughtsAndPrayersThree.ViewModels
 		}
 
 
+		public ObservableCollection<PrayerRequest> _observableCollectionOfPrayers;
+		public ObservableCollection<PrayerRequest> ObservableCollectionOfPrayers
+		{
+			get { return _observableCollectionOfPrayers; }
+			set { SetProperty(ref _observableCollectionOfPrayers, value); }
+		}
+
 		string buttonText = "Winner Winner";
 
 		public string ButtonText
@@ -42,16 +49,27 @@ namespace ThoughtsAndPrayersThree.ViewModels
 			set { SetProperty(ref buttonText, value); }
 		}
 
+		public EventHandler<PhotoSavedSuccessAlertEventArgs> TakePhotoSucceeded;
+		public class PhotoSavedSuccessAlertEventArgs : EventArgs
+		{
+			public string Title { get; set; }
+			public string Message { get; set; }
+		}
+
+		public EventHandler<ThoughtButtonPressedEventArgs> ThoughtButtonPressed;
+
+        public class ThoughtButtonPressedEventArgs : EventArgs
+		{
+			public string EventArg1 { get; set; }
+			public string EventArg2 { get; set; }
+		}
+
+
 		public ICommand DeletePrayerFromListCommand { get; set; }
 		public ICommand ThoughtClickCommand { get; set; }
         public ICommand PrayerClickCommand { get; set; }
 
-		public ObservableCollection<PrayerRequest> _observableCollectionOfPrayers;
-		public ObservableCollection<PrayerRequest> ObservableCollectionOfPrayers
-		{
-			get { return _observableCollectionOfPrayers; }
-			set { SetProperty(ref _observableCollectionOfPrayers, value); }
-		}
+
 
 		public PrayerListViewModel()
 		{
@@ -154,6 +172,9 @@ namespace ThoughtsAndPrayersThree.ViewModels
 			{
 
 				this.IsTheViewVisible = true;
+                ThoughtButtonPressed?.Invoke(this, new ThoughtButtonPressedEventArgs { EventArg1 = "Event arg 1", EventArg2 = "Event arg 2" });
+
+
 				await Task.Delay(2100);
 				this.IsTheViewVisible = false;
 
