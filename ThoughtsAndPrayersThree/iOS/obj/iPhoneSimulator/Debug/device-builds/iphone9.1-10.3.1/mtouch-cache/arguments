@@ -22,6 +22,20 @@
 	/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-10.3.1/mtouch-symbols.list \
 	--dsym=no \
 	-r \
+	/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/packages/Xamarin.FFImageLoading.2.2.23/lib/Xamarin.iOS10/FFImageLoading.dll \
+	-r \
+	/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/packages/Xamarin.FFImageLoading.Forms.2.2.23/lib/Xamarin.iOS10/FFImageLoading.Forms.dll \
+	-r \
+	/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/packages/Xamarin.FFImageLoading.Forms.2.2.23/lib/Xamarin.iOS10/FFImageLoading.Forms.Touch.dll \
+	-r \
+	/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/packages/Xamarin.FFImageLoading.2.2.23/lib/Xamarin.iOS10/FFImageLoading.Platform.dll \
+	-r \
+	/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/packages/Xamarin.FFImageLoading.Svg.Forms.2.2.23/lib/Xamarin.iOS10/FFImageLoading.Svg.Forms.dll \
+	-r \
+	/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/packages/Xamarin.FFImageLoading.Svg.2.2.23/lib/Xamarin.iOS10/FFImageLoading.Svg.Platform.dll \
+	-r \
+	/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/packages/Xamarin.FFImageLoading.Transformations.2.2.23/lib/Xamarin.iOS10/FFImageLoading.Transformations.dll \
+	-r \
 	/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/packages/Com.Airbnb.Xamarin.Forms.Lottie.2.3.4/lib/xamarinios/Lottie.Forms.dll \
 	-r \
 	/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/packages/Com.Airbnb.Xamarin.Forms.Lottie.2.3.4/lib/xamarinios/Lottie.Forms.iOS.dll \
@@ -56,6 +70,8 @@
 	-r \
 	/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/packages/Xam.Plugin.Connectivity.2.3.0/lib/Xamarin.iOS10/Plugin.Connectivity.dll \
 	-r \
+	/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/packages/SkiaSharp.1.59.1/lib/XamariniOS/SkiaSharp.dll \
+	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Core.dll \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.dll \
@@ -69,6 +85,8 @@
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Xml.dll \
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/System.Xml.Linq.dll \
+	-r \
+	/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/packages/WebP.Touch.1.0.4/lib/Xamarin.iOS10/WebP.Touch.dll \
 	-r \
 	/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/Xamarin.Forms.Core.dll \
 	-r \
@@ -358,6 +376,20 @@
 	-r \
 	/Library/Frameworks/Xamarin.iOS.framework/Versions/Current/lib/mono/Xamarin.iOS/Facades/System.Xml.Xsl.Primitives.dll \
 	-r \
+	/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/packages/Xamarin.FFImageLoading.2.2.23/lib/Xamarin.iOS10/FFImageLoading.dll \
+	-r \
+	/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/packages/Xamarin.FFImageLoading.Forms.2.2.23/lib/Xamarin.iOS10/FFImageLoading.Forms.dll \
+	-r \
+	/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/packages/Xamarin.FFImageLoading.Forms.2.2.23/lib/Xamarin.iOS10/FFImageLoading.Forms.Touch.dll \
+	-r \
+	/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/packages/Xamarin.FFImageLoading.2.2.23/lib/Xamarin.iOS10/FFImageLoading.Platform.dll \
+	-r \
+	/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/packages/Xamarin.FFImageLoading.Svg.Forms.2.2.23/lib/Xamarin.iOS10/FFImageLoading.Svg.Forms.dll \
+	-r \
+	/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/packages/Xamarin.FFImageLoading.Svg.2.2.23/lib/Xamarin.iOS10/FFImageLoading.Svg.Platform.dll \
+	-r \
+	/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/packages/Xamarin.FFImageLoading.Transformations.2.2.23/lib/Xamarin.iOS10/FFImageLoading.Transformations.dll \
+	-r \
 	/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/packages/Com.Airbnb.Xamarin.Forms.Lottie.2.3.4/lib/xamarinios/Lottie.Forms.dll \
 	-r \
 	/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/packages/Com.Airbnb.Xamarin.Forms.Lottie.2.3.4/lib/xamarinios/Lottie.Forms.iOS.dll \
@@ -390,7 +422,11 @@
 	-r \
 	/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/packages/Xam.Plugin.Connectivity.2.3.0/lib/Xamarin.iOS10/Plugin.Connectivity.dll \
 	-r \
+	/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/packages/SkiaSharp.1.59.1/lib/XamariniOS/SkiaSharp.dll \
+	-r \
 	/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/packages/System.Spatial.5.8.2/lib/netstandard1.1/System.Spatial.dll \
+	-r \
+	/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/packages/WebP.Touch.1.0.4/lib/Xamarin.iOS10/WebP.Touch.dll \
 	-r \
 	/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/packages/Xamarin.Forms.2.3.4.247/lib/Xamarin.iOS10/Xamarin.Forms.Core.dll \
 	-r \

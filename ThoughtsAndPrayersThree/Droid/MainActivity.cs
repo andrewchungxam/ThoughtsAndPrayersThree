@@ -8,6 +8,8 @@ using Android.Views;
 using Android.Widget;
 using Android.OS;
 using Lottie.Forms.Droid;
+using FFImageLoading.Forms.Droid;
+using FFImageLoading.Transformations;
 
 namespace ThoughtsAndPrayersThree.Droid
 {
@@ -16,7 +18,9 @@ namespace ThoughtsAndPrayersThree.Droid
     {
         protected override void OnCreate(Bundle bundle)
         {
-            TabLayoutResource = Resource.Layout.Tabbar;
+//			var ignore = new CircleTransformation();
+
+			TabLayoutResource = Resource.Layout.Tabbar;
             ToolbarResource = Resource.Layout.Toolbar;
 
             base.OnCreate(bundle);
@@ -24,6 +28,7 @@ namespace ThoughtsAndPrayersThree.Droid
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
 			AnimationViewRenderer.Init();
+            CachedImageRenderer.Init();
 
 			LoadApplication(new App());
         }

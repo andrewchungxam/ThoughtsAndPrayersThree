@@ -16,6 +16,7 @@ namespace ThoughtsAndPrayersThree.LocalData
 				FirstName = "Andrew",
 				LastName = "Kim",
 				FullName = "Andrew Kim",
+//                FBProfileUrl = "http://loremflickr.com/600/600/nature?filename=simple.jpg",
 				FBProfileUrl = "http://graph.facebook.com/450/picture?type=normal",
 				PrayerRequestText = "Guys - we want to make it to the World Series with year.  It's going to be an odd numbered year - so we have a chance.  Please keep us in your thoughts!"
 			},
@@ -26,6 +27,7 @@ namespace ThoughtsAndPrayersThree.LocalData
 				FirstName = "Andrew",
 				LastName = "Kim",
 				FullName = "Andrew Kim",
+//				FBProfileUrl = "http://loremflickr.com/600/600/nature?filename=simple.jpg",
 				FBProfileUrl = "http://graph.facebook.com/450/picture?type=normal",
 				PrayerRequestText = "Guys - we want to make it to the World Series with year.  It's going to be an odd numbered year - so we have a chance.  Please keep us in your thoughts!"
 			},
@@ -36,6 +38,7 @@ namespace ThoughtsAndPrayersThree.LocalData
 				FirstName = "Andrew",
 				LastName = "Kim",
 				FullName = "Andrew Kim",
+				//FBProfileUrl = "http://loremflickr.com/600/600/nature?filename=simple.jpg",
 				FBProfileUrl = "http://graph.facebook.com/450/picture?type=normal",
 				PrayerRequestText = "Guys - we want to make it to the World Series with year.  It's going to be an odd numbered year - so we have a chance.  Please keep us in your thoughts!"
 			},

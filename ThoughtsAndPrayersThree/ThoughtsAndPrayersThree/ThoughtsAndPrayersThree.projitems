@@ -22,6 +22,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PrayerListViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Constants\ASampleAppConstants.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\TestAnimationPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\DateTimeToStringConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)ViewModels\" />
@@ -32,5 +33,6 @@
     <Folder Include="$(MSBuildThisFileDirectory)Pages\Base\" />
     <Folder Include="$(MSBuildThisFileDirectory)Pages\ViewCells\" />
     <Folder Include="$(MSBuildThisFileDirectory)Constants\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
   </ItemGroup>
 </Project>

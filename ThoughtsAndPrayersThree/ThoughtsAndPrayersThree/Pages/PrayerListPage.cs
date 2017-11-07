@@ -59,7 +59,7 @@ namespace ThoughtsAndPrayersThree.Pages
 				VerticalOptions = LayoutOptions.Center,
 			};
 			contentView.Content = _animation;
-			contentView.SetBinding(IsVisibleProperty, nameof(MyViewModel.IsTheViewVisible));
+			contentView.SetBinding(IsVisibleProperty, nameof(MyViewModel.IsTheThoughtAnimationVisible));
 
             AbsoluteLayout.SetLayoutFlags
             (
@@ -87,13 +87,13 @@ namespace ThoughtsAndPrayersThree.Pages
 				Animation = "like_button.json",
 				WidthRequest = 290,
 				HeightRequest = 290,
-				Loop = false,
+				Loop = true,
 				AutoPlay = false,
 				HorizontalOptions = LayoutOptions.Center,
 				VerticalOptions = LayoutOptions.Center,
 			};
 			contentView1.Content = _animation1;
-			contentView1.SetBinding(IsVisibleProperty, nameof(MyViewModel.IsTheView1Visible));
+			contentView1.SetBinding(IsVisibleProperty, nameof(MyViewModel.IsThePrayerAnimationVisible));
 			AbsoluteLayout.SetLayoutFlags
 			(
 				contentView1,
@@ -153,7 +153,9 @@ namespace ThoughtsAndPrayersThree.Pages
 //
 
             simpleLayout.Children.Add(_prayerListPage);
-//			simpleLayout.Children.Add(_button);
+			//			simpleLayout.Children.Add(_button);
+			simpleLayout.Children.Add(contentView1);
+
 			simpleLayout.Children.Add(contentView);
 
 
@@ -174,7 +176,14 @@ namespace ThoughtsAndPrayersThree.Pages
 		{
 			base.OnAppearing();
 			MyViewModel.ThoughtButtonPressed += MyViewModel_ThoughtButtonPressed;
+			MyViewModel.PrayerButtonPressed += MyViewModel_PrayerButtonPressed;
+
 		}
+
+        private void MyViewModel_PrayerButtonPressed(object sender, PrayerListViewModel.PrayerButtonPressedEventArgs e)
+        {
+			_animation1.Play();
+        }
 
         private void MyViewModel_ThoughtButtonPressed(object sender, PrayerListViewModel.ThoughtButtonPressedEventArgs e)
         {
@@ -186,6 +195,8 @@ namespace ThoughtsAndPrayersThree.Pages
 		{
 			base.OnDisappearing();
 			MyViewModel.ThoughtButtonPressed -= MyViewModel_ThoughtButtonPressed;
+			MyViewModel.PrayerButtonPressed -= MyViewModel_PrayerButtonPressed;
+
 		}
 
 

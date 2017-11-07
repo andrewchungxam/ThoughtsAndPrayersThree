@@ -17,22 +17,26 @@ namespace ThoughtsAndPrayersThree.ViewModels
 	public class PrayerListViewModel : BaseViewModel
 	{
 
-        bool _isTheViewVisible;
-
-		public bool IsTheViewVisible 
+        bool _isTheThoughtAnimationVisible;
+		public bool IsTheThoughtAnimationVisible 
 		{
-            get { return _isTheViewVisible; } 
-			set { SetProperty(ref _isTheViewVisible, value); }
+            get { return _isTheThoughtAnimationVisible; } 
+			set { SetProperty(ref _isTheThoughtAnimationVisible, value); }
         }
 
-		bool _isTheView1Visible;
+		//bool _isTheView1Visible;
+		//public bool IsTheView1Visible
+		//{
+		//	get { return _isTheView1Visible; }
+		//	set { SetProperty(ref _isTheView1Visible, value); }
+		//}
 
-		public bool IsTheView1Visible
+        bool _isThePrayerAnimationVisible;
+		public bool IsThePrayerAnimationVisible
 		{
-			get { return _isTheView1Visible; }
-			set { SetProperty(ref _isTheView1Visible, value); }
+			get { return _isThePrayerAnimationVisible; }
+			set { SetProperty(ref _isThePrayerAnimationVisible, value); }
 		}
-
 
 		public ObservableCollection<PrayerRequest> _observableCollectionOfPrayers;
 		public ObservableCollection<PrayerRequest> ObservableCollectionOfPrayers
@@ -42,7 +46,6 @@ namespace ThoughtsAndPrayersThree.ViewModels
 		}
 
 		string buttonText = "Winner Winner";
-
 		public string ButtonText
 		{
 			get { return buttonText; }
@@ -57,13 +60,18 @@ namespace ThoughtsAndPrayersThree.ViewModels
 		}
 
 		public EventHandler<ThoughtButtonPressedEventArgs> ThoughtButtonPressed;
-
         public class ThoughtButtonPressedEventArgs : EventArgs
 		{
 			public string EventArg1 { get; set; }
 			public string EventArg2 { get; set; }
 		}
 
+		public EventHandler<PrayerButtonPressedEventArgs> PrayerButtonPressed;
+		public class PrayerButtonPressedEventArgs : EventArgs
+		{
+			public string EventArg1 { get; set; }
+			public string EventArg2 { get; set; }
+		}
 
 		public ICommand DeletePrayerFromListCommand { get; set; }
 		public ICommand ThoughtClickCommand { get; set; }
@@ -71,22 +79,24 @@ namespace ThoughtsAndPrayersThree.ViewModels
 
 
 
-		public PrayerListViewModel()
-		{
-			var list = new List<PrayerRequest> { };
+        public PrayerListViewModel()
+        {
+            var list = new List<PrayerRequest> { };
             //list = App.PrayerSQLDatabase.GetAllDogs();
             list = App.ListOfPrayers;
 
-			_observableCollectionOfPrayers = new ObservableCollection<PrayerRequest>();
-			foreach (var prayer in list)
-				_observableCollectionOfPrayers.Add(prayer);
+            _observableCollectionOfPrayers = new ObservableCollection<PrayerRequest>();
+            foreach (var prayer in list)
+                _observableCollectionOfPrayers.Add(prayer);
 
-			DeletePrayerFromListCommand = new Command(DeletePrayerFromListAction);
+            DeletePrayerFromListCommand = new Command(DeletePrayerFromListAction);
+
             ThoughtClickCommand = new Command(
                 execute: async () => { await OnThoughtClickActionAsync(); });
-  //              canExecute: () => !IsBusy);
-            PrayerClickCommand = new Command(OnPrayerClickActionAsync);
+            //  canExecute: () => !IsBusy);
 
+            PrayerClickCommand = new Command(
+                execute: async() => { await OnPrayerClickActionAsync(); });
 		}
 
 
@@ -168,15 +178,18 @@ namespace ThoughtsAndPrayersThree.ViewModels
         */
         async Task OnThoughtClickActionAsync()
 		{
-			if (this.IsTheViewVisible == false)
+			if (this.IsTheThoughtAnimationVisible == false)
 			{
-
-				this.IsTheViewVisible = true;
+				this.IsTheThoughtAnimationVisible = true;
                 ThoughtButtonPressed?.Invoke(this, new ThoughtButtonPressedEventArgs { EventArg1 = "Event arg 1", EventArg2 = "Event arg 2" });
-
-
 				await Task.Delay(2100);
-				this.IsTheViewVisible = false;
+				this.IsTheThoughtAnimationVisible = false;
+			}
+			else
+			{
+				this.IsTheThoughtAnimationVisible = false;
+			}
+			return;
 
 				//await Task.Delay(200); //Animation = "checked_done_.json",
 				//this.MyViewModel.PlayTheLottie = true;
@@ -189,11 +202,6 @@ namespace ThoughtsAndPrayersThree.ViewModels
 				//						//await Task.Delay(1400); //    Animation = "like_button.json",
 				//TEMP this.IsTheViewVisible = false;
 
-			}
-			else
-			{
-				this.IsTheViewVisible = false;
-			}
 
 			//Task.Delay(2000);
 			//this.IsTheViewVisible = false;
@@ -209,32 +217,22 @@ namespace ThoughtsAndPrayersThree.ViewModels
 			////ADD THE LAST DOG TO THE ViewModel
 			//var tempLastDog = App.DogRepBaseSixtyFour.GetLastDogB64();
 			//App.MyDogListPhotoBase64Page.MyViewModel._observableCollectionOfDogs.Add(tempLastDog);
-			return;
 		}
 
-
-
-		void OnPrayerClickActionAsync()
+		async Task OnPrayerClickActionAsync()
 		{
-			if (this.IsTheViewVisible == false)
+			if (this.IsThePrayerAnimationVisible == false)
 			{
-
-				this.IsTheViewVisible = true;
-				//await Task.Delay(200); //Animation = "checked_done_.json",
-				//this.MyViewModel.PlayTheLottie = true;
-				//this._animation.Play();
-
-				Task.Delay(2100); //    Animation = "beating_heart.json",
-								  //await Task.Delay(1400); //    Animation = "like_button.json",
-				this.IsTheViewVisible = false;
-
+				this.IsThePrayerAnimationVisible = true;
+				PrayerButtonPressed?.Invoke(this, new PrayerButtonPressedEventArgs { EventArg1 = "Event arg 3", EventArg2 = "Event arg 4" });
+				await Task.Delay(2100); 
+				this.IsThePrayerAnimationVisible = false;
 			}
 			else
 			{
-				this.IsTheViewVisible = false;
+				this.IsThePrayerAnimationVisible = false;
 			}
-
-			int five = 5;
+			return;
 
 			//#TODO - must register the click somewhere
 			////point 1
@@ -247,7 +245,6 @@ namespace ThoughtsAndPrayersThree.ViewModels
 			////ADD THE LAST DOG TO THE ViewModel
 			//var tempLastDog = App.DogRepBaseSixtyFour.GetLastDogB64();
 			//App.MyDogListPhotoBase64Page.MyViewModel._observableCollectionOfDogs.Add(tempLastDog);
-			return;
 		}
 
 
