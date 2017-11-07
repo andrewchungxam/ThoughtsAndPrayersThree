@@ -170,6 +170,9 @@
     <BundleResource Include="Resources\xamarin_logo.png" />
     <BundleResource Include="Resources\xamarin_logo%402x.png" />
     <BundleResource Include="Resources\xamarin_logo%403x.png" />
+    <BundleResource Include="Resources\beating_heart.json" />
+    <BundleResource Include="Resources\checked_done_.json" />
+    <BundleResource Include="Resources\like_button.json" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppDelegate.cs" />

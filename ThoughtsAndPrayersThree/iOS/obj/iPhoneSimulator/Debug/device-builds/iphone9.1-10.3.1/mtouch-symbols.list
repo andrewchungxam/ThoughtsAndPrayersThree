@@ -1,3 +1,10 @@
+_OBJC_CLASS_$_LOTAnimationView
+_OBJC_CLASS_$_LOTAnimatedControl
+_OBJC_CLASS_$_LOTAnimatedSwitch
+_OBJC_CLASS_$_LOTAnimationCache
+_OBJC_CLASS_$_LOTAnimationTransitionController
+_OBJC_CLASS_$_LOTCacheProvider
+_OBJC_CLASS_$_LOTComposition
 _OBJC_CLASS_$_MSCustomProperties
 _OBJC_CLASS_$_MSDevice
 _OBJC_CLASS_$_MSLogger

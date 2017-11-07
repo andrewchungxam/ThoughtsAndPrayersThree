@@ -70,3 +70,5 @@
 /Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/packages/Microsoft.Azure.Mobile.Analytics.0.17.0/lib/Xamarin.iOS10/Microsoft.Azure.Mobile.Analytics.iOS.Bindings.dll
 /Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/packages/Microsoft.Azure.Mobile.Crashes.0.17.0/lib/Xamarin.iOS10/Microsoft.Azure.Mobile.Crashes.dll
 /Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/packages/Microsoft.Azure.Mobile.Crashes.0.17.0/lib/Xamarin.iOS10/Microsoft.Azure.Mobile.Crashes.iOS.Bindings.dll
+/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/packages/Com.Airbnb.Xamarin.Forms.Lottie.2.3.4/lib/xamarinios/Lottie.Forms.iOS.dll
+/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/packages/Com.Airbnb.iOS.Lottie.2.1.3.0/lib/xamarinios/Lottie.iOS.dll

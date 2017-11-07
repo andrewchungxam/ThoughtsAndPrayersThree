@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using Lottie.Forms.iOS.Renderers;
 using UIKit;
 
 namespace ThoughtsAndPrayersThree.iOS
@@ -13,7 +14,13 @@ namespace ThoughtsAndPrayersThree.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
+
+			AnimationViewRenderer.Init();
+
+
+			LoadApplication(new App());
+
+
 
 
 

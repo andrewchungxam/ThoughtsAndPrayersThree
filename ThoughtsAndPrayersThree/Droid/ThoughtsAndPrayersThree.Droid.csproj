@@ -190,6 +190,13 @@
     <AndroidResource Include="Resources\layout\Toolbar.axml" />
     <AndroidResource Include="Resources\values\styles.xml" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidAsset Include="Assets\beating_heart.json" />
+    <AndroidAsset Include="Assets\checked_done_.json" />
+    <AndroidAsset Include="Assets\like_button.json" />
+    <AndroidAsset Include="Assets\LottieLogo1.json" />
+    <AndroidAsset Include="Assets\love_explosion.json" />
+  </ItemGroup>
   <Import Project="..\ThoughtsAndPrayersThree.LocalData\ThoughtsAndPrayersThree.LocalData.projitems" Label="Shared" Condition="Exists('..\ThoughtsAndPrayersThree.LocalData\ThoughtsAndPrayersThree.LocalData.projitems')" />
   <Import Project="..\ThoughtsAndPrayersThree.CosmosDB\ThoughtsAndPrayersThree.CosmosDB.projitems" Label="Shared" Condition="Exists('..\ThoughtsAndPrayersThree.CosmosDB\ThoughtsAndPrayersThree.CosmosDB.projitems')" />
   <Import Project="..\ThoughtsAndPrayersThree\ThoughtsAndPrayersThree.projitems" Label="Shared" Condition="Exists('..\ThoughtsAndPrayersThree\ThoughtsAndPrayersThree.projitems')" />

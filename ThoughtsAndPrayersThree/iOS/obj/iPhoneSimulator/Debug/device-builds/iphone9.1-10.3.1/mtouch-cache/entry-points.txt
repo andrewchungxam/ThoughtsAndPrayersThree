@@ -1,3 +1,17 @@
+ObjectiveCClass=OBJC_CLASS_$_LOTAnimationView
+	/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-10.3.1/mtouch-cache/Link/Lottie.iOS.dll
+ObjectiveCClass=OBJC_CLASS_$_LOTAnimatedControl
+	/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-10.3.1/mtouch-cache/Link/Lottie.iOS.dll
+ObjectiveCClass=OBJC_CLASS_$_LOTAnimatedSwitch
+	/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-10.3.1/mtouch-cache/Link/Lottie.iOS.dll
+ObjectiveCClass=OBJC_CLASS_$_LOTAnimationCache
+	/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-10.3.1/mtouch-cache/Link/Lottie.iOS.dll
+ObjectiveCClass=OBJC_CLASS_$_LOTAnimationTransitionController
+	/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-10.3.1/mtouch-cache/Link/Lottie.iOS.dll
+ObjectiveCClass=OBJC_CLASS_$_LOTCacheProvider
+	/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-10.3.1/mtouch-cache/Link/Lottie.iOS.dll
+ObjectiveCClass=OBJC_CLASS_$_LOTComposition
+	/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-10.3.1/mtouch-cache/Link/Lottie.iOS.dll
 ObjectiveCClass=OBJC_CLASS_$_MSCustomProperties
 	/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone9.1-10.3.1/mtouch-cache/Link/Microsoft.Azure.Mobile.iOS.Bindings.dll
 ObjectiveCClass=OBJC_CLASS_$_MSDevice

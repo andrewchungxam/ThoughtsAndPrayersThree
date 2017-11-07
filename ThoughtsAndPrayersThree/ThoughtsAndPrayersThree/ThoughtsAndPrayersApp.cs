@@ -78,7 +78,12 @@ namespace ThoughtsAndPrayersThree
 
             //MainPage = new ThoughtsAndPrayersThree.MainPage();
             //MainPage = new ThoughtsAndPrayersThree.MainPage();
+
             MainPage = new NavigationPage(new PrayerListPage());
+
+            //CONFIRMED WORKING
+            //MainPage = new TestAnimationPage();
+
 #endif
 
 			//ADDING STYLES TO RESOURCE DICTIONARIES

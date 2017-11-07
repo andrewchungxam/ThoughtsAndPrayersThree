@@ -21,6 +21,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\Base\BaseViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PrayerListViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Constants\ASampleAppConstants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\TestAnimationPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)ViewModels\" />

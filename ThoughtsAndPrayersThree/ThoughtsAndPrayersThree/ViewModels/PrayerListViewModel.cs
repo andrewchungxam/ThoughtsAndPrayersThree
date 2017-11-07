@@ -17,13 +17,13 @@ namespace ThoughtsAndPrayersThree.ViewModels
 	public class PrayerListViewModel : BaseViewModel
 	{
 
-		bool _isTheViewVisible;
+        bool _isTheViewVisible;
 
-		public bool IsTheViewVisible
+		public bool IsTheViewVisible 
 		{
-			get { return _isTheViewVisible; }
+            get { return _isTheViewVisible; } 
 			set { SetProperty(ref _isTheViewVisible, value); }
-		}
+        }
 
 		bool _isTheView1Visible;
 
@@ -64,7 +64,9 @@ namespace ThoughtsAndPrayersThree.ViewModels
 				_observableCollectionOfPrayers.Add(prayer);
 
 			DeletePrayerFromListCommand = new Command(DeletePrayerFromListAction);
-            ThoughtClickCommand = new Command(OnThoughtClickActionAsync);
+            ThoughtClickCommand = new Command(
+                execute: async () => { await OnThoughtClickActionAsync(); });
+  //              canExecute: () => !IsBusy);
             PrayerClickCommand = new Command(OnPrayerClickActionAsync);
 
 		}
@@ -146,19 +148,25 @@ namespace ThoughtsAndPrayersThree.ViewModels
 
                 private void DeleteAllDogsFromList()
         */
-        void OnThoughtClickActionAsync()
+        async Task OnThoughtClickActionAsync()
 		{
 			if (this.IsTheViewVisible == false)
 			{
 
 				this.IsTheViewVisible = true;
+				await Task.Delay(2100);
+				this.IsTheViewVisible = false;
+
 				//await Task.Delay(200); //Animation = "checked_done_.json",
 				//this.MyViewModel.PlayTheLottie = true;
 				//this._animation.Play();
 
-				Task.Delay(2100); //    Animation = "beating_heart.json",
-										//await Task.Delay(1400); //    Animation = "like_button.json",
-				this.IsTheViewVisible = false;
+				//Task.Delay(20000);
+				//this.IsTheViewVisible = false;
+
+				//TEMP Task.Delay(2100); //    Animation = "beating_heart.json",
+				//						//await Task.Delay(1400); //    Animation = "like_button.json",
+				//TEMP this.IsTheViewVisible = false;
 
 			}
 			else
@@ -166,7 +174,8 @@ namespace ThoughtsAndPrayersThree.ViewModels
 				this.IsTheViewVisible = false;
 			}
 
-            int five = 5;
+			//Task.Delay(2000);
+			//this.IsTheViewVisible = false;
 
             //#TODO - must register the click somewhere
 			////point 1
