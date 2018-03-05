@@ -45,11 +45,25 @@ namespace ThoughtsAndPrayersThree.ViewModels
 			set { SetProperty(ref _observableCollectionOfPrayers, value); }
 		}
 
-		string buttonText = "Winner Winner";
-		public string ButtonText
+		//string buttonText = "Winner Winner";
+		//public string ButtonText
+		//{
+		//	get { return buttonText; }
+		//	set { SetProperty(ref buttonText, value); }
+		//}
+
+		int _theNumberOfThoughts;
+		public int TheNumberOfThoughts
 		{
-			get { return buttonText; }
-			set { SetProperty(ref buttonText, value); }
+			get { return TheNumberOfThoughts; }
+			set { SetProperty(ref _theNumberOfThoughts, value); }
+		}
+
+        int _theNumberOfPrayers;
+        public int TheNumberOfPrayers
+		{
+            get { return TheNumberOfPrayers; }
+			set { SetProperty(ref _theNumberOfPrayers, value); }
 		}
 
 		public EventHandler<PhotoSavedSuccessAlertEventArgs> TakePhotoSucceeded;
@@ -184,6 +198,32 @@ namespace ThoughtsAndPrayersThree.ViewModels
                 ThoughtButtonPressed?.Invoke(this, new ThoughtButtonPressedEventArgs { EventArg1 = "Event arg 1", EventArg2 = "Event arg 2" });
 				await Task.Delay(2100);
 				this.IsTheThoughtAnimationVisible = false;
+
+
+                //REFERENCE THE ITEM
+
+                //new PrayerRequest()
+                //{
+                //    Id = 1,
+                //    CreatedDateTimeString = DateTime.Now.ToString("MMM d h:mm tt", new CultureInfo("en-US")),
+                //    CreatedDateTime = DateTimeOffset.UtcNow,
+                //    FirstName = "Andrew",
+                //    LastName = "Kim",
+                //    FullName = "Andrew Kim",
+                //    FullNameAndDate = "Andrew Kim\r\nMarch 1, 2018",
+                //    //                FBProfileUrl = "http://loremflickr.com/600/600/nature?filename=simple.jpg",
+                //    FBProfileUrl = "http://graph.facebook.com/450/picture?type=normal",
+                //    PrayerRequestText = "Guys - we want to make it to the World Series this year.  It's going to be an odd numbered year - so we have a chance.  Please keep us in your thoughts!",
+                //    NumberOfThoughts = 7,
+                //    NumberOfPrayers = 5
+                //},
+
+                //ASSIGN VARIABLE
+
+                //ADD 1
+
+                //RE-ASSIGN COUNT
+
 			}
 			else
 			{

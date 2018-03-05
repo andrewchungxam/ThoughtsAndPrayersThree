@@ -4,19 +4,16 @@ using Xamarin.Forms;
 
 namespace ThoughtsAndPrayersThree.Helpers
 {
-    public class DateTimeToStringConverter : IValueConverter
-    {
+    public class NumberOfThoughtsIntToStringConverter : IValueConverter
+	{
 		public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
 		{
 			if (value == null)
 				return string.Empty;
-
-            var dt = (DateTimeOffset)value;
-			CultureInfo ci = new CultureInfo("en-US");
-			string sampleDateTimeStringMonth = dt.ToString("MMM d", ci);
-			string sampleDateTimeStringTime = dt.ToString("h:mm tt", ci);
-			string sampleDateTimeStringConnected = ($"{sampleDateTimeStringMonth} at {sampleDateTimeStringTime}");
-            return sampleDateTimeStringConnected;
+			var numberOfThoughtsInt = (int)value;
+            var numberOfThoughtString = numberOfThoughtsInt.ToString();
+            var concantenatedNumberOfThoughts = ($"{numberOfThoughtString} Thoughts & 5 Prayers");
+			return concantenatedNumberOfThoughts;
 		}
 
 		public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)

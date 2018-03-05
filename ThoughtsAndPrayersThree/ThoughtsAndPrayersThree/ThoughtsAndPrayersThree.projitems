@@ -23,6 +23,9 @@
     <Compile Include="$(MSBuildThisFileDirectory)Constants\ASampleAppConstants.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\TestAnimationPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\DateTimeToStringConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\NumberOfThoughtsIntToStringConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\NumberOfPrayersIntToStringConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\ViewCells\CommentedPrayerViewCell.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)ViewModels\" />

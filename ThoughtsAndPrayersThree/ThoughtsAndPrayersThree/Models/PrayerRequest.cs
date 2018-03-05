@@ -14,9 +14,13 @@ namespace ThoughtsAndPrayersThree.Models
 		public string FirstName { get; set; }
 		public string LastName { get; set; }
 		public string FullName { get; set; }
+        public string FullNameAndDate { get; set; }
 		public string FBProfileUrl { get; set; }
-
 		public string PrayerRequestText { get; set; }
+        public int NumberOfThoughts { get; set; }
+        public int NumberOfPrayers { get; set; }
+
+
 	}
 
 	//LOCAL-COSMOSDB
@@ -31,7 +35,8 @@ namespace ThoughtsAndPrayersThree.Models
 		public string LastName { get; set; }
 		public string FullName { get; set; }
 		public string FBProfileUrl { get; set; }
-
 		public string PrayerRequestText { get; set; }
+        public int NumberOfThoughts { get; set; }
+        public int NumberOfPrayers { get; set; }
 	}
 }

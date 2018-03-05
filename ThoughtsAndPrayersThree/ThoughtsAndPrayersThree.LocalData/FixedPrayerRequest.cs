@@ -16,9 +16,12 @@ namespace ThoughtsAndPrayersThree.LocalData
 				FirstName = "Andrew",
 				LastName = "Kim",
 				FullName = "Andrew Kim",
+                FullNameAndDate = "Andrew Kim\r\nMarch 1, 2018",
 //                FBProfileUrl = "http://loremflickr.com/600/600/nature?filename=simple.jpg",
 				FBProfileUrl = "http://graph.facebook.com/450/picture?type=normal",
-				PrayerRequestText = "Guys - we want to make it to the World Series with year.  It's going to be an odd numbered year - so we have a chance.  Please keep us in your thoughts!"
+				PrayerRequestText = "Guys - we want to make it to the World Series this year.  It's going to be an odd numbered year - so we have a chance.  Please keep us in your thoughts!",
+                NumberOfThoughts = 7,
+                NumberOfPrayers = 5
 			},
 			new PrayerRequest (){
 				Id = 2,
@@ -27,9 +30,12 @@ namespace ThoughtsAndPrayersThree.LocalData
 				FirstName = "Andrew",
 				LastName = "Kim",
 				FullName = "Andrew Kim",
+                FullNameAndDate = "Andrew Kim\r\nMarch 1, 2018",
 //				FBProfileUrl = "http://loremflickr.com/600/600/nature?filename=simple.jpg",
 				FBProfileUrl = "http://graph.facebook.com/450/picture?type=normal",
-				PrayerRequestText = "Guys - we want to make it to the World Series with year.  It's going to be an odd numbered year - so we have a chance.  Please keep us in your thoughts!"
+				PrayerRequestText = "Guys - we want to make it to the World Series with year.  It's going to be an odd numbered year - so we have a chance.  Please keep us in your thoughts!",
+				NumberOfThoughts = 7,
+				NumberOfPrayers = 5
 			},
 			new PrayerRequest (){
 				Id = 3,
@@ -38,9 +44,12 @@ namespace ThoughtsAndPrayersThree.LocalData
 				FirstName = "Andrew",
 				LastName = "Kim",
 				FullName = "Andrew Kim",
+                FullNameAndDate = "Andrew Kim\r\nMarch 1, 2018",
 				//FBProfileUrl = "http://loremflickr.com/600/600/nature?filename=simple.jpg",
 				FBProfileUrl = "http://graph.facebook.com/450/picture?type=normal",
-				PrayerRequestText = "Guys - we want to make it to the World Series with year.  It's going to be an odd numbered year - so we have a chance.  Please keep us in your thoughts!"
+				PrayerRequestText = "Guys - we want to make it to the World Series with year.  It's going to be an odd numbered year - so we have a chance.  Please keep us in your thoughts!",
+				NumberOfThoughts = 7,
+				NumberOfPrayers = 5
 			},
 			new PrayerRequest (){
 				Id = 4,
@@ -49,11 +58,12 @@ namespace ThoughtsAndPrayersThree.LocalData
 				FirstName = "Andrew",
 				LastName = "Kim",
 				FullName = "Andrew Kim",
+                FullNameAndDate = "Andrew Kim\r\nMarch 1, 2018",
 				FBProfileUrl = "http://graph.facebook.com/450/picture?type=normal",
-				PrayerRequestText = "Guys - we want to make it to the World Series with year.  It's going to be an odd numbered year - so we have a chance.  Please keep us in your thoughts!"
+				PrayerRequestText = "Guys - we want to make it to the World Series with year.  It's going to be an odd numbered year - so we have a chance.  Please keep us in your thoughts!",
+				NumberOfThoughts = 7,
+				NumberOfPrayers = 5
 			}
-
 		};
-
 	}
 }
