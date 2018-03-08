@@ -7,7 +7,6 @@ using FFImageLoading.Transformations;
 using FFImageLoading.Work;
 using ThoughtsAndPrayersThree.Helpers;
 using ThoughtsAndPrayersThree.Models;
-using ThoughtsAndPrayersThree.Models;
 using ThoughtsAndPrayersThree.ViewModels;
 using Xamarin.Forms;
 
@@ -62,6 +61,13 @@ namespace ThoughtsAndPrayersThree.Pages.ViewCells
             var theNumberOfThoughtLabel = new Label() { };
             var theNumberOfPrayersLabel = new Label() { };
 
+            //TEST-BUTTON
+            var testButton = new Button() { 
+                Text = "Test +"
+            };
+
+            var testNumber = new Label() { };
+
             #region BINDINGS
             cachedImage.SetBinding(CachedImage.SourceProperty, nameof(model.FBProfileUrl));
             dateString.SetBinding(Label.TextProperty, nameof(model.CreatedDateTime), BindingMode.OneWay, new DateTimeToStringConverter());
@@ -86,6 +92,29 @@ namespace ThoughtsAndPrayersThree.Pages.ViewCells
 
             prayerButton.SetBinding(Button.CommandParameterProperty, new Binding("."));
             prayerButton.SetBinding(Button.CommandProperty, new Binding("BindingContext.PrayerClickCommand", source: prayerListPage));
+
+
+
+
+
+
+
+
+
+
+            //TEST-BUTTON
+            testButton.SetBinding(Button.CommandParameterProperty, new Binding("."));
+            testButton.SetBinding(Button.CommandProperty, new Binding("BindingContext.TestButtonClickCommand", source: prayerListPage));
+            testNumber.SetBinding(Label.TextProperty, nameof(model.NumberOfPrayers), BindingMode.OneWay, new NumberOfPrayersIntToStringConverter());
+
+
+            testButton.Clicked += (sender, e) =>
+            {
+                var button = (Button)sender;
+                var prayerRequest = (ThoughtsAndPrayersThree.Models.PrayerRequest)button.CommandParameter;
+
+            };
+
             #endregion
 
             #region GRID DEFINITION
@@ -98,6 +127,11 @@ namespace ThoughtsAndPrayersThree.Pages.ViewCells
  //           grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
             grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
             grid.RowDefinitions.Add(new RowDefinition { 
+                Height = new GridLength(1, GridUnitType.Star)
+            });
+
+            //TEST-ROW
+            grid.RowDefinitions.Add(new RowDefinition() { 
                 Height = new GridLength(1, GridUnitType.Star)
             });
 
@@ -149,6 +183,14 @@ namespace ThoughtsAndPrayersThree.Pages.ViewCells
             Grid.SetColumnSpan(thoughtButton, 2);
             grid.Children.Add(prayerButton, 2, 3);
             Grid.SetColumnSpan(prayerButton, 2);
+
+            //TEST-ROW
+            grid.Children.Add(testButton, 0, 4);
+            Grid.SetColumnSpan(testButton,2);
+
+            grid.Children.Add(testNumber, 2, 4);
+            Grid.SetColumnSpan(testNumber, 2);
+
 
             View = grid;
             #endregion
