@@ -21,7 +21,8 @@ namespace ThoughtsAndPrayersThree.LocalData
 				FBProfileUrl = "http://graph.facebook.com/450/picture?type=normal",
 				PrayerRequestText = "Guys - we want to make it to the World Series this year.  It's going to be an odd numbered year - so we have a chance.  Please keep us in your thoughts!",
                 NumberOfThoughts = 7,
-                NumberOfPrayers = 5
+                NumberOfPrayers = 5,
+                StringTheNumberOfPrayers = "first test string"
 			},
 			new PrayerRequest (){
 				Id = 2,
@@ -35,7 +36,8 @@ namespace ThoughtsAndPrayersThree.LocalData
 				FBProfileUrl = "http://graph.facebook.com/450/picture?type=normal",
 				PrayerRequestText = "Guys - we want to make it to the World Series with year.  It's going to be an odd numbered year - so we have a chance.  Please keep us in your thoughts!",
 				NumberOfThoughts = 7,
-				NumberOfPrayers = 5
+				NumberOfPrayers = 5,
+                StringTheNumberOfPrayers = "first test string"
 			},
 			new PrayerRequest (){
 				Id = 3,
@@ -49,7 +51,8 @@ namespace ThoughtsAndPrayersThree.LocalData
 				FBProfileUrl = "http://graph.facebook.com/450/picture?type=normal",
 				PrayerRequestText = "Guys - we want to make it to the World Series with year.  It's going to be an odd numbered year - so we have a chance.  Please keep us in your thoughts!",
 				NumberOfThoughts = 7,
-				NumberOfPrayers = 5
+				NumberOfPrayers = 5,
+                StringTheNumberOfPrayers = "first test string"
 			},
 			new PrayerRequest (){
 				Id = 4,
@@ -62,7 +65,8 @@ namespace ThoughtsAndPrayersThree.LocalData
 				FBProfileUrl = "http://graph.facebook.com/450/picture?type=normal",
 				PrayerRequestText = "Guys - we want to make it to the World Series with year.  It's going to be an odd numbered year - so we have a chance.  Please keep us in your thoughts!",
 				NumberOfThoughts = 7,
-				NumberOfPrayers = 5
+				NumberOfPrayers = 5,
+                StringTheNumberOfPrayers = "first test string"
 			}
 		};
 	}

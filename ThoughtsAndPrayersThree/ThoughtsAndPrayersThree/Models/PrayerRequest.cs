@@ -1,10 +1,11 @@
 ﻿using System;
+using System.ComponentModel;
 using Newtonsoft.Json;
 
 namespace ThoughtsAndPrayersThree.Models
 {
     //LOCAL-SQLLITE
-    public class PrayerRequest
+    public class PrayerRequest 
     {
 		public int Id { get; set; }
 		public string CreatedDateTimeString { get; set; }
@@ -19,9 +20,9 @@ namespace ThoughtsAndPrayersThree.Models
 		public string PrayerRequestText { get; set; }
         public int NumberOfThoughts { get; set; }
         public int NumberOfPrayers { get; set; }
+        public string StringTheNumberOfPrayers { get; set; }
 
-
-	}
+    }
 
 	//LOCAL-COSMOSDB
 	public class CosmosDBPrayerRequest

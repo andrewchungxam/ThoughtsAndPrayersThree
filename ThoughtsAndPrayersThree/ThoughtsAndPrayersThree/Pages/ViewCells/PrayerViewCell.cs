@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.ComponentModel;
 using System.Globalization;
+using System.Linq;
 using System.Threading.Tasks;
 using FFImageLoading.Forms;
 using FFImageLoading.Transformations;
@@ -15,8 +18,9 @@ namespace ThoughtsAndPrayersThree.Pages.ViewCells
     public class PrayerViewCell : ViewCell
     {
     	MenuItem _deleteAction;
+        public static PrayerListViewModel ParentViewModel;
 
-        public PrayerViewCell()
+        public PrayerViewCell(PrayerListPage inputPrayerListPage)
         {
            var model = BindingContext as PrayerRequest;
 
@@ -76,11 +80,7 @@ namespace ThoughtsAndPrayersThree.Pages.ViewCells
             theNumberOfPrayersLabel.SetBinding(Label.TextProperty, nameof(model.NumberOfPrayers), BindingMode.OneWay, new NumberOfPrayersIntToStringConverter());
 
             //myNameProperty.SetBinding(Label.TextProperty, nameof(model.FullName));
-
             myFullNameProperty.SetBinding(Label.TextProperty, nameof(model.FullNameAndDate));
-
-
-
             myPrayerRequestProperty.SetBinding(Label.TextProperty, nameof(model.PrayerRequestText));
 
             var navigationPage = Application.Current.MainPage as NavigationPage;
@@ -93,25 +93,53 @@ namespace ThoughtsAndPrayersThree.Pages.ViewCells
             prayerButton.SetBinding(Button.CommandParameterProperty, new Binding("."));
             prayerButton.SetBinding(Button.CommandProperty, new Binding("BindingContext.PrayerClickCommand", source: prayerListPage));
 
-
-
-
-
-
-
-
-
-
             //TEST-BUTTON
             testButton.SetBinding(Button.CommandParameterProperty, new Binding("."));
-            testButton.SetBinding(Button.CommandProperty, new Binding("BindingContext.TestButtonClickCommand", source: prayerListPage));
-            testNumber.SetBinding(Label.TextProperty, nameof(model.NumberOfPrayers), BindingMode.OneWay, new NumberOfPrayersIntToStringConverter());
+            testButton.SetBinding(Button.CommandProperty, new Binding("BindingContext.TestButtonClickCommand", source: inputPrayerListPage));
+            //testNumber.SetBinding(Label.TextProperty, nameof(model.NumberOfPrayers), BindingMode.OneWay, new NumberOfPrayersIntToStringConverter());
 
+            testNumber.SetBinding(Label.TextProperty, nameof(model.StringTheNumberOfPrayers), BindingMode.Default );
 
             testButton.Clicked += (sender, e) =>
             {
+
                 var button = (Button)sender;
-                var prayerRequest = (ThoughtsAndPrayersThree.Models.PrayerRequest)button.CommandParameter;
+                string newString = "2nd string";
+
+                var cellBindingContext = (ThoughtsAndPrayersThree.Models.PrayerRequest)this.BindingContext;
+                if (cellBindingContext != null)
+                {
+                    cellBindingContext.StringTheNumberOfPrayers = "new and updated";
+                    ParentViewModel.ResetDataSource();
+                }
+
+
+                //RESTORE
+                //var button = (Button)sender;
+                //var prayerRequest = (ThoughtsAndPrayersThree.Models.PrayerRequest)button.CommandParameter;
+                //////var newNumberOfPrayerRequests = prayerRequest.NumberOfPrayers + 1;
+                //////inputPrayerListPage.MyViewModel.TheNumberOfPrayers = newNumberOfPrayerRequests;
+
+                //string newString = "2nd string";
+                ////inputPrayerListPage.MyViewModel.StringTheNumberOfPrayers = newString;
+                ////prayerListPage.MyViewModel.StringTheNumberOfPrayers = newString;
+
+                ////ID OF THE PRAYER LIST IN THE CELL
+                ////var cellBindingContext = (ThoughtsAndPrayersThree.Models.PrayerRequest)this.BindingContext;
+                ////int cellPrayerRequestId = cellBindingContext.Id;
+
+                ////var testCollectionOfPrayers = inputPrayerListPage.MyViewModel.ObservableCollectionOfPrayers;
+
+                ////ObservableCollection<ThoughtsAndPrayersThree.Models.PrayerRequest>  tempObservableCollection = inputPrayerListPage.MyViewModel.ObservableCollectionOfPrayers; //.Where(x.Id == cellPrayerRequestId);
+                ////var specificPrayerRequest = tempObservableCollection.FirstOrDefault(x=> x.Id == cellPrayerRequestId);
+                ////if(specificPrayerRequest != null)
+                ////{
+                ////    specificPrayerRequest.StringTheNumberOfPrayers = "new and updated";
+                ////}
+
+                ////inputPrayerListPage.MyViewModel.ObservableCollectionOfPrayers = tempObservableCollection;
+                ////inputPrayerListPage.MyViewModel._observableCollectionOfPrayers = tempObservableCollection;
+
 
             };
 
@@ -155,7 +183,7 @@ namespace ThoughtsAndPrayersThree.Pages.ViewCells
 
             grid.Children.Add(cachedImage, 0, 0);
             Grid.SetRowSpan(cachedImage, 2);
-//            Grid.SetColumnSpan(cachedImage, 2);
+            //            Grid.SetColumnSpan(cachedImage, 2);
 
 
             //REPLACE WITH NAME AND DATA
@@ -171,9 +199,9 @@ namespace ThoughtsAndPrayersThree.Pages.ViewCells
             grid.Children.Add(theNumberOfThoughtLabel, 1, 1);
             Grid.SetColumnSpan(theNumberOfThoughtLabel, 3);
 
-//            grid.Children.Add(theNumberOfThoughtLabel, 1, 2);
+            //            grid.Children.Add(theNumberOfThoughtLabel, 1, 2);
             //Grid.SetColumnSpan(theNumberOfThoughtLabel, 2);
- //           grid.Children.Add(theNumberOfPrayersLabel, 2, 2);
+            //           grid.Children.Add(theNumberOfPrayersLabel, 2, 2);
             //Grid.SetColumnSpan(theNumberOfPrayersLabel, 2);
 
             grid.Children.Add(myPrayerRequestProperty, 0, 2);
@@ -186,7 +214,7 @@ namespace ThoughtsAndPrayersThree.Pages.ViewCells
 
             //TEST-ROW
             grid.Children.Add(testButton, 0, 4);
-            Grid.SetColumnSpan(testButton,2);
+            Grid.SetColumnSpan(testButton, 2);
 
             grid.Children.Add(testNumber, 2, 4);
             Grid.SetColumnSpan(testNumber, 2);
@@ -199,3 +227,51 @@ namespace ThoughtsAndPrayersThree.Pages.ViewCells
     }
 }
 
+
+
+
+//NOTES
+
+//LOOK FOR THE OBSERVABLE COLLECTION
+
+//inputPrayerListPage.MyViewModel.ObservableCollectionOfPrayers
+
+//METHOD 1
+//FIND THE NUMBER OF THE CELL
+//FIND THE RELEVANT PRAYER REQUEST (IE. PRAYER REQUEST #1)
+
+//METHOD 2
+//OR FIND THE ID NUMBER (LETS START THERE)
+
+//var cellBindingContext = (ThoughtsAndPrayersThree.Models.PrayerRequest)this.BindingContext;
+//int cellPrayerRequestId = cellBindingContext.Id;
+
+//FIND THE RELEVANT PRAYER REQUEST (IE. PRAYER REQUEST #1)
+
+
+//ObservableCollection<ThoughtsAndPrayersThree.Models.PrayerRequest>  tempObservableCollection = inputPrayerListPage.MyViewModel.ObservableCollectionOfPrayers; //.Where(x.Id == cellPrayerRequestId);
+//var specificPrayerRequest = tempObservableCollection.FirstOrDefault(x=> x.Id == cellPrayerRequestId);
+//if(specificPrayerRequest != null)
+//{
+//    specificPrayerRequest.StringTheNumberOfPrayers = newString;
+//}
+
+//var specificPrayerRequestFromCollection = inputPrayerListPage.MyViewModel.ObservableCollectionOfPrayers.FirstOrDefault(x => x.Id == cellPrayerRequestId); //.Where(x.Id == cellPrayerRequestId);
+//if (specificPrayerRequestFromCollection != null)
+//{
+//    specificPrayerRequestFromCollection.StringTheNumberOfPrayers = newString;
+//}
+
+//if (inputPrayerListPage.MyViewModel.ObservableCollectionOfPrayers.FirstOrDefault(x => x.Id == cellPrayerRequestId) != null) //.Where(x.Id == cellPrayerRequestId);
+//{
+//    inputPrayerListPage.MyViewModel.ObservableCollectionOfPrayers.FirstOrDefault(x => x.Id == cellPrayerRequestId) = newString;
+//}
+
+
+//MAKE ENUMBERABE -> USE WHERE
+//ADD ITEM BACK INTO OBSERVABLE 
+//MAY HAVE TO DO A RECREATION OF THE OBSERVABLE COLLECTION
+
+
+//CHANGE THE OBSERVABLE COLLECTION.COUNT#1.PRAYER_REQUEST.STRING_THE_NUMBER_OF_PRAYERS = "THE NEW PRAYER REQUEST"
+//

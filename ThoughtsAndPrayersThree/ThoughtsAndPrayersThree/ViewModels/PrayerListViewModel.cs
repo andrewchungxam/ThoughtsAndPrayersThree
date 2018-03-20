@@ -4,6 +4,7 @@ using System.Windows.Input;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 
 using Xamarin.Forms;
 
@@ -11,12 +12,19 @@ using ThoughtsAndPrayersThree.Models;
 using ThoughtsAndPrayersThree.CosmosDB;
 
 using ThoughtsAndPrayersThree.ViewModels.Base;
+using ThoughtsAndPrayersThree.Pages.ViewCells;
 
 namespace ThoughtsAndPrayersThree.ViewModels
 {
+    public class ResetableObservableCollection<T> : ObservableCollection<T>
+    {
+        public void Reset() => this.OnCollectionChanged(new System.Collections.Specialized.NotifyCollectionChangedEventArgs(System.Collections.Specialized.NotifyCollectionChangedAction.Reset));
+    }
+
+
 	public class PrayerListViewModel : BaseViewModel
 	{
-
+        
         bool _isTheThoughtAnimationVisible;
 		public bool IsTheThoughtAnimationVisible 
 		{
@@ -66,6 +74,26 @@ namespace ThoughtsAndPrayersThree.ViewModels
 			set { SetProperty(ref _theNumberOfPrayers, value); }
 		}
 
+        //STRING_TEST
+        string _stringTheNumberOfPrayers;
+        public string StringTheNumberOfPrayers
+        {
+            get { return StringTheNumberOfPrayers; }
+            set { SetProperty(ref _stringTheNumberOfPrayers, value); }
+        }
+
+        public ResetableObservableCollection<PrayerRequest> MyObservableCollectionOfUnderlyingData
+        {
+            get;
+            set;
+        } = new ResetableObservableCollection<PrayerRequest>();
+
+        public void ResetDataSource()
+        {
+            MyObservableCollectionOfUnderlyingData.Reset();
+        }
+
+
 		public EventHandler<PhotoSavedSuccessAlertEventArgs> TakePhotoSucceeded;
 		public class PhotoSavedSuccessAlertEventArgs : EventArgs
 		{
@@ -95,13 +123,23 @@ namespace ThoughtsAndPrayersThree.ViewModels
 
         public PrayerListViewModel()
         {
+
+            PrayerViewCell.ParentViewModel = this;
+
             var list = new List<PrayerRequest> { };
             //list = App.PrayerSQLDatabase.GetAllDogs();
             list = App.ListOfPrayers;
 
-            _observableCollectionOfPrayers = new ObservableCollection<PrayerRequest>();
-            foreach (var prayer in list)
-                _observableCollectionOfPrayers.Add(prayer);
+            foreach (var prayerRequest in list)
+                MyObservableCollectionOfUnderlyingData.Add(prayerRequest);
+
+            //OLD METHOD
+            ////if(list.Count()==0)
+            ////{
+            //_observableCollectionOfPrayers = new ObservableCollection<PrayerRequest>();
+            //foreach (var prayer in list)
+            //    _observableCollectionOfPrayers.Add(prayer);
+            ////}
 
             DeletePrayerFromListCommand = new Command(DeletePrayerFromListAction);
 
