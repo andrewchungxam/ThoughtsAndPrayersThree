@@ -70,6 +70,11 @@ namespace ThoughtsAndPrayersThree.Pages.ViewCells
                 Text = "Test +"
             };
 
+            var testButtonCommanding = new Button()
+            {
+                Text = "Test Comm +"
+            };
+
             var testNumber = new Label() { };
 
             #region BINDINGS
@@ -94,8 +99,13 @@ namespace ThoughtsAndPrayersThree.Pages.ViewCells
             prayerButton.SetBinding(Button.CommandProperty, new Binding("BindingContext.PrayerClickCommand", source: prayerListPage));
 
             //TEST-BUTTON
-            testButton.SetBinding(Button.CommandParameterProperty, new Binding("."));
-            testButton.SetBinding(Button.CommandProperty, new Binding("BindingContext.TestButtonClickCommand", source: inputPrayerListPage));
+            testButtonCommanding.SetBinding(Button.CommandParameterProperty, new Binding("."));
+            testButtonCommanding.SetBinding(Button.CommandProperty, new Binding("BindingContext.AddThoughtClickCommand", source: prayerListPage));
+
+
+
+
+
             //testNumber.SetBinding(Label.TextProperty, nameof(model.NumberOfPrayers), BindingMode.OneWay, new NumberOfPrayersIntToStringConverter());
 
             testNumber.SetBinding(Label.TextProperty, nameof(model.StringTheNumberOfPrayers), BindingMode.Default );
@@ -158,15 +168,22 @@ namespace ThoughtsAndPrayersThree.Pages.ViewCells
                 Height = new GridLength(1, GridUnitType.Star)
             });
 
-            //TEST-ROW
+
+            //TEST-ROW 1+2
             grid.RowDefinitions.Add(new RowDefinition() { 
                 Height = new GridLength(1, GridUnitType.Star)
             });
 
+            //grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+
+
             grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
             grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
             grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+
+            //TEST-ROW 1
             grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+
             //grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
 
             var Picture = new Label { Text = "Picture Picture Picture Picture Picture Picture Picture Picture Picture" };
@@ -212,13 +229,19 @@ namespace ThoughtsAndPrayersThree.Pages.ViewCells
             grid.Children.Add(prayerButton, 2, 3);
             Grid.SetColumnSpan(prayerButton, 2);
 
-            //TEST-ROW
-            grid.Children.Add(testButton, 0, 4);
-            Grid.SetColumnSpan(testButton, 2);
+            //TEST-ROW 1
+            //grid.Children.Add(testButton, 0, 4);
+            //Grid.SetColumnSpan(testButton, 2);
+
+            //grid.Children.Add(testNumber, 2, 4);
+            //Grid.SetColumnSpan(testNumber, 2);
+
+            //TEST-ROW 2
+            grid.Children.Add(testButtonCommanding, 0, 4);
+            Grid.SetColumnSpan(testButtonCommanding, 2);
 
             grid.Children.Add(testNumber, 2, 4);
             Grid.SetColumnSpan(testNumber, 2);
-
 
             View = grid;
             #endregion
