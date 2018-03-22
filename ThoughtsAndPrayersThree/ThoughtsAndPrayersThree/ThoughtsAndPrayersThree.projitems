@@ -26,6 +26,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\NumberOfThoughtsIntToStringConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\NumberOfPrayersIntToStringConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\ViewCells\CommentedPrayerViewCell.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\NumberOfThoughtsandPrayersIntToStringConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)ViewModels\" />

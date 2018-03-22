@@ -49,6 +49,11 @@ namespace ThoughtsAndPrayersThree.Pages.ViewCells
             var myNameProperty = new Label() { };
             var myFullNameProperty = new Label() { };
             var myPrayerRequestProperty = new Label() { };
+
+
+
+
+
             var thoughtButton = new Button()
             {
                 Text = "Thought"
@@ -65,6 +70,9 @@ namespace ThoughtsAndPrayersThree.Pages.ViewCells
             var theNumberOfThoughtLabel = new Label() { };
             var theNumberOfPrayersLabel = new Label() { };
 
+
+            var theCombinedNumberOfThoughtsAndPrayersLabel = new Label();
+
             //TEST-BUTTON
             var testButton = new Button() { 
                 Text = "Test +"
@@ -72,7 +80,12 @@ namespace ThoughtsAndPrayersThree.Pages.ViewCells
 
             var testButtonCommanding = new Button()
             {
-                Text = "Test Comm +"
+                Text = "Thought +"
+            };
+
+            var testPrayerButtonCommanding = new Button() 
+            { 
+                Text = "Prayer +"
             };
 
             var testNumber = new Label() { };
@@ -84,6 +97,8 @@ namespace ThoughtsAndPrayersThree.Pages.ViewCells
             theNumberOfThoughtLabel.SetBinding(Label.TextProperty, nameof(model.NumberOfThoughts), BindingMode.OneWay, new NumberOfThoughtsIntToStringConverter());
             theNumberOfPrayersLabel.SetBinding(Label.TextProperty, nameof(model.NumberOfPrayers), BindingMode.OneWay, new NumberOfPrayersIntToStringConverter());
 
+            theCombinedNumberOfThoughtsAndPrayersLabel.SetBinding(Label.TextProperty, nameof(model.CombinedNumberOfThoughtsAndPrayers), BindingMode.Default); //, new CombinedNumberOfThoughtsAndPrayersStringConverter());
+                                                                  
             //myNameProperty.SetBinding(Label.TextProperty, nameof(model.FullName));
             myFullNameProperty.SetBinding(Label.TextProperty, nameof(model.FullNameAndDate));
             myPrayerRequestProperty.SetBinding(Label.TextProperty, nameof(model.PrayerRequestText));
@@ -98,10 +113,13 @@ namespace ThoughtsAndPrayersThree.Pages.ViewCells
             prayerButton.SetBinding(Button.CommandParameterProperty, new Binding("."));
             prayerButton.SetBinding(Button.CommandProperty, new Binding("BindingContext.PrayerClickCommand", source: prayerListPage));
 
-            //TEST-BUTTON
+            //TEST-THOUGHT-BUTTON
             testButtonCommanding.SetBinding(Button.CommandParameterProperty, new Binding("."));
             testButtonCommanding.SetBinding(Button.CommandProperty, new Binding("BindingContext.AddThoughtClickCommand", source: prayerListPage));
 
+            //TEST-PRAYER-BUTTON
+            testPrayerButtonCommanding.SetBinding(Button.CommandParameterProperty, new Binding("."));
+            testPrayerButtonCommanding.SetBinding(Button.CommandProperty, new Binding("BindingContext.AddPrayerClickCommand", source: prayerListPage));
 
 
 
@@ -174,7 +192,8 @@ namespace ThoughtsAndPrayersThree.Pages.ViewCells
                 Height = new GridLength(1, GridUnitType.Star)
             });
 
-            //grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+            grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+            grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
 
 
             grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
@@ -240,8 +259,17 @@ namespace ThoughtsAndPrayersThree.Pages.ViewCells
             grid.Children.Add(testButtonCommanding, 0, 4);
             Grid.SetColumnSpan(testButtonCommanding, 2);
 
-            grid.Children.Add(testNumber, 2, 4);
-            Grid.SetColumnSpan(testNumber, 2);
+            grid.Children.Add(theNumberOfThoughtLabel, 2, 4);
+            Grid.SetColumnSpan(theNumberOfThoughtLabel, 2);
+
+            grid.Children.Add(testPrayerButtonCommanding, 0, 5);
+            Grid.SetColumnSpan(testPrayerButtonCommanding, 2);
+
+            grid.Children.Add(theNumberOfPrayersLabel, 2, 5);
+            Grid.SetColumnSpan(theNumberOfPrayersLabel, 2);
+
+            grid.Children.Add(theCombinedNumberOfThoughtsAndPrayersLabel, 2, 6);
+            Grid.SetColumnSpan(theCombinedNumberOfThoughtsAndPrayersLabel, 2);
 
             View = grid;
             #endregion

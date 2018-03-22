@@ -12,7 +12,8 @@ namespace ThoughtsAndPrayersThree.Helpers
 				return string.Empty;
 			var numberOfThoughtsInt = (int)value;
             var numberOfThoughtString = numberOfThoughtsInt.ToString();
-            var concantenatedNumberOfThoughts = ($"{numberOfThoughtString} Thoughts & 5 Prayers");
+            var concantenatedNumberOfThoughts = ($"{numberOfThoughtString} Thoughts");
+            //var concantenatedNumberOfThoughts = ($"{numberOfThoughtString} Thoughts & 5 Prayers");
 			return concantenatedNumberOfThoughts;
 		}
 

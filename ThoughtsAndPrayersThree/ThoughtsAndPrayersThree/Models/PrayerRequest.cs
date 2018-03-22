@@ -20,6 +20,16 @@ namespace ThoughtsAndPrayersThree.Models
 		public string PrayerRequestText { get; set; }
         public int NumberOfThoughts { get; set; }
         public int NumberOfPrayers { get; set; }
+        public string CombinedNumberOfThoughtsAndPrayers 
+        { get 
+            {
+                //if (NumberOfPrayers != null & NumberOfThoughts != null)
+                //{
+                //    return " ";
+                //}
+                return String.Format("{0} Thoughts and {1} Prayers", NumberOfThoughts.ToString(), NumberOfPrayers.ToString()); //Concat(NumberOfThoughts.ToString(), NumberOfPrayers.ToString()); 
+            }  
+        }
         public string StringTheNumberOfPrayers { get; set; }
 
     }

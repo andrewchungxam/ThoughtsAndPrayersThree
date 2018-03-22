@@ -50,14 +50,18 @@ namespace ThoughtsAndPrayersThree.ViewModels
 		public int TheNumberOfThoughts
 		{
 			get { return TheNumberOfThoughts; }
-			set { SetProperty(ref _theNumberOfThoughts, value); }
+			set { SetProperty(ref _theNumberOfThoughts, value); 
+                OnPropertyChanged(nameof(this.CombinedNumberOfThoughtsAndPrayers));
+            }
 		}
 
         int _theNumberOfPrayers;
         public int TheNumberOfPrayers
 		{
             get { return TheNumberOfPrayers; }
-			set { SetProperty(ref _theNumberOfPrayers, value); }
+			set { SetProperty(ref _theNumberOfPrayers, value); 
+                OnPropertyChanged(nameof(this.CombinedNumberOfThoughtsAndPrayers));
+            }
 		}
 
         //STRING_TEST
@@ -66,6 +70,13 @@ namespace ThoughtsAndPrayersThree.ViewModels
         {
             get { return StringTheNumberOfPrayers; }
             set { SetProperty(ref _stringTheNumberOfPrayers, value); }
+        }
+
+        string _combinedNumberOfThoughtsAndPrayers;
+        public string CombinedNumberOfThoughtsAndPrayers
+        {
+            get { return CombinedNumberOfThoughtsAndPrayers; }
+            set { SetProperty(ref _combinedNumberOfThoughtsAndPrayers, value); }
         }
 
         public ResetableObservableCollection<PrayerRequest> MyObservableCollectionOfUnderlyingData
@@ -105,6 +116,7 @@ namespace ThoughtsAndPrayersThree.ViewModels
 		public ICommand ThoughtClickCommand { get; set; }
         public ICommand PrayerClickCommand { get; set; }
         public ICommand AddThoughtClickCommand { get; set; }
+        public ICommand AddPrayerClickCommand { get; set; }
 
 
         public PrayerListViewModel()
@@ -128,7 +140,10 @@ namespace ThoughtsAndPrayersThree.ViewModels
             PrayerClickCommand = new Command(
                 execute: async() => { await OnPrayerClickActionAsync(); });
 
-            AddThoughtClickCommand = new Command <PrayerRequest> (OnAddThoughtClickActionAsync);   
+            AddThoughtClickCommand = new Command <PrayerRequest> (OnAddThoughtClickActionAsync);
+
+
+            AddPrayerClickCommand = new Command<PrayerRequest>(OnAddPrayerClickActionAsync);
 
             //AddThoughtClickCommand = new Command<PrayerRequest>(
             //        execute: async () =>
@@ -352,15 +367,30 @@ namespace ThoughtsAndPrayersThree.ViewModels
         void OnAddThoughtClickActionAsync(PrayerRequest cellPrayerRequest)
         {
             int hi = 5;
-
             if (cellPrayerRequest != null)
             {
                 cellPrayerRequest.StringTheNumberOfPrayers = "new and updated commanded";
+                cellPrayerRequest.NumberOfThoughts = cellPrayerRequest.NumberOfThoughts + 1;
                 this.ResetDataSource();
             }
             return;
         }
 
+
+
+
+        void OnAddPrayerClickActionAsync(PrayerRequest cellPrayerRequest)
+        {
+  
+
+            if (cellPrayerRequest != null)
+            {
+                cellPrayerRequest.StringTheNumberOfPrayers = "new and updated commanded";
+                cellPrayerRequest.NumberOfPrayers = cellPrayerRequest.NumberOfPrayers + 1;
+                this.ResetDataSource();
+            }
+            return;
+        }
 
 
 		private void DeleteAllDogsFromList()
