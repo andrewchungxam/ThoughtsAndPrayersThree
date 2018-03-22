@@ -137,6 +137,10 @@ namespace ThoughtsAndPrayersThree.ViewModels
                 execute: async () => { await OnThoughtClickActionAsync(); });
             //  canExecute: () => !IsBusy);
 
+
+            //ThoughtClickCommand = new Command <PrayerRequest>(OnThoughtClickActionAsync2);
+
+
             PrayerClickCommand = new Command(
                 execute: async() => { await OnPrayerClickActionAsync(); });
 
@@ -231,6 +235,35 @@ namespace ThoughtsAndPrayersThree.ViewModels
 
                 private void DeleteAllDogsFromList()
         */
+
+        //void OnThoughtClickActionAsync2(PrayerRequest cellPrayerRequest)
+        //{
+        //    if (this.IsTheThoughtAnimationVisible == false)
+        //    {
+        //        this.IsTheThoughtAnimationVisible = true;
+        //        ThoughtButtonPressed?.Invoke(this, new ThoughtButtonPressedEventArgs { EventArg1 = "Event arg 1", EventArg2 = "Event arg 2" });
+        //        Task.Delay(2100);
+        //        this.IsTheThoughtAnimationVisible = false;
+        //    }
+        //    else
+        //    {
+        //        this.IsTheThoughtAnimationVisible = false;
+        //    }
+        //    return;
+        //}
+
+        //void OnAddThoughtClickActionAsync(PrayerRequest cellPrayerRequest)
+        //{
+        //    int hi = 5;
+        //    if (cellPrayerRequest != null)
+        //    {
+        //        cellPrayerRequest.StringTheNumberOfPrayers = "new and updated commanded";
+        //        cellPrayerRequest.NumberOfThoughts = cellPrayerRequest.NumberOfThoughts + 1;
+        //        this.ResetDataSource();
+        //    }      
+        //}
+
+
         async Task OnThoughtClickActionAsync()
 		{
 			if (this.IsTheThoughtAnimationVisible == false)
@@ -239,7 +272,6 @@ namespace ThoughtsAndPrayersThree.ViewModels
                 ThoughtButtonPressed?.Invoke(this, new ThoughtButtonPressedEventArgs { EventArg1 = "Event arg 1", EventArg2 = "Event arg 2" });
 				await Task.Delay(2100);
 				this.IsTheThoughtAnimationVisible = false;
-
 
                 //REFERENCE THE ITEM
 
@@ -363,20 +395,21 @@ namespace ThoughtsAndPrayersThree.ViewModels
         //}
 
 
-
         void OnAddThoughtClickActionAsync(PrayerRequest cellPrayerRequest)
         {
-            int hi = 5;
             if (cellPrayerRequest != null)
             {
                 cellPrayerRequest.StringTheNumberOfPrayers = "new and updated commanded";
                 cellPrayerRequest.NumberOfThoughts = cellPrayerRequest.NumberOfThoughts + 1;
                 this.ResetDataSource();
+
+                this.OnThoughtClickActionAsync();
+
+                //TRIGGER A COMMAND
             }
+
             return;
         }
-
-
 
 
         void OnAddPrayerClickActionAsync(PrayerRequest cellPrayerRequest)
@@ -388,6 +421,9 @@ namespace ThoughtsAndPrayersThree.ViewModels
                 cellPrayerRequest.StringTheNumberOfPrayers = "new and updated commanded";
                 cellPrayerRequest.NumberOfPrayers = cellPrayerRequest.NumberOfPrayers + 1;
                 this.ResetDataSource();
+
+                this.OnPrayerClickActionAsync();
+
             }
             return;
         }
