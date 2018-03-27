@@ -7,18 +7,5 @@ namespace ThoughtsAndPrayersThree.CustomRenderers
 	{
 		public GradientNavigationPage(Page content) : base(content) { }
 	}
-
-	//public class CustomNavigationPage : ContentPage
-	//{
-	//    public CustomNavigationPage()
-	//    {
-	//        Content = new StackLayout
-	//        {
-	//            Children = {
-	//                new Label { Text = "Hello ContentPage" }
-	//            }
-	//        };
-	//    }
-	//}
 }
 

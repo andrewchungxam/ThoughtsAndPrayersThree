@@ -25,8 +25,11 @@
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\DateTimeToStringConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\NumberOfThoughtsIntToStringConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\NumberOfPrayersIntToStringConverter.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Pages\ViewCells\CommentedPrayerViewCell.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\NumberOfThoughtsandPrayersIntToStringConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Constants\MyColors.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\ViewHelpers\StyledButton.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\SurveyQuestion.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\AddTapPage.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)ViewModels\" />
@@ -38,5 +41,6 @@
     <Folder Include="$(MSBuildThisFileDirectory)Pages\ViewCells\" />
     <Folder Include="$(MSBuildThisFileDirectory)Constants\" />
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Pages\ViewHelpers\" />
   </ItemGroup>
 </Project>

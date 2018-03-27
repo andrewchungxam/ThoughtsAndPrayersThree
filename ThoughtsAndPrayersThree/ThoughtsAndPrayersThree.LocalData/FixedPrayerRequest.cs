@@ -13,6 +13,7 @@ namespace ThoughtsAndPrayersThree.LocalData
 				Id = 1,
 				CreatedDateTimeString = DateTime.Now.ToString("MMM d h:mm tt", new CultureInfo("en-US")),
 				CreatedDateTime = DateTimeOffset.UtcNow,
+                StringOnlyDateTime = "March 1, 2018",
 				FirstName = "Andrew",
 				LastName = "Kim",
 				FullName = "Andrew Kim",

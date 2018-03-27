@@ -24,10 +24,10 @@ using ThoughtsAndPrayersThree.Models;
 
 namespace ThoughtsAndPrayersThree
 {
-	public class App : Application
-	{
+    public class App : Application
+    {
         //public static DogRepository DogRep { get; private set; }
-//#TODO
+        //#TODO
         //		public static DogPhotoRepository DogPhotoRep { get; set; }
         //public static DogRepositoryBaseSixtyFour DogRepBaseSixtyFour { get; private set; }
         //public static DogRepositoryBlob DogRepBlob { get; private set; }
@@ -44,12 +44,55 @@ namespace ThoughtsAndPrayersThree
 
         public static List<PrayerRequest> ListOfPrayers { get; set; } = FixedPrayerRequests.ListOfPrayerRequests;
 
-        public static LocalData.PrayerRequestDatabase PrayerSQLDatabase { get; set; } 
+        public static LocalData.PrayerRequestDatabase PrayerSQLDatabase { get; set; }
 
-		public static HttpClient myHttpClient;
+        public static HttpClient myHttpClient;
 
-		public App()
-		{
+        public App()
+        {
+            var labelStyle = new Style(typeof(Label))
+            {
+
+#if __ANDROID__
+                Setters = 
+                    {
+                        new Setter
+                        { 
+                            Property = Label.FontFamilyProperty,   Value = "Droid Sans Mono"
+                        }
+                    }
+                };
+#endif
+
+#if __IOS__
+                Setters = 
+                    {
+                        new Setter
+                        { 
+                            Property = Label.FontFamilyProperty,   Value = "AppleSDGothicNeo-Light"
+                        }
+                    }
+                };
+#endif                        
+
+#if __Windows__
+            Setters = 
+                    {
+                        new Setter
+                        { 
+                            Property = Label.FontFamilyProperty,   Value = "Times New Roman"
+                        }
+                    }
+                };
+#endif
+
+
+
+
+            Resources = new ResourceDictionary();
+            Resources.Add(labelStyle); //THIS IS IMPLICIT
+
+
 
 			//HTTPClient
 			myHttpClient = new HttpClient();
@@ -79,7 +122,13 @@ namespace ThoughtsAndPrayersThree
             //MainPage = new ThoughtsAndPrayersThree.MainPage();
             //MainPage = new ThoughtsAndPrayersThree.MainPage();
 
-            MainPage = new NavigationPage(new PrayerListPage());
+            var np = new NavigationPage(new PrayerListPage());
+            np.BarBackgroundColor = MyColors.MyBlue1;
+            np.BarTextColor = Color.White;
+
+            MainPage = np;
+
+
 
             //CONFIRMED WORKING
             //MainPage = new TestAnimationPage();
