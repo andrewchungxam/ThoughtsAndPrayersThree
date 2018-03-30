@@ -9,7 +9,7 @@
     <OutputType>Library</OutputType>
     <RootNamespace>ThoughtsAndPrayersThree.Droid</RootNamespace>
     <AssemblyName>ThoughtsAndPrayersThree.Droid</AssemblyName>
-    <TargetFrameworkVersion>v7.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v8.0</TargetFrameworkVersion>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
     <AndroidResgenClass>Resource</AndroidResgenClass>
@@ -227,7 +227,6 @@
     <AndroidAsset Include="Assets\Raleway-SemiBold.ttf" />
   </ItemGroup>
   <Import Project="..\ThoughtsAndPrayersThree.LocalData\ThoughtsAndPrayersThree.LocalData.projitems" Label="Shared" Condition="Exists('..\ThoughtsAndPrayersThree.LocalData\ThoughtsAndPrayersThree.LocalData.projitems')" />
-  <Import Project="..\ThoughtsAndPrayersThree.CosmosDB\ThoughtsAndPrayersThree.CosmosDB.projitems" Label="Shared" Condition="Exists('..\ThoughtsAndPrayersThree.CosmosDB\ThoughtsAndPrayersThree.CosmosDB.projitems')" />
   <Import Project="..\ThoughtsAndPrayersThree\ThoughtsAndPrayersThree.projitems" Label="Shared" Condition="Exists('..\ThoughtsAndPrayersThree\ThoughtsAndPrayersThree.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets" Condition="Exists('..\packages\Xamarin.Forms.2.3.4.247\build\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+Xamarin.iOS10+xamarinmac20\Xamarin.Forms.targets')" />

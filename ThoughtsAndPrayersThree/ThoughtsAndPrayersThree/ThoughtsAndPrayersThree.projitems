@@ -9,9 +9,6 @@
     <Import_RootNamespace>ThoughtsAndPrayersThree</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)AboutPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)MainPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)MyPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ThoughtsAndPrayersApp.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CustomRenderers\CustomNavigationPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\PrayerRequest.cs" />
@@ -20,15 +17,12 @@
     <Compile Include="$(MSBuildThisFileDirectory)Pages\PrayerListPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\Base\BaseViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PrayerListViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Constants\ASampleAppConstants.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Pages\TestAnimationPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\DateTimeToStringConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\NumberOfThoughtsIntToStringConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\NumberOfPrayersIntToStringConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\NumberOfThoughtsandPrayersIntToStringConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Constants\MyColors.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\ViewHelpers\StyledButton.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\SurveyQuestion.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\AddTapPage.cs" />
   </ItemGroup>
   <ItemGroup>
