@@ -50,49 +50,9 @@ namespace ThoughtsAndPrayersThree
 
         public App()
         {
-            var labelStyle = new Style(typeof(Label))
-            {
-
-#if __ANDROID__
-                Setters = 
-                    {
-                        new Setter
-                        { 
-                            Property = Label.FontFamilyProperty,   Value = "Droid Sans Mono"
-                        }
-                    }
-                };
-#endif
-
-#if __IOS__
-                Setters = 
-                    {
-                        new Setter
-                        { 
-                            Property = Label.FontFamilyProperty,   Value = "AppleSDGothicNeo-Light"
-                        }
-                    }
-                };
-#endif                        
-
-#if __Windows__
-            Setters = 
-                    {
-                        new Setter
-                        { 
-                            Property = Label.FontFamilyProperty,   Value = "Times New Roman"
-                        }
-                    }
-                };
-#endif
 
 
-
-
-            Resources = new ResourceDictionary();
-            Resources.Add(labelStyle); //THIS IS IMPLICIT
-
-
+ 
 
 			//HTTPClient
 			myHttpClient = new HttpClient();
@@ -108,10 +68,82 @@ namespace ThoughtsAndPrayersThree
 			//#TODO 
 //			DogPhotoRep = new DogPhotoRepository(dbPath);
 
-            //NAVIGATE TO YOUR FIRST PAGE
-            //         var applicationStartPage = new MyPage();
-            //var myNavigationPage = new NavigationPage(applicationStartPage);
-            //MainPage = myNavigationPage;
+
+
+var labelStyle = new Style(typeof(Label))
+            {
+
+#if __ANDROID__
+                Setters = 
+                    {
+                        new Setter
+                        { 
+                            Property = Label.FontFamilyProperty,   Value = "Droid Sans Mono"
+                        }
+                    }
+                };
+#endif
+
+#if __IOS__
+                Setters =
+                    {
+                        new Setter
+                        {
+                            Property = Label.FontFamilyProperty,   Value = "AppleSDGothicNeo-Light"
+                        }
+                    }
+            };
+#endif                        
+
+#if __Windows__
+            Setters = 
+                    {
+                        new Setter
+                        { 
+                            Property = Label.FontFamilyProperty,   Value = "Times New Roman"
+                        }
+                    }
+                };
+#endif
+            var editorStyle = new Style(typeof(Editor))
+            {
+#if __ANDROID__
+                Setters = 
+                    {
+                        new Setter
+                        { 
+                            Property = Label.FontFamilyProperty,   Value = "Droid Sans Mono"
+                        }
+                    }
+                };
+#endif
+
+#if __IOS__
+                Setters =
+                    {
+                    new Setter
+                    {
+                        Property = Label.FontFamilyProperty,
+                        Value = "AppleSDGothicNeo-Light"
+                    }
+                    }
+            };
+#endif                        
+
+#if __Windows__
+            Setters = 
+                    {
+                        new Setter
+                        { 
+                            Property = Label.FontFamilyProperty,   Value = "Times New Roman"
+                        }
+                    }
+                };
+#endif
+            Resources = new ResourceDictionary();
+            Resources.Add(labelStyle); //THIS IS IMPLICIT
+            Resources.Add("editorStyle", editorStyle); //THIS IS IMPLICIT
+
 
 #if __ANDROID__
             MainPage = new NavigationPage(new MainPage());
@@ -150,6 +182,10 @@ namespace ThoughtsAndPrayersThree
 			//MyDogListPhotoPage = new DogListPhotoPage();
 			//MyDogListPhotoBase64Page = new DogListPhotoBase64Page();
 			//MyDogListPhotoBlobPage = new DogListPhotoBlobPage();
+
+
+
+
 
 		}
 

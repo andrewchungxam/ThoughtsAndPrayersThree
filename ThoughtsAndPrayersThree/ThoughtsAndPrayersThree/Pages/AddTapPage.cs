@@ -15,13 +15,28 @@ namespace ThoughtsAndPrayersThree.Pages
 
         public static PrayerListViewModel ParentViewModel;
 
-        Label prompt = new Label() { Text = "Update: What your question?                " };
+        Label prompt = new Label() { 
+#if __ANDROID__
+            FontFamily = "Droid Sans Mono",
+#endif
 
-        public Editor myQuestion = new Editor
-        {
-            BackgroundColor = MyColors.MyLightPurple,
-            HorizontalOptions = LayoutOptions.FillAndExpand
-        };
+#if __IOS__
+            FontFamily = "AppleSDGothicNeo-Light",
+#endif
+
+#if __Windows__
+            FontFamily = "Times New Roman",
+#endif
+
+            Text = "Update: What your question?                " };
+
+        //public Editor myQuestion = new Editor
+        //{
+
+
+        //    BackgroundColor = MyColors.MyLightPurple,
+        //    HorizontalOptions = LayoutOptions.FillAndExpand
+        //};
 
         Label fnPrompt = new Label() { Text = "First Name" };
 
@@ -41,7 +56,8 @@ namespace ThoughtsAndPrayersThree.Pages
 
         public Editor mySharedText = new Editor
         {
-            BackgroundColor = MyColors.MyLightPurple
+            FontFamily = "AppleSDGothicNeo-Light",
+            BackgroundColor = MyColors.Clouds
         };
 
         public AddTapPage()
@@ -102,7 +118,7 @@ namespace ThoughtsAndPrayersThree.Pages
             };
 
             StackLayout myEnterTextStacklayout = new StackLayout
-            {
+            {   BackgroundColor = Color.Transparent,
                 VerticalOptions = LayoutOptions.Start,
                 HorizontalOptions = LayoutOptions.FillAndExpand,
 
@@ -113,7 +129,7 @@ namespace ThoughtsAndPrayersThree.Pages
 
 
             StackLayout myButtonStacklayout = new StackLayout
-            {
+            {   
                 Padding = new Thickness(10, 10, 10, 10),
                 Orientation = StackOrientation.Horizontal,
                 VerticalOptions = LayoutOptions.Start,
@@ -124,9 +140,9 @@ namespace ThoughtsAndPrayersThree.Pages
                 }
             };
 
-
-            Content = new StackLayout
+            StackLayout combinedLayout = new StackLayout
             {
+                BackgroundColor = Color.White,
                 Padding = new Thickness(10, 50, 10, 10),
                 VerticalOptions = LayoutOptions.Start,
                 HorizontalOptions = LayoutOptions.FillAndExpand,
@@ -135,6 +151,47 @@ namespace ThoughtsAndPrayersThree.Pages
 
                 }
             };
+
+
+            #region GRID DEFINITION
+            var grid = new Grid()
+            {
+                //Padding = new Thickness(10, 10, 10, 10),
+                Padding = new Thickness(10, 10, 10, 10),
+                //BackgroundColor = MyColors.DarkGray
+                BackgroundColor = MyColors.LighterGray
+
+            };
+
+            grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(.5, GridUnitType.Star) });
+            grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+            grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+            grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+
+            grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+
+            grid.Children.Add(combinedLayout, 0, 1);
+            //Grid.SetRowSpan(cachedImage, 2);
+            //Grid.SetColumnSpan(cachedImage, 2);
+
+            Content = grid;
+            #endregion
+
+
+
+
+
+
+            //Content = new StackLayout
+            //{
+            //    Padding = new Thickness(10, 50, 10, 10),
+            //    VerticalOptions = LayoutOptions.Start,
+            //    HorizontalOptions = LayoutOptions.FillAndExpand,
+            //    Children = {
+            //        myEnterTextStacklayout, myButtonStacklayout
+
+            //    }
+            //};
         }
 
         private void myQuestion_Focused(object sender, FocusEventArgs e) //triggered when the user taps on the Editor to interact with it

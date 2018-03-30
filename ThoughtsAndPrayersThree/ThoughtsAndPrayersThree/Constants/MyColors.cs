@@ -5,6 +5,9 @@ namespace ThoughtsAndPrayersThree.Constants
 {
     public static class MyColors
     {
+        //GRAYS
+        public static Color DarkGray = Color.FromHex("#333333");//("#262626"); //("#1A1A1A");
+        public static Color LighterGray = Color.FromHex("#D9D9D9");  // ("#E6E6E6"); //("#D9D9D9");
 
         //FLAT UI COLORS
         //blue
@@ -16,6 +19,7 @@ namespace ThoughtsAndPrayersThree.Constants
         //darkgray
         public static Color WetAsphalt = Color.FromHex("#34495e");
         public static Color MidnightBlue = Color.FromHex("#2c3e50");
+
         //light gray
         public static Color Concrete = Color.FromHex("#95a5a6");
         public static Color Asbsetos = Color.FromHex("#7f8c8d");

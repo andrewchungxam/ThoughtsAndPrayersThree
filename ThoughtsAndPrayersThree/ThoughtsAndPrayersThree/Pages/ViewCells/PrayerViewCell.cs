@@ -21,7 +21,7 @@ namespace ThoughtsAndPrayersThree.Pages.ViewCells
         MenuItem _deleteAction;
         public static PrayerListViewModel ParentViewModel;
 
-        public PrayerViewCell(PrayerListPage inputPrayerListPage)
+        public PrayerViewCell()//(PrayerListPage inputPrayerListPage)
         {
            var model = BindingContext as PrayerRequest;
 
@@ -105,9 +105,7 @@ namespace ThoughtsAndPrayersThree.Pages.ViewCells
             grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
             grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
             grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
-            grid.RowDefinitions.Add(new RowDefinition { 
-                Height = new GridLength(1, GridUnitType.Star)
-            });
+            grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
 
             grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
             grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });

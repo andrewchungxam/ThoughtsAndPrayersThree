@@ -21,17 +21,17 @@ namespace ThoughtsAndPrayersThree.Pages
         public PrayerListPage()
         {
             this.ToolbarItems.Add(new ToolbarItem("+", null, //"filter.png", 
-                                                  async () => { var addTapPage = new AddTapPage(); 
-                                Navigation.PushModalAsync(addTapPage);
-                                //var result = await page.DisplayAlert("Title", "Message", "Accept", "Cancel");
-                                }
-                             ));
+            async () => 
+            { 
+                var addTapPage = new AddTapPage(); 
+                Navigation.PushModalAsync(addTapPage);
+                //var result = await page.DisplayAlert("Title", "Message", "Accept", "Cancel");
+            }));
 
-            test = 1;
             _prayerListPage = new ListView();
 
             _prayerListPage.ItemTemplate = new DataTemplate(() => {
-                return new PrayerViewCell(this);
+                return new PrayerViewCell(); //(this)
             });
 
            //NEW METHOD
