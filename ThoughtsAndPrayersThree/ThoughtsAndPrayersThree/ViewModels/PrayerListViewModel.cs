@@ -9,7 +9,7 @@ using System.Linq;
 using Xamarin.Forms;
 
 using ThoughtsAndPrayersThree.Models;
-using ThoughtsAndPrayersThree.CosmosDB;
+//using ThoughtsAndPrayersThree.CosmosDB;
 
 using ThoughtsAndPrayersThree.ViewModels.Base;
 using ThoughtsAndPrayersThree.Pages.ViewCells;
@@ -133,7 +133,7 @@ namespace ThoughtsAndPrayersThree.ViewModels
             foreach (var prayerRequest in list)
                 MyObservableCollectionOfUnderlyingData.Add(prayerRequest);
 
-            DeletePrayerFromListCommand = new Command(DeletePrayerFromListAction);
+            //           DeletePrayerFromListCommand = new Command(DeletePrayerFromListAction);
 
             ThoughtClickCommand = new Command(
                 execute: async () => { await OnThoughtClickActionAsync(); });
@@ -220,34 +220,34 @@ namespace ThoughtsAndPrayersThree.ViewModels
         }
 
 
-        private void DeleteAllDogsFromList()
-        {
-            Debug.WriteLine("DELETE ALL DOGS FROM LIST ACTION");
-            var allPrayers = _observableCollectionOfPrayers;
+        //private void DeleteAllDogsFromList()
+        //{
+        //    Debug.WriteLine("DELETE ALL DOGS FROM LIST ACTION");
+        //    var allPrayers = _observableCollectionOfPrayers;
 
-            foreach (var prayer in allPrayers)
-            {
-                DeletePrayerFromListAction(prayer);
-            };
+        //    foreach (var prayer in allPrayers)
+        //    {
+        //        DeletePrayerFromListAction(prayer);
+        //    };
 
-        }
+        //}
 
-        private async void DeletePrayerFromListAction(object obj)
-        {
-            Debug.WriteLine("DELETE PRAYER FROM LIST ACTION");
-            var myPrayer = obj as PrayerRequest;
-            Debug.WriteLine($"Removing Prayer {myPrayer}");
+        //private async void DeletePrayerFromListAction(object obj)
+        //{
+        //    Debug.WriteLine("DELETE PRAYER FROM LIST ACTION");
+        //    var myPrayer = obj as PrayerRequest;
+        //    Debug.WriteLine($"Removing Prayer {myPrayer}");
 
-            if (_observableCollectionOfPrayers.Remove(myPrayer))
-            {
-                var myCosmosPrayer = CosmosDB.PrayerRequestConverter.ConvertToCosmosPrayerRequest(myPrayer);
-                await CosmosDBPrayerService.DeleteCosmosPrayerRequestsAsync(myCosmosPrayer);
-            }
-            else
-            {
-                Debug.WriteLine($"Prayer not removed from observable collection {myPrayer}");
-            }
-        }
+        //    if (_observableCollectionOfPrayers.Remove(myPrayer))
+        //    {
+        //        //var myCosmosPrayer = CosmosDB.PrayerRequestConverter.ConvertToCosmosPrayerRequest(myPrayer);
+        //        //await CosmosDBPrayerService.DeleteCosmosPrayerRequestsAsync(myCosmosPrayer);
+        //    }
+        //    else
+        //    {
+        //        Debug.WriteLine($"Prayer not removed from observable collection {myPrayer}");
+        //    }
+        //}
     }
 }
 

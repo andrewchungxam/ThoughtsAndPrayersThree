@@ -17,7 +17,7 @@ using ThoughtsAndPrayersThree.LocalData;
 using ThoughtsAndPrayersThree.Pages;
 using ThoughtsAndPrayersThree.Models;
 using ThoughtsAndPrayersThree.Constants;
-using ThoughtsAndPrayersThree.BlobStorage;
+//using ThoughtsAndPrayersThree.BlobStorage;
 
 using ThoughtsAndPrayersThree.LocalData;
 using ThoughtsAndPrayersThree.Models;
@@ -44,7 +44,7 @@ namespace ThoughtsAndPrayersThree
 
         public static List<PrayerRequest> ListOfPrayers { get; set; } = FixedPrayerRequests.ListOfPrayerRequests;
 
-        public static LocalData.PrayerRequestDatabase PrayerSQLDatabase { get; set; }
+//        public static LocalData.PrayerRequestDatabase PrayerSQLDatabase { get; set; }
 
         public static HttpClient myHttpClient;
 
@@ -57,12 +57,12 @@ namespace ThoughtsAndPrayersThree
 			//HTTPClient
 			myHttpClient = new HttpClient();
 
-			////MAKE THIS ASYNC AND PULL THIS OUT OF THE CONSTRUCTOR
+            ////MAKE THIS ASYNC AND PULL THIS OUT OF THE CONSTRUCTOR
 			//MyAzureBlobStorage = new AzureBlobStorage();
 			//MyCloudBlobClient = MyAzureBlobStorage.CreateCloudBlobClient();
 			//MyCloudBlobContainer = MyAzureBlobStorage.CreateCloudBlobClientAndContainer(ContainerName);
 
-			string dbPath = LocalData.FileAccessHelper.GetLocalFilePath("ThoughtsAndPrayer1.db3");
+//			string dbPath = LocalData.FileAccessHelper.GetLocalFilePath("ThoughtsAndPrayer1.db3");
 
 			////USE THIS FOR LIST PHOTO PAGE
 			//#TODO 
@@ -192,10 +192,10 @@ var labelStyle = new Style(typeof(Label))
 
 		protected override void OnStart()
 		{
-			MobileCenter.Start(ASampleAppConstants.MobileCenterIOS +
-				   "uwp={Your UWP App secret here};" +
-				   "android={Your Android App secret here}",
-				   typeof(Analytics), typeof(Crashes));
+			//MobileCenter.Start(ASampleAppConstants.MobileCenterIOS +
+				   //"uwp={Your UWP App secret here};" +
+				   //"android={Your Android App secret here}",
+				   //typeof(Analytics), typeof(Crashes));
 		}
 
 		protected override void OnSleep()

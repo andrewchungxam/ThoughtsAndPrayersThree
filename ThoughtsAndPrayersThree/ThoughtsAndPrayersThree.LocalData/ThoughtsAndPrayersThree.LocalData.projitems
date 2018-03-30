@@ -9,8 +9,6 @@
     <Import_RootNamespace>ThoughtsAndPrayersThree.LocalData</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)FileAccessHelper.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FixedPrayerRequest.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)PrayerRequestDatabase.cs" />
   </ItemGroup>
 </Project>

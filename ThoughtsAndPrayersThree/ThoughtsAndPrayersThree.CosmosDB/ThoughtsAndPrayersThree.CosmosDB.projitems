@@ -8,9 +8,4 @@
   <PropertyGroup Label="Configuration">
     <Import_RootNamespace>ThoughtsAndPrayersThree.CosmosDB</Import_RootNamespace>
   </PropertyGroup>
-  <ItemGroup>
-    <Compile Include="$(MSBuildThisFileDirectory)CosmosDBPrayerRequestStrings.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)CosmosDBPrayerService.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)PrayerRequestConverter.cs" />
-  </ItemGroup>
 </Project>
