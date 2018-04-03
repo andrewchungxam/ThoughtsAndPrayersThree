@@ -13,7 +13,7 @@ namespace ThoughtsAndPrayersThree.Pages
     public class AddTapPage : ContentPage
     {
 
-        public static PrayerListViewModel ParentViewModel;
+        public static PrayerListViewModel ParentViewModelofAddTapPage;
 
         Label prompt = new Label() { 
 #if __ANDROID__
@@ -77,8 +77,8 @@ namespace ThoughtsAndPrayersThree.Pages
                         StringTheNumberOfPrayers = "first test string"
                     };
 
-                    ParentViewModel.MyObservableCollectionOfUnderlyingData.Add(newPrayerRequest);
-                    ParentViewModel.ResetDataSource();
+                    ParentViewModelofAddTapPage.MyObservableCollectionOfUnderlyingData.Add(newPrayerRequest);
+                    ParentViewModelofAddTapPage.ResetDataSource();
 
                     Navigation.PopModalAsync();
                 });

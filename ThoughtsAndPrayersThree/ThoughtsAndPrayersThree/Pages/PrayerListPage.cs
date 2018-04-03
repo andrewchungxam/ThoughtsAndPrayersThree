@@ -6,12 +6,13 @@ using ThoughtsAndPrayersThree.Pages.ViewCells;
 
 using Lottie.Forms;
 using Xamarin.Forms;
+using ThoughtsAndPrayersThree.Models;
 
 namespace ThoughtsAndPrayersThree.Pages
 {
     public class PrayerListPage : BaseContentPage<PrayerListViewModel>
     {
-        ListView _prayerListPage;
+        ListView _prayerListView;
         AnimationView _animation;
         AnimationView _animation1;
         Button _button;
@@ -28,17 +29,17 @@ namespace ThoughtsAndPrayersThree.Pages
                 //var result = await page.DisplayAlert("Title", "Message", "Accept", "Cancel");
             }));
 
-            _prayerListPage = new ListView();
+            _prayerListView = new ListView();
 
-            _prayerListPage.ItemTemplate = new DataTemplate(() => {
+            _prayerListView.ItemTemplate = new DataTemplate(() => {
                 return new PrayerViewCell(); //(this)
             });
 
            //NEW METHOD
-            _prayerListPage.SetBinding(ListView.ItemsSourceProperty, nameof(MyViewModel.MyObservableCollectionOfUnderlyingData));
+            _prayerListView.SetBinding(ListView.ItemsSourceProperty, nameof(MyViewModel.MyObservableCollectionOfUnderlyingData));
 
 
-            _prayerListPage.HasUnevenRows = true;
+            _prayerListView.HasUnevenRows = true;
 
             //OPTION 2 WITH ANIMATIONS
             var contentView = new ContentView()
@@ -110,13 +111,13 @@ namespace ThoughtsAndPrayersThree.Pages
 
             AbsoluteLayout.SetLayoutFlags
             (
-                 _prayerListPage,
+                 _prayerListView,
                 AbsoluteLayoutFlags.PositionProportional
             );
 
             AbsoluteLayout.SetLayoutBounds
             (
-                _prayerListPage,
+                _prayerListView,
                 new Rectangle(0, 0, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize)
             );
 
@@ -139,18 +140,10 @@ namespace ThoughtsAndPrayersThree.Pages
             );
             
             //BOTTOM TO TOP -->       
-            simpleLayout.Children.Add(_prayerListPage);
+            simpleLayout.Children.Add(_prayerListView);
             simpleLayout.Children.Add(contentView1);
             simpleLayout.Children.Add(contentView);
             Content = simpleLayout;
-
-        }
-
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            MyViewModel.ThoughtButtonPressed += MyViewModel_ThoughtButtonPressed;
-            MyViewModel.PrayerButtonPressed += MyViewModel_PrayerButtonPressed;
 
         }
 
@@ -167,12 +160,64 @@ namespace ThoughtsAndPrayersThree.Pages
             _animation.Play();
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            MyViewModel.ThoughtButtonPressed += MyViewModel_ThoughtButtonPressed;
+            MyViewModel.PrayerButtonPressed += MyViewModel_PrayerButtonPressed;
+
+            _prayerListView.ItemSelected += OnListViewItemSelected;
+
+        }
+
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
             MyViewModel.ThoughtButtonPressed -= MyViewModel_ThoughtButtonPressed;
             MyViewModel.PrayerButtonPressed -= MyViewModel_PrayerButtonPressed;
+
+            _prayerListView.ItemSelected -= OnListViewItemSelected;
         }
+
+        private void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            //throw new NotImplementedException();
+            Device.BeginInvokeOnMainThread(async () =>
+            {
+                var itemSelected = e?.SelectedItem as PrayerRequest;
+
+                ////METHOD 1: USING ITEM SELECTED DIRECTION AS ARGUMENT
+                //PrayerRequest selectedPrayerRequest = itemSelected;
+                //await Navigation?.PushAsync(new PrayerDetailPage(itemSelected));
+                //_prayerListPage.SelectedItem = null;
+
+                //METHOD 2: ASSIGNING ITEM SELECTED IN VM OF DETAIL PAGE
+                PrayerRequest selectedPrayerRequest = itemSelected;
+
+                var pdPage = new PrayerDetailPage() { };
+
+                pdPage.MyViewModel.TheNumberOfPrayers = selectedPrayerRequest.NumberOfPrayers;
+
+                //METHOD 3: EXPLICIT ASSIGNMENT OF VM
+                //PrayerRequest selectedPrayerRequest = itemSelected;
+
+                //var pdPage = new PrayerDetailPage() {};
+                //var pdViewModel = new PrayerDetailPageViewModel();
+                //pdPage.BindingContext = pdViewModel;
+
+                //pdViewModel.TheNumberOfThoughts = selectedPrayerRequest.NumberOfThoughts;
+              
+
+                await Navigation?.PushAsync(new PrayerDetailPage());
+
+                _prayerListView.SelectedItem = null;
+
+                //_prayerListPage.EndRefresh();
+            });
+
+
+        }
+
     }
 }
 

@@ -1,54 +1,18 @@
 ﻿<Properties StartupConfiguration="{71C427FF-24AD-4770-BBDD-31D7A71C1534}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ThoughtsAndPrayersThree/ThoughtsAndPrayersApp.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ThoughtsAndPrayersThree/ViewModels/Base/BaseViewModel.cs">
     <Files>
-      <File FileName="ThoughtsAndPrayersThree/Helpers/DateTimeToStringConverter.cs" Line="1" Column="1" />
-      <File FileName="ThoughtsAndPrayersThree/Helpers/NumberOfPrayersIntToStringConverter.cs" Line="1" Column="1" />
-      <File FileName="ThoughtsAndPrayersThree/Helpers/NumberOfThoughtsandPrayersIntToStringConverter.cs" Line="1" Column="1" />
-      <File FileName="ThoughtsAndPrayersThree/Helpers/NumberOfThoughtsIntToStringConverter.cs" Line="1" Column="1" />
-      <File FileName="ThoughtsAndPrayersThree/Models/PrayerRequest.cs" Line="1" Column="1" />
-      <File FileName="ThoughtsAndPrayersThree/Pages/ViewCells/PrayerViewCell.cs" Line="1" Column="1" />
-      <File FileName="ThoughtsAndPrayersThree/Pages/AddTapPage.cs" Line="150" Column="1" />
-      <File FileName="ThoughtsAndPrayersThree/Pages/PrayerListPage.cs" Line="1" Column="1" />
-      <File FileName="ThoughtsAndPrayersThree/ViewModels/PrayerListViewModel.cs" Line="12" Column="1" />
-      <File FileName="ThoughtsAndPrayersThree/ThoughtsAndPrayersApp.cs" Line="129" Column="1" />
+      <File FileName="ThoughtsAndPrayersThree/Pages/PrayerListPage.cs" Line="199" Column="54" />
+      <File FileName="ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" Line="24" Column="50" />
+      <File FileName="ThoughtsAndPrayersThree/ViewModels/PrayerListViewModel.cs" Line="65" Column="1" />
+      <File FileName="ThoughtsAndPrayersThree/Pages/Base/BaseContentPage.cs" Line="15" Column="21" />
+      <File FileName="ThoughtsAndPrayersThree/ViewModels/Base/BaseViewModel.cs" Line="36" Column="1" />
+      <File FileName="ThoughtsAndPrayersThree/Pages/PrayerDetailPage.cs" Line="159" Column="79" NotebookId="1" />
+      <File FileName="ThoughtsAndPrayersThree/Helpers/NumberOfPrayersIntToStringConverter.cs" Line="7" Column="15" NotebookId="1" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="ThoughtsAndPrayersThree" expanded="True">
-            <Node name="ThoughtsAndPrayersThree" expanded="True">
-              <Node name="Constants" expanded="True" />
-              <Node name="CustomRenderers" expanded="True" />
-              <Node name="Helpers" expanded="True" />
-              <Node name="Models" expanded="True" />
-              <Node name="Pages" expanded="True">
-                <Node name="Base" expanded="True" />
-                <Node name="ViewCells" expanded="True" />
-                <Node name="ViewHelpers" expanded="True" />
-              </Node>
-              <Node name="ViewModels" expanded="True" />
-              <Node name="ThoughtsAndPrayersApp.cs" selected="True" />
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Helpers/NumberOfPrayersIntToStringConverter.cs" relfile="ThoughtsAndPrayersThree/Helpers/NumberOfPrayersIntToStringConverter.cs" line="7" column="15" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Helpers/NumberOfPrayersIntToStringConverter.cs" relfile="ThoughtsAndPrayersThree/Helpers/NumberOfPrayersIntToStringConverter.cs" line="8" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Helpers/NumberOfPrayersIntToStringConverter.cs" relfile="ThoughtsAndPrayersThree/Helpers/NumberOfPrayersIntToStringConverter.cs" line="9" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Helpers/NumberOfPrayersIntToStringConverter.cs" relfile="ThoughtsAndPrayersThree/Helpers/NumberOfPrayersIntToStringConverter.cs" line="10" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Helpers/NumberOfPrayersIntToStringConverter.cs" relfile="ThoughtsAndPrayersThree/Helpers/NumberOfPrayersIntToStringConverter.cs" line="11" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Helpers/NumberOfPrayersIntToStringConverter.cs" relfile="ThoughtsAndPrayersThree/Helpers/NumberOfPrayersIntToStringConverter.cs" line="12" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Helpers/NumberOfPrayersIntToStringConverter.cs" relfile="ThoughtsAndPrayersThree/Helpers/NumberOfPrayersIntToStringConverter.cs" line="13" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Helpers/NumberOfPrayersIntToStringConverter.cs" relfile="ThoughtsAndPrayersThree/Helpers/NumberOfPrayersIntToStringConverter.cs" line="14" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Helpers/NumberOfPrayersIntToStringConverter.cs" relfile="ThoughtsAndPrayersThree/Helpers/NumberOfPrayersIntToStringConverter.cs" line="15" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Helpers/NumberOfPrayersIntToStringConverter.cs" relfile="ThoughtsAndPrayersThree/Helpers/NumberOfPrayersIntToStringConverter.cs" line="16" column="1" />
-      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Models/PrayerRequest.cs" relfile="ThoughtsAndPrayersThree/Models/PrayerRequest.cs" line="10" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.ThoughtsAndPrayersThree.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.96F1B57E-418A-4BDC-ACA7-ACB9E7F88168">

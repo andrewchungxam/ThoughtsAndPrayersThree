@@ -1,34 +1,38 @@
 ﻿using System;
-using System.Diagnostics;
-using System.Windows.Input;
-using System.Threading.Tasks;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-
-using Xamarin.Forms;
-
+using System.Threading.Tasks;
+using System.Windows.Input;
 using ThoughtsAndPrayersThree.Models;
-
 using ThoughtsAndPrayersThree.ViewModels.Base;
-using ThoughtsAndPrayersThree.Pages.ViewCells;
-
-using ThoughtsAndPrayersThree.Pages;
+using Xamarin.Forms;
 
 namespace ThoughtsAndPrayersThree.ViewModels
 {
-    public class ResetableObservableCollection<T> : ObservableCollection<T>
+    public class PrayerDetailPageViewModel : BaseViewModel
     {
-        public void Reset() => this.OnCollectionChanged(new System.Collections.Specialized.NotifyCollectionChangedEventArgs(System.Collections.Specialized.NotifyCollectionChangedAction.Reset));
-    }
+        private PrayerRequest _prayerRequest;
 
-    public class PrayerListViewModel : BaseViewModel
-    {
-        
-        bool _isTheThoughtAnimationVisible;
-        public bool IsTheThoughtAnimationVisible 
+        public PrayerRequest SelectedPrayerRequest
         {
-            get { return _isTheThoughtAnimationVisible; } 
+            get { return _prayerRequest; }
+            set { SetProperty(ref _prayerRequest, value); }
+        }
+
+        public string SelectedPrayerName
+        {
+            get { return _prayerRequest?.FullName; }
+            set {
+                _prayerRequest.FullName = value;
+                OnPropertyChanged();
+            }
+        }
+
+
+        bool _isTheThoughtAnimationVisible;
+        public bool IsTheThoughtAnimationVisible
+        {
+            get { return _isTheThoughtAnimationVisible; }
             set { SetProperty(ref _isTheThoughtAnimationVisible, value); }
         }
 
@@ -50,8 +54,11 @@ namespace ThoughtsAndPrayersThree.ViewModels
         public int TheNumberOfThoughts
         {
             get { return TheNumberOfThoughts; }
-            set { 
-                SetProperty(ref _theNumberOfThoughts, value); 
+            set
+            {
+                SetProperty(ref _theNumberOfThoughts, value);
+                //OnPropertyChanged(nameof(this.TheNumberOfThoughts));
+
                 OnPropertyChanged(nameof(this.CombinedNumberOfThoughtsAndPrayers));
             }
         }
@@ -59,9 +66,12 @@ namespace ThoughtsAndPrayersThree.ViewModels
         int _theNumberOfPrayers;
         public int TheNumberOfPrayers
         {
-            get { return TheNumberOfPrayers; }
-            set { 
+            get { return _theNumberOfPrayers; }
+            set
+            {
                 SetProperty(ref _theNumberOfPrayers, value);
+               // OnPropertyChanged(nameof(this.TheNumberOfPrayers));
+
                 OnPropertyChanged(nameof(this.CombinedNumberOfThoughtsAndPrayers));
             }
         }
@@ -70,14 +80,14 @@ namespace ThoughtsAndPrayersThree.ViewModels
         string _stringTheNumberOfPrayers;
         public string StringTheNumberOfPrayers
         {
-            get { return StringTheNumberOfPrayers; }
+            get { return _stringTheNumberOfPrayers; }
             set { SetProperty(ref _stringTheNumberOfPrayers, value); }
         }
 
         string _combinedNumberOfThoughtsAndPrayers;
         public string CombinedNumberOfThoughtsAndPrayers
         {
-            get { return CombinedNumberOfThoughtsAndPrayers; }
+            get { return _combinedNumberOfThoughtsAndPrayers; }
             set { SetProperty(ref _combinedNumberOfThoughtsAndPrayers, value); }
         }
 
@@ -121,20 +131,20 @@ namespace ThoughtsAndPrayersThree.ViewModels
         public ICommand AddPrayerClickCommand { get; set; }
 
 
-        public PrayerListViewModel()
+        public PrayerDetailPageViewModel()
         {
 
-            PrayerViewCell.ParentViewModel = this;
-            AddTapPage.ParentViewModelofAddTapPage = this;
+            //PrayerViewCell.ParentViewModel = this;
+            //AddTapPage.ParentViewModelofAddTapPage = this;
 
-            var list = new List<PrayerRequest> { };
-            //list = App.PrayerSQLDatabase.GetAllDogs();
-            list = App.ListOfPrayers;
+            //var list = new List<PrayerRequest> { };
+            ////list = App.PrayerSQLDatabase.GetAllDogs();
+            //list = App.ListOfPrayers;
 
-            foreach (var prayerRequest in list)
-                MyObservableCollectionOfUnderlyingData.Add(prayerRequest);
+            //foreach (var prayerRequest in list)
+            //    MyObservableCollectionOfUnderlyingData.Add(prayerRequest);
 
-            //           DeletePrayerFromListCommand = new Command(DeletePrayerFromListAction);
+            ////           DeletePrayerFromListCommand = new Command(DeletePrayerFromListAction);
 
             ThoughtClickCommand = new Command(
                 execute: async () => { await OnThoughtClickActionAsync(); });
@@ -145,9 +155,9 @@ namespace ThoughtsAndPrayersThree.ViewModels
 
 
             PrayerClickCommand = new Command(
-                execute: async() => { await OnPrayerClickActionAsync(); });
+                execute: async () => { await OnPrayerClickActionAsync(); });
 
-            AddThoughtClickCommand = new Command <PrayerRequest> (OnAddThoughtClickActionAsync);
+            AddThoughtClickCommand = new Command<PrayerRequest>(OnAddThoughtClickActionAsync);
 
 
             AddPrayerClickCommand = new Command<PrayerRequest>(OnAddPrayerClickActionAsync);
@@ -178,7 +188,7 @@ namespace ThoughtsAndPrayersThree.ViewModels
             {
                 this.IsThePrayerAnimationVisible = true;
                 PrayerButtonPressed?.Invoke(this, new PrayerButtonPressedEventArgs { EventArg1 = "Event arg 3", EventArg2 = "Event arg 4" });
-                await Task.Delay(2100); 
+                await Task.Delay(2100);
                 this.IsThePrayerAnimationVisible = false;
             }
             else
@@ -206,7 +216,7 @@ namespace ThoughtsAndPrayersThree.ViewModels
 
         void OnAddPrayerClickActionAsync(PrayerRequest cellPrayerRequest)
         {
-  
+
 
             if (cellPrayerRequest != null)
             {
@@ -219,5 +229,10 @@ namespace ThoughtsAndPrayersThree.ViewModels
             }
             return;
         }
+
+
+
+
+
     }
 }

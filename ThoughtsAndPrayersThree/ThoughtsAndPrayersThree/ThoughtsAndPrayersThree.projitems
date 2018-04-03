@@ -24,6 +24,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Constants\MyColors.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\ViewHelpers\StyledButton.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\AddTapPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Pages\PrayerDetailPage.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PrayerDetailPageViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)ViewModels\" />
