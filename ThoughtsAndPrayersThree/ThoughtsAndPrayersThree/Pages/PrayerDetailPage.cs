@@ -186,7 +186,7 @@ namespace ThoughtsAndPrayersThree.Pages
             //var myTestLabel = new Label() { Text = "hello" };
 
             var myTestLabel = new Label(); //{ Text = "hello" };
-            myTestLabel.SetBinding(Label.TextProperty, nameof(this.MyViewModel.TheNumberOfPrayers1), BindingMode.Default, new NumberOfPrayersIntToStringConverter());
+            myTestLabel.SetBinding(Label.TextProperty, nameof(this.MyViewModel.TheNumberOfPrayers), BindingMode.Default, new NumberOfPrayersIntToStringConverter());
             //myTestLabel.SetBinding(Label.TextProperty, "TheNumberOfPrayers", BindingMode.OneWay, new NumberOfPrayersIntToStringConverter());
 
             var myNameProperty = new Label() { };
@@ -213,18 +213,19 @@ namespace ThoughtsAndPrayersThree.Pages
 
             #region BINDINGS
             //cachedImage.SetBinding(CachedImage.SourceProperty, nameof(Models.PrayerRequest.FBProfileUrl));
-            cachedImage.SetBinding(CachedImage.SourceProperty, nameof(Models.PrayerRequest.FBProfileUrl));
+            cachedImage.SetBinding(CachedImage.SourceProperty, nameof(this.MyViewModel.TheFBProfileUrl));
 
-            dateString.SetBinding(Label.TextProperty, nameof(Models.PrayerRequest.CreatedDateTime), BindingMode.OneWay, new DateTimeToStringConverter());
+            dateString.SetBinding(Label.TextProperty, nameof(this.MyViewModel.TheCreatedDateTime ), BindingMode.OneWay, new DateTimeToStringConverter());
 
-            theNumberOfThoughtLabel.SetBinding(Label.TextProperty, nameof(Models.PrayerRequest.NumberOfThoughts), BindingMode.OneWay, new NumberOfThoughtsIntToStringConverter());
-            theNumberOfPrayersLabel.SetBinding(Label.TextProperty, nameof(Models.PrayerRequest.NumberOfPrayers), BindingMode.OneWay, new NumberOfPrayersIntToStringConverter());
+            theNumberOfThoughtLabel.SetBinding(Label.TextProperty, nameof(this.MyViewModel.TheNumberOfThoughts), BindingMode.OneWay, new NumberOfThoughtsIntToStringConverter());
+            theNumberOfPrayersLabel.SetBinding(Label.TextProperty, nameof(this.MyViewModel.TheNumberOfPrayers), BindingMode.OneWay, new NumberOfPrayersIntToStringConverter());
 
-            theCombinedNumberOfThoughtsAndPrayersLabel.SetBinding(Label.TextProperty, nameof(Models.PrayerRequest.CombinedNumberOfThoughtsAndPrayers), BindingMode.Default); //, new CombinedNumberOfThoughtsAndPrayersStringConverter());
+            theCombinedNumberOfThoughtsAndPrayersLabel.SetBinding(Label.TextProperty, nameof(this.MyViewModel.TheCombinedNumberOfThoughtsAndPrayers), BindingMode.Default); //, new CombinedNumberOfThoughtsAndPrayersStringConverter());
 
             //NEW
-            myFullNameProperty.SetBinding(Label.TextProperty, nameof(Models.PrayerRequest.NewCombinedNameAndDate), BindingMode.Default);
-            myPrayerRequestProperty.SetBinding(Label.TextProperty, nameof(Models.PrayerRequest.PrayerRequestText));
+
+            myFullNameProperty.SetBinding(Label.TextProperty, nameof(this.MyViewModel.TheNewCombinedNameAndDate), BindingMode.Default);
+            myPrayerRequestProperty.SetBinding(Label.TextProperty, nameof(this.MyViewModel.ThePrayerRequestText));
 
             //var navigationPage = Application.Current.MainPage as NavigationPage;
             //var prayerListPage = navigationPage.CurrentPage as PrayerListPage;
@@ -235,13 +236,18 @@ namespace ThoughtsAndPrayersThree.Pages
             //var prayerDetailPage = navigationPage.CurrentPage as PrayerDetailPage;
             //var prayerDetailPageViewModel = prayerDetailPage.BindingContext as PrayerDetailPageViewModel;
 
+            //var theBindingContextViewModel = this.BindingContext;
 
-            ////COMBINED-COMMANDING-NEW
-            //thoughtButton.SetBinding(Button.CommandParameterProperty, new Binding("."));
-            //thoughtButton.SetBinding(Button.CommandProperty, new Binding("BindingContext.AddThoughtClickCommand", source: prayerDetailPage));
+            //////COMBINED-COMMANDING-NEW
+            thoughtButton.SetBinding(Button.CommandParameterProperty, new Binding("SelectedPrayerRequest"));  //("BindingContext.SelectedPrayerRequest"));  //new Binding("."));
+            thoughtButton.SetBinding(Button.CommandProperty, new Binding("BindingContext.AddThoughtClickCommand", source: this));
 
-            //prayerButton.SetBinding(Button.CommandParameterProperty, new Binding("."));
-            //prayerButton.SetBinding(Button.CommandProperty, new Binding("BindingContext.AddPrayerClickCommand", source: prayerDetailPage));
+            //thoughtButton.SetBinding(Button.CommandProperty, new Binding("BindingContext.AddThoughtClickCommand", source: theBindingContextViewModel));
+
+//            prayerButton.SetBinding(Button.CommandParameterProperty, new Binding("."));
+////            prayerButton.SetBinding(Button.CommandProperty, new Binding("BindingContext.AddPrayerClickCommand", source: prayerDetailPage));
+            //prayerButton.SetBinding(Button.CommandProperty, new Binding("BindingContext.AddPrayerClickCommand", source: theBindingContextViewModel));
+
 
             #endregion
 
@@ -259,7 +265,7 @@ namespace ThoughtsAndPrayersThree.Pages
                 Padding = new Thickness(10, 10, 10, 10)
             };
 
-            grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+            //grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
             grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
             grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
             grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
@@ -270,26 +276,26 @@ namespace ThoughtsAndPrayersThree.Pages
             grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
             grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
 
-            //grid.Children.Add(cachedImage, 0, 0);
-            //Grid.SetRowSpan(cachedImage, 2);
-            ////Grid.SetColumnSpan(cachedImage, 2);
+            grid.Children.Add(cachedImage, 0, 0);
+            Grid.SetRowSpan(cachedImage, 2);
+            //Grid.SetColumnSpan(cachedImage, 2);
 
-            //grid.Children.Add(myFullNameProperty, 1, 0);
-            //Grid.SetColumnSpan(myFullNameProperty, 3);
+            grid.Children.Add(myFullNameProperty, 1, 0);
+            Grid.SetColumnSpan(myFullNameProperty, 3);
 
-            //grid.Children.Add(theCombinedNumberOfThoughtsAndPrayersLabel, 1, 1);
-            //Grid.SetColumnSpan(theCombinedNumberOfThoughtsAndPrayersLabel, 3);
+            grid.Children.Add(theCombinedNumberOfThoughtsAndPrayersLabel, 1, 1);
+            Grid.SetColumnSpan(theCombinedNumberOfThoughtsAndPrayersLabel, 3);
 
-            //grid.Children.Add(myPrayerRequestProperty, 0, 2);
-            //Grid.SetColumnSpan(myPrayerRequestProperty, 4);
+            grid.Children.Add(myPrayerRequestProperty, 0, 2);
+            Grid.SetColumnSpan(myPrayerRequestProperty, 4);
 
-            //grid.Children.Add(thoughtButton, 0, 3);
-            //Grid.SetColumnSpan(thoughtButton, 2);
-            //grid.Children.Add(prayerButton, 2, 3);
-            //Grid.SetColumnSpan(prayerButton, 2);
+            grid.Children.Add(thoughtButton, 0, 3);
+            Grid.SetColumnSpan(thoughtButton, 2);
+            grid.Children.Add(prayerButton, 2, 3);
+            Grid.SetColumnSpan(prayerButton, 2);
 
-            grid.Children.Add(myTestLabel, 0, 0);
-            Grid.SetColumnSpan(myTestLabel, 2);
+            //grid.Children.Add(myTestLabel, 0, 0);
+            //Grid.SetColumnSpan(myTestLabel, 2);
 
             Content = grid;
             #endregion

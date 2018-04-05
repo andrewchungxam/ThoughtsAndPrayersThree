@@ -12,7 +12,6 @@ namespace ThoughtsAndPrayersThree.ViewModels
     public class PrayerDetailPageViewModel : BaseViewModel
     {
         private PrayerRequest _prayerRequest;
-
         public PrayerRequest SelectedPrayerRequest
         {
             get { return _prayerRequest; }
@@ -28,6 +27,12 @@ namespace ThoughtsAndPrayersThree.ViewModels
             }
         }
 
+        private DateTimeOffset _theCreatedDateTime;
+        public DateTimeOffset TheCreatedDateTime
+        {
+            get { return _theCreatedDateTime; }
+            set { SetProperty(ref _theCreatedDateTime, value); }
+        }
 
         bool _isTheThoughtAnimationVisible;
         public bool IsTheThoughtAnimationVisible
@@ -63,16 +68,45 @@ namespace ThoughtsAndPrayersThree.ViewModels
             }
         }
 
-        int _theNumberOfPrayers1;
-        public int TheNumberOfPrayers1
+        int _theNumberOfPrayers;
+        public int TheNumberOfPrayers
         {
-            get { return _theNumberOfPrayers1; }
+            get { return _theNumberOfPrayers; }
             set
             {
-                SetProperty(ref _theNumberOfPrayers1, value);
+                SetProperty(ref _theNumberOfPrayers, value);
                 //OnPropertyChanged(nameof(this.CombinedNumberOfThoughtsAndPrayers));
             }
         }
+
+        string _theFBProfileUrl;
+        public string TheFBProfileUrl
+        {
+            get { return _theFBProfileUrl; }
+            set { SetProperty(ref _theFBProfileUrl, value); }
+        }
+
+        string _theCombinedNumberOfThoughtsAndPrayers;
+        public string TheCombinedNumberOfThoughtsAndPrayers
+        {
+            get { return _theCombinedNumberOfThoughtsAndPrayers; }
+            set { SetProperty(ref _theCombinedNumberOfThoughtsAndPrayers, value); }
+        }
+
+        string _theNewCombinedNameAndDate;
+        public string TheNewCombinedNameAndDate
+        {
+            get { return _theNewCombinedNameAndDate; }
+            set { SetProperty(ref _theNewCombinedNameAndDate, value); }
+        }
+
+        string _thePrayerRequestText;
+        public string ThePrayerRequestText
+        {
+            get { return _thePrayerRequestText; }
+            set { SetProperty(ref _thePrayerRequestText, value); }
+        }
+
 
         //STRING_TEST
         string _stringTheNumberOfPrayers;
@@ -88,6 +122,9 @@ namespace ThoughtsAndPrayersThree.ViewModels
             get { return _combinedNumberOfThoughtsAndPrayers; }
             set { SetProperty(ref _combinedNumberOfThoughtsAndPrayers, value); }
         }
+
+
+
 
         public ResetableObservableCollection<PrayerRequest> MyObservableCollectionOfUnderlyingData
         {
