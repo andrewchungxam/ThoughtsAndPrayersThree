@@ -186,7 +186,7 @@ namespace ThoughtsAndPrayersThree.Pages
             //var myTestLabel = new Label() { Text = "hello" };
 
             var myTestLabel = new Label(); //{ Text = "hello" };
-            myTestLabel.SetBinding(Label.TextProperty, nameof(PrayerDetailPageViewModel.TheNumberOfPrayers), BindingMode.OneWay, new NumberOfPrayersIntToStringConverter());
+            myTestLabel.SetBinding(Label.TextProperty, nameof(this.MyViewModel.TheNumberOfPrayers1), BindingMode.Default, new NumberOfPrayersIntToStringConverter());
             //myTestLabel.SetBinding(Label.TextProperty, "TheNumberOfPrayers", BindingMode.OneWay, new NumberOfPrayersIntToStringConverter());
 
             var myNameProperty = new Label() { };

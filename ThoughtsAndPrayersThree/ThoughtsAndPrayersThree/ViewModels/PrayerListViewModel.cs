@@ -49,7 +49,7 @@ namespace ThoughtsAndPrayersThree.ViewModels
         int _theNumberOfThoughts;
         public int TheNumberOfThoughts
         {
-            get { return TheNumberOfThoughts; }
+            get { return _theNumberOfThoughts; }
             set { 
                 SetProperty(ref _theNumberOfThoughts, value); 
                 OnPropertyChanged(nameof(this.CombinedNumberOfThoughtsAndPrayers));
@@ -59,7 +59,7 @@ namespace ThoughtsAndPrayersThree.ViewModels
         int _theNumberOfPrayers;
         public int TheNumberOfPrayers
         {
-            get { return TheNumberOfPrayers; }
+            get { return _theNumberOfPrayers; }
             set { 
                 SetProperty(ref _theNumberOfPrayers, value);
                 OnPropertyChanged(nameof(this.CombinedNumberOfThoughtsAndPrayers));
@@ -70,14 +70,14 @@ namespace ThoughtsAndPrayersThree.ViewModels
         string _stringTheNumberOfPrayers;
         public string StringTheNumberOfPrayers
         {
-            get { return StringTheNumberOfPrayers; }
+            get { return _stringTheNumberOfPrayers; }
             set { SetProperty(ref _stringTheNumberOfPrayers, value); }
         }
 
         string _combinedNumberOfThoughtsAndPrayers;
         public string CombinedNumberOfThoughtsAndPrayers
         {
-            get { return CombinedNumberOfThoughtsAndPrayers; }
+            get { return _combinedNumberOfThoughtsAndPrayers; }
             set { SetProperty(ref _combinedNumberOfThoughtsAndPrayers, value); }
         }
 

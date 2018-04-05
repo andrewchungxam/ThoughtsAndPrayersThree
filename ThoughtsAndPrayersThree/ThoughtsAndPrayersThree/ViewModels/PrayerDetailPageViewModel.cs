@@ -53,26 +53,24 @@ namespace ThoughtsAndPrayersThree.ViewModels
         int _theNumberOfThoughts;
         public int TheNumberOfThoughts
         {
-            get { return TheNumberOfThoughts; }
+            get { return _theNumberOfThoughts; }
             set
             {
                 SetProperty(ref _theNumberOfThoughts, value);
-                //OnPropertyChanged(nameof(this.TheNumberOfThoughts));
+                ////OnPropertyChanged(nameof(this.TheNumberOfThoughts));
 
                 OnPropertyChanged(nameof(this.CombinedNumberOfThoughtsAndPrayers));
             }
         }
 
-        int _theNumberOfPrayers;
-        public int TheNumberOfPrayers
+        int _theNumberOfPrayers1;
+        public int TheNumberOfPrayers1
         {
-            get { return _theNumberOfPrayers; }
+            get { return _theNumberOfPrayers1; }
             set
             {
-                SetProperty(ref _theNumberOfPrayers, value);
-               // OnPropertyChanged(nameof(this.TheNumberOfPrayers));
-
-                OnPropertyChanged(nameof(this.CombinedNumberOfThoughtsAndPrayers));
+                SetProperty(ref _theNumberOfPrayers1, value);
+                //OnPropertyChanged(nameof(this.CombinedNumberOfThoughtsAndPrayers));
             }
         }
 

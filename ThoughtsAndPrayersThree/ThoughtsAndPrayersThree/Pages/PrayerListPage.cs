@@ -193,25 +193,22 @@ namespace ThoughtsAndPrayersThree.Pages
 
                 //METHOD 2: ASSIGNING ITEM SELECTED IN VM OF DETAIL PAGE
                 PrayerRequest selectedPrayerRequest = itemSelected;
-
                 var pdPage = new PrayerDetailPage() { };
+                pdPage.MyViewModel.TheNumberOfPrayers1 = selectedPrayerRequest.NumberOfPrayers;
+                await Navigation?.PushAsync(pdPage);
 
-                pdPage.MyViewModel.TheNumberOfPrayers = selectedPrayerRequest.NumberOfPrayers;
 
                 //METHOD 3: EXPLICIT ASSIGNMENT OF VM
                 //PrayerRequest selectedPrayerRequest = itemSelected;
-
                 //var pdPage = new PrayerDetailPage() {};
                 //var pdViewModel = new PrayerDetailPageViewModel();
                 //pdPage.BindingContext = pdViewModel;
-
                 //pdViewModel.TheNumberOfThoughts = selectedPrayerRequest.NumberOfThoughts;
-              
+                //await Navigation?.PushAsync(pdPage);
 
-                await Navigation?.PushAsync(new PrayerDetailPage());
+
 
                 _prayerListView.SelectedItem = null;
-
                 //_prayerListPage.EndRefresh();
             });
 

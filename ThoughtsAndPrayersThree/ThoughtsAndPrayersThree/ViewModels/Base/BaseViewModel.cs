@@ -31,5 +31,8 @@ namespace ThoughtsAndPrayersThree.ViewModels.Base
 
 			PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 		}
+
+
+ 
 	}
 }
