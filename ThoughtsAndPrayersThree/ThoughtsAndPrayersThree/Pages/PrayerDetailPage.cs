@@ -160,6 +160,12 @@ namespace ThoughtsAndPrayersThree.Pages
     {
         public static PrayerListViewModel ParentViewModelOfDetailPage;
 
+        public Lottie.Forms.AnimationView sampleAnimationView;
+        public Lottie.Forms.AnimationView sampleAnimationView2;
+        public Lottie.Forms.AnimationView sampleAnimationViewPlaceholder;
+
+        public StackLayout myStackLayout;
+
         public PrayerDetailPage()
         {
             var cachedImage = new CachedImage()
@@ -244,10 +250,77 @@ namespace ThoughtsAndPrayersThree.Pages
 
             //thoughtButton.SetBinding(Button.CommandProperty, new Binding("BindingContext.AddThoughtClickCommand", source: theBindingContextViewModel));
 
-//            prayerButton.SetBinding(Button.CommandParameterProperty, new Binding("."));
-////            prayerButton.SetBinding(Button.CommandProperty, new Binding("BindingContext.AddPrayerClickCommand", source: prayerDetailPage));
+            //            prayerButton.SetBinding(Button.CommandParameterProperty, new Binding("."));
+            ////            prayerButton.SetBinding(Button.CommandProperty, new Binding("BindingContext.AddPrayerClickCommand", source: prayerDetailPage));
             //prayerButton.SetBinding(Button.CommandProperty, new Binding("BindingContext.AddPrayerClickCommand", source: theBindingContextViewModel));
 
+
+            var button3 = new Button { Text = "Tap Me" };
+            Label label3 = new Label { Text = "I can be toggled" };
+
+            button3.Clicked += OnButtonActivated3;
+
+            sampleAnimationView = new Lottie.Forms.AnimationView() { 
+                Animation = "beating_heart.json",
+                Loop = true,
+                AutoPlay = false,
+                //IsVisible = false
+
+            };
+
+            sampleAnimationViewPlaceholder = new Lottie.Forms.AnimationView()
+            {
+                Animation = "beating_heart.json",
+                Loop = true,
+                AutoPlay = false,
+                //IsVisible = false
+
+            };
+
+
+            var animationButton = new Button() { 
+                Text = "animation button"
+            };
+
+            animationButton.Clicked += OnBackButtonClickedTwo;
+
+
+            sampleAnimationView2 = new Lottie.Forms.AnimationView()
+            {
+                Animation = "like_button.json",
+                Loop = true,
+                AutoPlay = false
+
+            };
+
+
+            var animationButton2 = new Button()
+            {
+                Text = "animation button 2"
+            };
+
+            animationButton2.Clicked += OnBackButtonClickedThree;
+
+            /////////////
+            myStackLayout = new StackLayout() { 
+                Children = {label3, sampleAnimationView}
+            };
+
+            var myStackLayoutButton3 = new Button()
+            {
+                Text = "Stack 3"
+            };
+
+            myStackLayoutButton3.Clicked += OnButtonStackLayoutThree;
+
+
+
+            void OnButtonActivated3(object sender, EventArgs args)
+            {
+                label3.IsVisible = !label3.IsVisible;
+                sampleAnimationView.IsVisible = !sampleAnimationView.IsVisible;
+                sampleAnimationViewPlaceholder.IsVisible = !sampleAnimationViewPlaceholder.IsVisible;
+            }
 
             #endregion
 
@@ -267,32 +340,67 @@ namespace ThoughtsAndPrayersThree.Pages
 
             //grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
             grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+            grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
             grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
             grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
             grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+            grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+            grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+            grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+
 
             grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
             grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
             grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
             grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
 
-            grid.Children.Add(cachedImage, 0, 0);
+            grid.Children.Add(cachedImage, 0, 1);
             Grid.SetRowSpan(cachedImage, 2);
             //Grid.SetColumnSpan(cachedImage, 2);
 
-            grid.Children.Add(myFullNameProperty, 1, 0);
+            grid.Children.Add(myFullNameProperty, 1, 1);
             Grid.SetColumnSpan(myFullNameProperty, 3);
 
-            grid.Children.Add(theCombinedNumberOfThoughtsAndPrayersLabel, 1, 1);
+            grid.Children.Add(theCombinedNumberOfThoughtsAndPrayersLabel, 1, 2);
             Grid.SetColumnSpan(theCombinedNumberOfThoughtsAndPrayersLabel, 3);
 
-            grid.Children.Add(myPrayerRequestProperty, 0, 2);
+            grid.Children.Add(myPrayerRequestProperty, 0, 3);
             Grid.SetColumnSpan(myPrayerRequestProperty, 4);
 
-            grid.Children.Add(thoughtButton, 0, 3);
-            Grid.SetColumnSpan(thoughtButton, 2);
-            grid.Children.Add(prayerButton, 2, 3);
-            Grid.SetColumnSpan(prayerButton, 2);
+            grid.Children.Add(sampleAnimationView, 0, 4);
+            Grid.SetColumnSpan(sampleAnimationView, 1);
+            grid.Children.Add(thoughtButton, 1, 4);
+            Grid.SetColumnSpan(thoughtButton, 1);
+
+            grid.Children.Add(sampleAnimationViewPlaceholder, 2, 4);
+            Grid.SetColumnSpan(sampleAnimationViewPlaceholder, 1);
+            grid.Children.Add(sampleAnimationView2, 2, 4);
+            Grid.SetColumnSpan(sampleAnimationView2, 1);
+
+            grid.Children.Add(prayerButton, 3, 4);
+            Grid.SetColumnSpan(prayerButton, 1);
+
+            //grid.Children.Add(sampleAnimationView, 0, 5);
+            //Grid.SetColumnSpan(sampleAnimationView, 1);
+            grid.Children.Add(animationButton, 0, 6);
+            Grid.SetColumnSpan(animationButton, 1);
+
+            //grid.Children.Add(sampleAnimationView2, 1, 5);
+            //Grid.SetColumnSpan(sampleAnimationView2, 1);
+
+            grid.Children.Add(animationButton2, 1, 6);
+            Grid.SetColumnSpan(animationButton2, 1);
+
+            grid.Children.Add(label3, 0, 7);
+            Grid.SetColumnSpan(label3, 1);
+            grid.Children.Add(button3, 1, 7);
+            Grid.SetColumnSpan(button3, 1);
+
+            grid.Children.Add(myStackLayout, 0, 8);
+            Grid.SetColumnSpan(myStackLayout, 1);
+            grid.Children.Add(myStackLayoutButton3, 1, 8);
+            Grid.SetColumnSpan(myStackLayoutButton3, 1);
+
 
             //grid.Children.Add(myTestLabel, 0, 0);
             //Grid.SetColumnSpan(myTestLabel, 2);
@@ -301,6 +409,25 @@ namespace ThoughtsAndPrayersThree.Pages
             #endregion
 
         }
+
+        private void OnButtonStackLayoutThree(object sender, EventArgs e)
+        {
+            myStackLayout.IsVisible = !myStackLayout.IsVisible;
+        }
+
+        private void OnBackButtonClickedThree(object sender, EventArgs e)
+        {
+            sampleAnimationViewPlaceholder.IsVisible = !sampleAnimationViewPlaceholder.IsVisible;
+            sampleAnimationView2.Play();
+        }
+
+        private void OnBackButtonClickedTwo(object sender, EventArgs e)
+        {
+            //throw new NotImplementedException();
+            sampleAnimationView.Play();
+        }
+
+
     }
 
 

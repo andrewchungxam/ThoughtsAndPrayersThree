@@ -236,6 +236,10 @@ namespace ThoughtsAndPrayersThree.ViewModels
 
         void OnAddThoughtClickActionAsync(PrayerRequest cellPrayerRequest)
         {
+            
+
+
+
             if (cellPrayerRequest != null)
             {
                 cellPrayerRequest.StringTheNumberOfPrayers = "new and updated commanded";
