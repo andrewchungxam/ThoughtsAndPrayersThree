@@ -15,7 +15,11 @@ namespace ThoughtsAndPrayersThree.ViewModels
         public PrayerRequest SelectedPrayerRequest
         {
             get { return _prayerRequest; }
-            set { SetProperty(ref _prayerRequest, value); }
+            set 
+            { 
+                SetProperty(ref _prayerRequest, value);
+                //OnPropertyChanged("TheCombinedNumberOfThoughtsAndPrayers");
+            }
         }
 
         public string SelectedPrayerName
@@ -64,7 +68,7 @@ namespace ThoughtsAndPrayersThree.ViewModels
                 SetProperty(ref _theNumberOfThoughts, value);
                 ////OnPropertyChanged(nameof(this.TheNumberOfThoughts));
 
-                OnPropertyChanged(nameof(this.CombinedNumberOfThoughtsAndPrayers));
+                //OnPropertyChanged(nameof(this.TheCombinedNumberOfThoughtsAndPrayers));
             }
         }
 
@@ -116,12 +120,12 @@ namespace ThoughtsAndPrayersThree.ViewModels
             set { SetProperty(ref _stringTheNumberOfPrayers, value); }
         }
 
-        string _combinedNumberOfThoughtsAndPrayers;
-        public string CombinedNumberOfThoughtsAndPrayers
-        {
-            get { return _combinedNumberOfThoughtsAndPrayers; }
-            set { SetProperty(ref _combinedNumberOfThoughtsAndPrayers, value); }
-        }
+        //string _combinedNumberOfThoughtsAndPrayers;
+        //public string CombinedNumberOfThoughtsAndPrayers
+        //{
+        //    get { return _combinedNumberOfThoughtsAndPrayers; }
+        //    set { SetProperty(ref _combinedNumberOfThoughtsAndPrayers, value); }
+        //}
 
 
 
@@ -138,8 +142,8 @@ namespace ThoughtsAndPrayersThree.ViewModels
         }
 
 
-        public EventHandler<PhotoSavedSuccessAlertEventArgs> TakePhotoSucceeded;
-        public class PhotoSavedSuccessAlertEventArgs : EventArgs
+        public EventHandler<LeftAnimationEventArgs> TakePhotoSucceeded;
+        public class LeftAnimationEventArgs : EventArgs
         {
             public string Title { get; set; }
             public string Message { get; set; }
@@ -234,16 +238,16 @@ namespace ThoughtsAndPrayersThree.ViewModels
 
         }
 
-        void OnAddThoughtClickActionAsync(PrayerRequest cellPrayerRequest)
+        void OnAddThoughtClickActionAsync(PrayerRequest specificCellPrayerRequest)
         {
-            
-
-
-
-            if (cellPrayerRequest != null)
+            if (specificCellPrayerRequest != null)
             {
-                cellPrayerRequest.StringTheNumberOfPrayers = "new and updated commanded";
-                cellPrayerRequest.NumberOfThoughts = cellPrayerRequest.NumberOfThoughts + 1;
+                specificCellPrayerRequest.NumberOfThoughts = specificCellPrayerRequest.NumberOfThoughts + 1;
+                specificCellPrayerRequest.StringTheNumberOfPrayers = "new and updated commanded";
+                this.TheCombinedNumberOfThoughtsAndPrayers = this.SelectedPrayerRequest.CombinedNumberOfThoughtsAndPrayers;
+
+                ThoughtButtonPressed?.Invoke(this, new ThoughtButtonPressedEventArgs { EventArg1 = "Thought Event 1", EventArg2 = "Thought Event 2" });
+
                 this.ResetDataSource();
 
                 this.OnThoughtClickActionAsync();
@@ -253,14 +257,19 @@ namespace ThoughtsAndPrayersThree.ViewModels
         }
 
 
-        void OnAddPrayerClickActionAsync(PrayerRequest cellPrayerRequest)
+        void OnAddPrayerClickActionAsync(PrayerRequest specificCellPrayerRequest)
         {
 
 
-            if (cellPrayerRequest != null)
+            if (specificCellPrayerRequest != null)
             {
-                cellPrayerRequest.StringTheNumberOfPrayers = "new and updated commanded";
-                cellPrayerRequest.NumberOfPrayers = cellPrayerRequest.NumberOfPrayers + 1;
+                specificCellPrayerRequest.NumberOfPrayers = specificCellPrayerRequest.NumberOfPrayers + 1;
+                specificCellPrayerRequest.StringTheNumberOfPrayers = "new and updated commanded";
+
+                this.TheCombinedNumberOfThoughtsAndPrayers = this.SelectedPrayerRequest.CombinedNumberOfThoughtsAndPrayers;
+
+                PrayerButtonPressed?.Invoke(this, new PrayerButtonPressedEventArgs { EventArg1 = "Thought Event 1", EventArg2 = "Thought Event 2" });
+
                 this.ResetDataSource();
 
                 this.OnPrayerClickActionAsync();
