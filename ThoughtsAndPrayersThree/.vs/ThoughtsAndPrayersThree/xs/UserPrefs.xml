@@ -1,11 +1,10 @@
 ﻿<Properties StartupConfiguration="{71C427FF-24AD-4770-BBDD-31D7A71C1534}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ThoughtsAndPrayersThree/Pages/ViewCells/PrayerViewCell.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ThoughtsAndPrayersThree/ViewModels/Base/BaseViewModel.cs">
     <Files>
       <File FileName="ThoughtsAndPrayersThree/Pages/PrayerListPage.cs" Line="85" Column="46" />
-      <File FileName="ThoughtsAndPrayersThree/Pages/PrayerDetailPage.cs" Line="419" Column="10" />
-      <File FileName="ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" Line="207" Column="1" />
-      <File FileName="iOS/Main.cs" Line="17" Column="1" />
-      <File FileName="ThoughtsAndPrayersThree/Pages/ViewCells/PrayerViewCell.cs" Line="1" Column="1" />
+      <File FileName="ThoughtsAndPrayersThree/Pages/PrayerDetailPage.cs" Line="446" Column="41" />
+      <File FileName="ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" Line="12" Column="50" />
+      <File FileName="ThoughtsAndPrayersThree/ViewModels/Base/BaseViewModel.cs" Line="10" Column="15" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
