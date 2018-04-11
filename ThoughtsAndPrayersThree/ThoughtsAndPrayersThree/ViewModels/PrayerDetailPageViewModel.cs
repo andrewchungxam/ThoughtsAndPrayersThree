@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using ThoughtsAndPrayersThree.Models;
@@ -11,6 +12,9 @@ namespace ThoughtsAndPrayersThree.ViewModels
 {
     public class PrayerDetailPageViewModel : BaseViewModel
     {
+
+        public static PrayerListViewModel ParentViewModelOfDetailPage;
+
         private PrayerRequest _prayerRequest;
         public PrayerRequest SelectedPrayerRequest
         {
@@ -248,8 +252,20 @@ namespace ThoughtsAndPrayersThree.ViewModels
 
                 ThoughtButtonPressed?.Invoke(this, new ThoughtButtonPressedEventArgs { EventArg1 = "Thought Event 1", EventArg2 = "Thought Event 2" });
 
-                this.ResetDataSource();
 
+                //ParentViewModelOfDetailPage.MyObservableCollectionOfUnderlyingData.Add(specificCellPrayerRequest);
+                ParentViewModelOfDetailPage.MyObservableCollectionOfUnderlyingData.Add(specificCellPrayerRequest);
+                var originalItem = ParentViewModelOfDetailPage.MyObservableCollectionOfUnderlyingData.FirstOrDefault(i => i.Id == specificCellPrayerRequest.Id);
+                if (originalItem == null) 
+                {
+                    return;
+                }
+                var index = ParentViewModelOfDetailPage.MyObservableCollectionOfUnderlyingData.IndexOf(originalItem);
+                ParentViewModelOfDetailPage.MyObservableCollectionOfUnderlyingData[index] = specificCellPrayerRequest;
+
+                ParentViewModelOfDetailPage.ResetDataSource();
+
+                this.ResetDataSource();
                 this.OnThoughtClickActionAsync();
             }
 
@@ -269,6 +285,8 @@ namespace ThoughtsAndPrayersThree.ViewModels
                 this.TheCombinedNumberOfThoughtsAndPrayers = this.SelectedPrayerRequest.CombinedNumberOfThoughtsAndPrayers;
 
                 PrayerButtonPressed?.Invoke(this, new PrayerButtonPressedEventArgs { EventArg1 = "Thought Event 1", EventArg2 = "Thought Event 2" });
+
+
 
                 this.ResetDataSource();
 

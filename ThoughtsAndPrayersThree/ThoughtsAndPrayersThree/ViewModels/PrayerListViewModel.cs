@@ -126,6 +126,7 @@ namespace ThoughtsAndPrayersThree.ViewModels
 
             PrayerViewCell.ParentViewModel = this;
             AddTapPage.ParentViewModelofAddTapPage = this;
+            PrayerDetailPageViewModel.ParentViewModelOfDetailPage = this;
 
             var list = new List<PrayerRequest> { };
             //list = App.PrayerSQLDatabase.GetAllDogs();

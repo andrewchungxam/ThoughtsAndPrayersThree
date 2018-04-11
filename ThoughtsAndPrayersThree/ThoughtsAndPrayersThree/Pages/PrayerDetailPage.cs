@@ -169,7 +169,7 @@ namespace ThoughtsAndPrayersThree.Pages
         //}
 
 
-        public static PrayerListViewModel ParentViewModelOfDetailPage;
+
 
         public Lottie.Forms.AnimationView sampleAnimationView;
         public Lottie.Forms.AnimationView sampleAnimationView2;
@@ -256,13 +256,6 @@ namespace ThoughtsAndPrayersThree.Pages
                 AutoPlay = false
             };
 
-
-            var animationButton = new Button() { 
-                Text = "left"
-            };
-            animationButton.Clicked += OnBackButtonClickedLeft;
-
-
             sampleAnimationView2 = new Lottie.Forms.AnimationView()
             {
                 Animation = "like_button.json",
@@ -270,12 +263,6 @@ namespace ThoughtsAndPrayersThree.Pages
                 AutoPlay = false,
                 BackgroundColor = MyColors.MyBlue1
             };
-
-            var animationButton2 = new Button()
-            {
-                Text = "right"
-            };
-            animationButton2.Clicked += OnBackButtonClickedRight;
 
             #endregion
 
@@ -345,11 +332,7 @@ namespace ThoughtsAndPrayersThree.Pages
             grid.Children.Add(prayerButton, 11, 3);
             Grid.SetColumnSpan(prayerButton, 5);
            
-            grid.Children.Add(animationButton, 0,4);
-            Grid.SetColumnSpan(animationButton, 3);
 
-            grid.Children.Add(animationButton2, 3, 4);
-            Grid.SetColumnSpan(animationButton2, 3);
 
      
             Content = grid;

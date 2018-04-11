@@ -86,7 +86,8 @@ namespace ThoughtsAndPrayersThree.Pages.ViewCells
 
             var navigationPage = Application.Current.MainPage as NavigationPage;
             var prayerListPage = navigationPage.CurrentPage as PrayerListPage;
-            var prayerListViewModel = prayerListPage.BindingContext as PrayerListViewModel;
+            //FOR NOW 
+            var prayerListViewModel = prayerListPage?.BindingContext as PrayerListViewModel;
 
             //COMBINED-COMMANDING-NEW
             thoughtButton.SetBinding(Button.CommandParameterProperty, new Binding("."));
