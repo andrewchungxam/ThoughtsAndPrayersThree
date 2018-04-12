@@ -1,4 +1,4 @@
-# Part 1: ThoughtsAndPrayersThree 
+# Part 2: ThoughtsAndPrayersThree 
 
 Part 1: Thoughts + Prayers App with:
 1) a List View 
