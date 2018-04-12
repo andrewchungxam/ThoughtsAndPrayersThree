@@ -9,3 +9,8 @@ This Xamarin Forms project will be split into distict parts that will build on t
 3) Lottie animations
 4) Local and global styles
 5) Add Request button which adds to the List View
+
+[Part 2: Thoughts + Prayers App with:](https://github.com/andrewchungxam/ThoughtsAndPrayersThree/tree/Branch-02-Clickable-ViewCells)
+Part 1 plus
+1) a Detail page view with Lottie animation within a Grid
+2) Links to the Observable Collection in ListView 
