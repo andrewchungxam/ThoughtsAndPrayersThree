@@ -24,6 +24,13 @@ namespace ThoughtsAndPrayersThree.ViewModels
 
     public class PrayerListViewModel : BaseViewModel
     {
+
+        double _heightRequestDoubleValue;
+        public double HeightRequestDoubleValue
+        {
+            get { return _heightRequestDoubleValue; }
+            set { SetProperty(ref _heightRequestDoubleValue, value); }
+        }
         
         bool _isTheThoughtAnimationVisible;
         public bool IsTheThoughtAnimationVisible 

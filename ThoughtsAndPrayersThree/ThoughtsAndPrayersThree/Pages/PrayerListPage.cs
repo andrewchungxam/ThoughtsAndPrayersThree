@@ -11,7 +11,7 @@ namespace ThoughtsAndPrayersThree.Pages
 {
     public class PrayerListPage : BaseContentPage<PrayerListViewModel>
     {
-        ListView _prayerListPage;
+        ListView _prayerListView;
         AnimationView _animation;
         AnimationView _animation1;
         Button _button;
@@ -28,19 +28,16 @@ namespace ThoughtsAndPrayersThree.Pages
                 //var result = await page.DisplayAlert("Title", "Message", "Accept", "Cancel");
             }));
 
-            _prayerListPage = new ListView();
+            _prayerListView = new ListView();
 
-            _prayerListPage.ItemTemplate = new DataTemplate(() => {
+            _prayerListView.ItemTemplate = new DataTemplate(() => {
                 return new PrayerViewCell(); //(this)
             });
 
-           //NEW METHOD
-            _prayerListPage.SetBinding(ListView.ItemsSourceProperty, nameof(MyViewModel.MyObservableCollectionOfUnderlyingData));
+            _prayerListView.SetBinding(ListView.ItemsSourceProperty, nameof(MyViewModel.MyObservableCollectionOfUnderlyingData));
+            _prayerListView.HasUnevenRows = true;
+            _prayerListView.SetBinding(ListView.HeightRequestProperty, nameof(MyViewModel.HeightRequestDoubleValue));
 
-
-            _prayerListPage.HasUnevenRows = true;
-
-            //OPTION 2 WITH ANIMATIONS
             var contentView = new ContentView()
             {
                 BackgroundColor = Color.FromHex("#7000"),
@@ -110,13 +107,13 @@ namespace ThoughtsAndPrayersThree.Pages
 
             AbsoluteLayout.SetLayoutFlags
             (
-                 _prayerListPage,
+                 _prayerListView,
                 AbsoluteLayoutFlags.PositionProportional
             );
 
             AbsoluteLayout.SetLayoutBounds
             (
-                _prayerListPage,
+                _prayerListView,
                 new Rectangle(0, 0, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize)
             );
 
@@ -139,11 +136,17 @@ namespace ThoughtsAndPrayersThree.Pages
             );
             
             //BOTTOM TO TOP -->       
-            simpleLayout.Children.Add(_prayerListPage);
+            simpleLayout.Children.Add(_prayerListView);
             simpleLayout.Children.Add(contentView1);
             simpleLayout.Children.Add(contentView);
             Content = simpleLayout;
 
+        }
+
+        protected override void OnSizeAllocated(double width, double height)
+        {
+            base.OnSizeAllocated(width, height);
+            this.MyViewModel.HeightRequestDoubleValue = height;
         }
 
         protected override void OnAppearing()
