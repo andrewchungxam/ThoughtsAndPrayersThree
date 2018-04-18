@@ -1,42 +1,8 @@
 ﻿<Properties StartupConfiguration="{71C427FF-24AD-4770-BBDD-31D7A71C1534}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ThoughtsAndPrayersThree/Pages/AddTapPage.cs">
-    <Files>
-      <File FileName="ThoughtsAndPrayersThree/Pages/PrayerDetailPage.cs" Line="172" Column="70" />
-      <File FileName="ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" Line="275" Column="17" />
-      <File FileName="ThoughtsAndPrayersThree/Pages/ViewCells/PrayerViewCell.cs" Line="22" Column="58" />
-      <File FileName="ThoughtsAndPrayersThree/ViewModels/PrayerListViewModel.cs" Line="127" Column="43" />
-      <File FileName="ThoughtsAndPrayersThree/Pages/AddTapPage.cs" Line="1" Column="1" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" relfile="ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" line="169" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" relfile="ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" line="188" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" relfile="ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" line="199" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" relfile="ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" line="208" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" relfile="ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" line="207" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" relfile="ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" line="209" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" relfile="ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" line="211" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" relfile="ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" line="243" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" relfile="ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" line="244" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" relfile="ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" line="245" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" relfile="ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" line="255" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" relfile="ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" line="241" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" relfile="ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" line="246" column="98" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" relfile="ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" line="96" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" relfile="ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" line="94" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" relfile="ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" line="93" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" relfile="ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" line="97" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" relfile="ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" line="20" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" relfile="ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" line="21" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" relfile="ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" line="247" column="17" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" relfile="ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" line="253" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" relfile="ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" line="268" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" relfile="ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" line="269" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" relfile="ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" line="271" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" relfile="ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" line="277" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.ThoughtsAndPrayersThree.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.16895ACC-4C08-4F69-9D0B-FCF11635365F">

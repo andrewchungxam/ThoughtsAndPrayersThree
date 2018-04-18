@@ -12,7 +12,6 @@ namespace ThoughtsAndPrayersThree.ViewModels
 {
     public class PrayerDetailPageViewModel : BaseViewModel
     {
-
         public static PrayerListViewModel ParentViewModelOfDetailPage;
 
         private PrayerRequest _prayerRequest;
@@ -22,7 +21,6 @@ namespace ThoughtsAndPrayersThree.ViewModels
             set 
             { 
                 SetProperty(ref _prayerRequest, value);
-                //OnPropertyChanged("TheCombinedNumberOfThoughtsAndPrayers");
             }
         }
 
@@ -71,7 +69,6 @@ namespace ThoughtsAndPrayersThree.ViewModels
             {
                 SetProperty(ref _theNumberOfThoughts, value);
                 ////OnPropertyChanged(nameof(this.TheNumberOfThoughts));
-
                 //OnPropertyChanged(nameof(this.TheCombinedNumberOfThoughtsAndPrayers));
             }
         }
@@ -115,25 +112,6 @@ namespace ThoughtsAndPrayersThree.ViewModels
             set { SetProperty(ref _thePrayerRequestText, value); }
         }
 
-
-        //STRING_TEST
-        string _stringTheNumberOfPrayers;
-        public string StringTheNumberOfPrayers
-        {
-            get { return _stringTheNumberOfPrayers; }
-            set { SetProperty(ref _stringTheNumberOfPrayers, value); }
-        }
-
-        //string _combinedNumberOfThoughtsAndPrayers;
-        //public string CombinedNumberOfThoughtsAndPrayers
-        //{
-        //    get { return _combinedNumberOfThoughtsAndPrayers; }
-        //    set { SetProperty(ref _combinedNumberOfThoughtsAndPrayers, value); }
-        //}
-
-
-
-
         public ResetableObservableCollection<PrayerRequest> MyObservableCollectionOfUnderlyingData
         {
             get;
@@ -144,7 +122,6 @@ namespace ThoughtsAndPrayersThree.ViewModels
         {
             MyObservableCollectionOfUnderlyingData.Reset();
         }
-
 
         public EventHandler<LeftAnimationEventArgs> TakePhotoSucceeded;
         public class LeftAnimationEventArgs : EventArgs
@@ -173,40 +150,21 @@ namespace ThoughtsAndPrayersThree.ViewModels
         public ICommand AddThoughtClickCommand { get; set; }
         public ICommand AddPrayerClickCommand { get; set; }
 
-
         public PrayerDetailPageViewModel()
         {
-
-            //PrayerViewCell.ParentViewModel = this;
-            //AddTapPage.ParentViewModelofAddTapPage = this;
-
-            //var list = new List<PrayerRequest> { };
-            ////list = App.PrayerSQLDatabase.GetAllDogs();
-            //list = App.ListOfPrayers;
-
-            //foreach (var prayerRequest in list)
-            //    MyObservableCollectionOfUnderlyingData.Add(prayerRequest);
-
-            ////           DeletePrayerFromListCommand = new Command(DeletePrayerFromListAction);
 
             ThoughtClickCommand = new Command(
                 execute: async () => { await OnThoughtClickActionAsync(); });
             //  canExecute: () => !IsBusy);
 
-
-            //ThoughtClickCommand = new Command <PrayerRequest>(OnThoughtClickActionAsync2);
-
-
+            
             PrayerClickCommand = new Command(
                 execute: async () => { await OnPrayerClickActionAsync(); });
 
             AddThoughtClickCommand = new Command<PrayerRequest>(OnAddThoughtClickActionAsync);
 
-
             AddPrayerClickCommand = new Command<PrayerRequest>(OnAddPrayerClickActionAsync);
-
         }
-
 
         async Task OnThoughtClickActionAsync()
         {
@@ -222,7 +180,6 @@ namespace ThoughtsAndPrayersThree.ViewModels
                 this.IsTheThoughtAnimationVisible = false;
             }
             return;
-
         }
 
         async Task OnPrayerClickActionAsync()
@@ -239,7 +196,6 @@ namespace ThoughtsAndPrayersThree.ViewModels
                 this.IsThePrayerAnimationVisible = false;
             }
             return;
-
         }
 
         void OnAddThoughtClickActionAsync(PrayerRequest specificCellPrayerRequest)
@@ -247,14 +203,10 @@ namespace ThoughtsAndPrayersThree.ViewModels
             if (specificCellPrayerRequest != null)
             {
                 specificCellPrayerRequest.NumberOfThoughts = specificCellPrayerRequest.NumberOfThoughts + 1;
-                specificCellPrayerRequest.StringTheNumberOfPrayers = "new and updated commanded";
                 this.TheCombinedNumberOfThoughtsAndPrayers = this.SelectedPrayerRequest.CombinedNumberOfThoughtsAndPrayers;
 
                 ThoughtButtonPressed?.Invoke(this, new ThoughtButtonPressedEventArgs { EventArg1 = "Thought Event 1", EventArg2 = "Thought Event 2" });
 
-
-                //ParentViewModelOfDetailPage.MyObservableCollectionOfUnderlyingData.Add(specificCellPrayerRequest);
-                ParentViewModelOfDetailPage.MyObservableCollectionOfUnderlyingData.Add(specificCellPrayerRequest);
                 var originalItem = ParentViewModelOfDetailPage.MyObservableCollectionOfUnderlyingData.FirstOrDefault(i => i.Id == specificCellPrayerRequest.Id);
                 if (originalItem == null) 
                 {
@@ -263,42 +215,32 @@ namespace ThoughtsAndPrayersThree.ViewModels
                 var index = ParentViewModelOfDetailPage.MyObservableCollectionOfUnderlyingData.IndexOf(originalItem);
                 ParentViewModelOfDetailPage.MyObservableCollectionOfUnderlyingData[index] = specificCellPrayerRequest;
 
-                ParentViewModelOfDetailPage.ResetDataSource();
-
-                this.ResetDataSource();
                 this.OnThoughtClickActionAsync();
             }
-
             return;
         }
 
 
         void OnAddPrayerClickActionAsync(PrayerRequest specificCellPrayerRequest)
         {
-
-
             if (specificCellPrayerRequest != null)
             {
                 specificCellPrayerRequest.NumberOfPrayers = specificCellPrayerRequest.NumberOfPrayers + 1;
-                specificCellPrayerRequest.StringTheNumberOfPrayers = "new and updated commanded";
-
                 this.TheCombinedNumberOfThoughtsAndPrayers = this.SelectedPrayerRequest.CombinedNumberOfThoughtsAndPrayers;
 
                 PrayerButtonPressed?.Invoke(this, new PrayerButtonPressedEventArgs { EventArg1 = "Thought Event 1", EventArg2 = "Thought Event 2" });
 
-
-
-                this.ResetDataSource();
+                var originalItem = ParentViewModelOfDetailPage.MyObservableCollectionOfUnderlyingData.FirstOrDefault(i => i.Id == specificCellPrayerRequest.Id);
+                if (originalItem == null)
+                {
+                    return;
+                }
+                var index = ParentViewModelOfDetailPage.MyObservableCollectionOfUnderlyingData.IndexOf(originalItem);
+                ParentViewModelOfDetailPage.MyObservableCollectionOfUnderlyingData[index] = specificCellPrayerRequest;
 
                 this.OnPrayerClickActionAsync();
-
             }
             return;
         }
-
-
-
-
-
     }
 }
