@@ -27,7 +27,6 @@ namespace ThoughtsAndPrayersThree.Pages
             { 
                 var addTapPage = new AddTapPage(); 
                 Navigation.PushModalAsync(addTapPage);
-                //var result = await page.DisplayAlert("Title", "Message", "Accept", "Cancel");
             }));
 
             _prayerListView = new ListView();
@@ -36,14 +35,10 @@ namespace ThoughtsAndPrayersThree.Pages
                 return new PrayerViewCell(); //(this)
             });
 
-           //NEW METHOD
             _prayerListView.SetBinding(ListView.ItemsSourceProperty, nameof(MyViewModel.MyObservableCollectionOfUnderlyingData));
             _prayerListView.HasUnevenRows = true;
-            //_prayerListView.HeightRequest = 700;
-
             _prayerListView.SetBinding(ListView.HeightRequestProperty, nameof(MyViewModel.HeightRequestDoubleValue));
 
-            //OPTION 2 WITH ANIMATIONS
             var contentView = new ContentView()
             {
                 BackgroundColor = Color.FromHex("#7000"),
@@ -115,41 +110,17 @@ namespace ThoughtsAndPrayersThree.Pages
             (
                  _prayerListView,
                  AbsoluteLayoutFlags.PositionProportional
-                 //AbsoluteLayoutFlags.YProportional
 
             );
 
             AbsoluteLayout.SetLayoutBounds
             (
                 _prayerListView,
-//                new Rectangle(0, 0, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize)
-                new Rectangle(0, 0, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize) //  //AbsoluteLayout.AutoSize)
+                new Rectangle(0, 0, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize) 
             );
-
-
-
-            //_button = new Button()
-            //{
-            //    Text = "Press me!",
-            //    BorderWidth = 5
-
-            //};
-
-            //AbsoluteLayout.SetLayoutFlags
-            //(
-            //    _button,
-            //    AbsoluteLayoutFlags.PositionProportional
-            //);
-
-            //AbsoluteLayout.SetLayoutBounds
-            //(
-            //    _button,
-            //    new Rectangle(.5, .1, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize)
-            //);
             
             //BOTTOM TO TOP -->       
             simpleLayout.Children.Add(_prayerListView);
-            //simpleLayout.Children.Add(_button);
             simpleLayout.Children.Add(contentView1);
             simpleLayout.Children.Add(contentView);
             Content = simpleLayout;
