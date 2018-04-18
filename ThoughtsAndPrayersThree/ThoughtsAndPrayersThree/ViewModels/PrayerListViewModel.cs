@@ -24,6 +24,13 @@ namespace ThoughtsAndPrayersThree.ViewModels
 
     public class PrayerListViewModel : BaseViewModel
     {
+
+        double _heightRequestDoubleValue;
+        public double HeightRequestDoubleValue
+        {
+            get { return _heightRequestDoubleValue; }
+            set { SetProperty(ref _heightRequestDoubleValue, value); }
+        }
         
         bool _isTheThoughtAnimationVisible;
         public bool IsTheThoughtAnimationVisible 
@@ -92,7 +99,6 @@ namespace ThoughtsAndPrayersThree.ViewModels
             MyObservableCollectionOfUnderlyingData.Reset();
         }
 
-
         public EventHandler<PhotoSavedSuccessAlertEventArgs> TakePhotoSucceeded;
         public class PhotoSavedSuccessAlertEventArgs : EventArgs
         {
@@ -120,7 +126,6 @@ namespace ThoughtsAndPrayersThree.ViewModels
         public ICommand AddThoughtClickCommand { get; set; }
         public ICommand AddPrayerClickCommand { get; set; }
 
-
         public PrayerListViewModel()
         {
 
@@ -141,18 +146,14 @@ namespace ThoughtsAndPrayersThree.ViewModels
                 execute: async () => { await OnThoughtClickActionAsync(); });
             //  canExecute: () => !IsBusy);
 
-
             //ThoughtClickCommand = new Command <PrayerRequest>(OnThoughtClickActionAsync2);
-
 
             PrayerClickCommand = new Command(
                 execute: async() => { await OnPrayerClickActionAsync(); });
 
             AddThoughtClickCommand = new Command <PrayerRequest> (OnAddThoughtClickActionAsync);
 
-
             AddPrayerClickCommand = new Command<PrayerRequest>(OnAddPrayerClickActionAsync);
-
         }
 
 

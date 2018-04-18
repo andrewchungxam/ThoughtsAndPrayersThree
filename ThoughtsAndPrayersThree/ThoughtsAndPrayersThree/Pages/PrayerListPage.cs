@@ -19,6 +19,7 @@ namespace ThoughtsAndPrayersThree.Pages
 
         public int test = 0;
 
+
         public PrayerListPage()
         {
             this.ToolbarItems.Add(new ToolbarItem("+", null, //"filter.png", 
@@ -37,9 +38,10 @@ namespace ThoughtsAndPrayersThree.Pages
 
            //NEW METHOD
             _prayerListView.SetBinding(ListView.ItemsSourceProperty, nameof(MyViewModel.MyObservableCollectionOfUnderlyingData));
-
-
             _prayerListView.HasUnevenRows = true;
+            //_prayerListView.HeightRequest = 700;
+
+            _prayerListView.SetBinding(ListView.HeightRequestProperty, nameof(MyViewModel.HeightRequestDoubleValue));
 
             //OPTION 2 WITH ANIMATIONS
             var contentView = new ContentView()
@@ -112,35 +114,42 @@ namespace ThoughtsAndPrayersThree.Pages
             AbsoluteLayout.SetLayoutFlags
             (
                  _prayerListView,
-                AbsoluteLayoutFlags.PositionProportional
+                 AbsoluteLayoutFlags.PositionProportional
+                 //AbsoluteLayoutFlags.YProportional
+
             );
 
             AbsoluteLayout.SetLayoutBounds
             (
                 _prayerListView,
-                new Rectangle(0, 0, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize)
+//                new Rectangle(0, 0, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize)
+                new Rectangle(0, 0, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize) //  //AbsoluteLayout.AutoSize)
             );
 
-            _button = new Button()
-            {
-                Text = "Press me!"
 
-            };
 
-            AbsoluteLayout.SetLayoutFlags
-            (
-                _button,
-                AbsoluteLayoutFlags.PositionProportional
-            );
+            //_button = new Button()
+            //{
+            //    Text = "Press me!",
+            //    BorderWidth = 5
 
-            AbsoluteLayout.SetLayoutBounds
-            (
-                _button,
-                new Rectangle(.5, .1, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize)
-            );
+            //};
+
+            //AbsoluteLayout.SetLayoutFlags
+            //(
+            //    _button,
+            //    AbsoluteLayoutFlags.PositionProportional
+            //);
+
+            //AbsoluteLayout.SetLayoutBounds
+            //(
+            //    _button,
+            //    new Rectangle(.5, .1, AbsoluteLayout.AutoSize, AbsoluteLayout.AutoSize)
+            //);
             
             //BOTTOM TO TOP -->       
             simpleLayout.Children.Add(_prayerListView);
+            //simpleLayout.Children.Add(_button);
             simpleLayout.Children.Add(contentView1);
             simpleLayout.Children.Add(contentView);
             Content = simpleLayout;
@@ -160,23 +169,43 @@ namespace ThoughtsAndPrayersThree.Pages
             _animation.Play();
         }
 
+        protected override void OnSizeAllocated(double width, double height)
+        {
+            base.OnSizeAllocated(width, height);
+
+            //var theScreenHeight = height;
+            this.MyViewModel.HeightRequestDoubleValue = height;
+        }
+
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
+
             MyViewModel.ThoughtButtonPressed += MyViewModel_ThoughtButtonPressed;
             MyViewModel.PrayerButtonPressed += MyViewModel_PrayerButtonPressed;
 
             _prayerListView.ItemSelected += OnListViewItemSelected;
 
+            //this.SizeChanged += OnSizeChanged;
         }
+
+        //private void OnSizeChanged(object sender, EventArgs e)
+        //{
+        //    this.MyViewModel.HeightRequestDoubleValue = this.Height;
+        //}
 
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
+
             MyViewModel.ThoughtButtonPressed -= MyViewModel_ThoughtButtonPressed;
             MyViewModel.PrayerButtonPressed -= MyViewModel_PrayerButtonPressed;
 
             _prayerListView.ItemSelected -= OnListViewItemSelected;
+
+            //this.SizeChanged -= OnSizeChanged;
+
         }
 
         private void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -186,12 +215,6 @@ namespace ThoughtsAndPrayersThree.Pages
             {
                 var itemSelected = e?.SelectedItem as PrayerRequest;
 
-                ////METHOD 1: USING ITEM SELECTED DIRECTION AS ARGUMENT
-                //PrayerRequest selectedPrayerRequest = itemSelected;
-                //await Navigation?.PushAsync(new PrayerDetailPage(itemSelected));
-                //_prayerListPage.SelectedItem = null;
-
-                //METHOD 2: ASSIGNING ITEM SELECTED IN VM OF DETAIL PAGE
                 PrayerRequest selectedPrayerRequest = itemSelected;
                 var pdPage = new PrayerDetailPage() { };
 
@@ -212,19 +235,7 @@ namespace ThoughtsAndPrayersThree.Pages
 
                 await Navigation?.PushAsync(pdPage);
 
-
-                //METHOD 3: EXPLICIT ASSIGNMENT OF VM
-                //PrayerRequest selectedPrayerRequest = itemSelected;
-                //var pdPage = new PrayerDetailPage() {};
-                //var pdViewModel = new PrayerDetailPageViewModel();
-                //pdPage.BindingContext = pdViewModel;
-                //pdViewModel.TheNumberOfThoughts = selectedPrayerRequest.NumberOfThoughts;
-                //await Navigation?.PushAsync(pdPage);
-
-
-
                 _prayerListView.SelectedItem = null;
-                //_prayerListPage.EndRefresh();
             });
 
 
