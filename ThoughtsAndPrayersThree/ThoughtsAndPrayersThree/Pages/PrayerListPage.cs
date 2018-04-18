@@ -160,7 +160,6 @@ namespace ThoughtsAndPrayersThree.Pages
         {
             //THOUGHT BUTTON
             _animation1.Play();
-
         }
 
         private void MyViewModel_ThoughtButtonPressed(object sender, PrayerListViewModel.ThoughtButtonPressedEventArgs e)
@@ -172,11 +171,8 @@ namespace ThoughtsAndPrayersThree.Pages
         protected override void OnSizeAllocated(double width, double height)
         {
             base.OnSizeAllocated(width, height);
-
-            //var theScreenHeight = height;
             this.MyViewModel.HeightRequestDoubleValue = height;
         }
-
 
         protected override void OnAppearing()
         {
@@ -187,13 +183,7 @@ namespace ThoughtsAndPrayersThree.Pages
 
             _prayerListView.ItemSelected += OnListViewItemSelected;
 
-            //this.SizeChanged += OnSizeChanged;
         }
-
-        //private void OnSizeChanged(object sender, EventArgs e)
-        //{
-        //    this.MyViewModel.HeightRequestDoubleValue = this.Height;
-        //}
 
         protected override void OnDisappearing()
         {
@@ -204,13 +194,10 @@ namespace ThoughtsAndPrayersThree.Pages
 
             _prayerListView.ItemSelected -= OnListViewItemSelected;
 
-            //this.SizeChanged -= OnSizeChanged;
-
         }
 
         private void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            //throw new NotImplementedException();
             Device.BeginInvokeOnMainThread(async () =>
             {
                 var itemSelected = e?.SelectedItem as PrayerRequest;
