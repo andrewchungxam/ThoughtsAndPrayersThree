@@ -197,6 +197,9 @@ namespace ThoughtsAndPrayersThree.ViewModels
             {
                 cellPrayerRequest.StringTheNumberOfPrayers = "new and updated commanded";
                 cellPrayerRequest.NumberOfThoughts = cellPrayerRequest.NumberOfThoughts + 1;
+
+                App.PrayerSQLDatabase.UpdateNumberOfThoughts(cellPrayerRequest);
+
                 this.ResetDataSource();
 
                 this.OnThoughtClickActionAsync();
@@ -214,6 +217,9 @@ namespace ThoughtsAndPrayersThree.ViewModels
             {
                 cellPrayerRequest.StringTheNumberOfPrayers = "new and updated commanded";
                 cellPrayerRequest.NumberOfPrayers = cellPrayerRequest.NumberOfPrayers + 1;
+
+                App.PrayerSQLDatabase.UpdateNumberOfPrayers(cellPrayerRequest);
+
                 this.ResetDataSource();
 
                 this.OnPrayerClickActionAsync();

@@ -55,6 +55,13 @@ namespace ThoughtsAndPrayersThree.Pages
 
             submitButton.Clicked += (sender, e) => {
                 Device.BeginInvokeOnMainThread(() => {
+
+
+                    //#TODO - CREATE - int only UUID 
+                    //#TOD0 - this projects SQLite enforces PrimaryKey but not unique in this instance.  
+                    // Investiage potential issues here with Id collision  (Ie. wrong prayer request gets deleted or shared)
+                    // If you create Unique - will need to do some type of Uniqueness of Id checking (potentially on backend server and graceful error checking)
+
                     System.Random random = new Random();
                     int randomId = random.Next(1, 1000000000);
                     string randomNumber = string.Join(string.Empty, Enumerable.Range(0, 10).Select(number => random.Next(0, 5).ToString()));
@@ -79,6 +86,10 @@ namespace ThoughtsAndPrayersThree.Pages
 
                     ParentViewModelofAddTapPage.MyObservableCollectionOfUnderlyingData.Add(newPrayerRequest);
                     ParentViewModelofAddTapPage.ResetDataSource();
+
+                    //#TODO
+                    //try//catch//async
+                    App.PrayerSQLDatabase.AddNewPrayerRequest(newPrayerRequest);
 
                     Navigation.PopModalAsync();
                 });

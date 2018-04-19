@@ -2,12 +2,14 @@
 using System.ComponentModel;
 using System.Globalization;
 using Newtonsoft.Json;
+using SQLite;
 
 namespace ThoughtsAndPrayersThree.Models
 {
     //LOCAL-SQLLITE
     public class PrayerRequest 
     {
+        [PrimaryKey]
 		public int Id { get; set; }
 		public string CreatedDateTimeString { get; set; }
         public DateTimeOffset CreatedDateTime { get; set; }

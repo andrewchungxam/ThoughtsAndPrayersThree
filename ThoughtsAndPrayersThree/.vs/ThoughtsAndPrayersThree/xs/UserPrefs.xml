@@ -1,5 +1,13 @@
 ﻿<Properties StartupConfiguration="{71C427FF-24AD-4770-BBDD-31D7A71C1534}|Default">
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ThoughtsAndPrayersThree/Models/PrayerRequest.cs">
+    <Files>
+      <File FileName="ThoughtsAndPrayersThree/ThoughtsAndPrayersApp.cs" Line="40" Column="22" />
+      <File FileName="ThoughtsAndPrayersThree/Pages/AddTapPage.cs" Line="85" Column="47" />
+      <File FileName="ThoughtsAndPrayersThree.LocalData/PrayerRequestDatabase.cs" Line="174" Column="1" />
+      <File FileName="ThoughtsAndPrayersThree/ViewModels/PrayerListViewModel.cs" Line="201" Column="46" />
+      <File FileName="ThoughtsAndPrayersThree/Models/PrayerRequest.cs" Line="11" Column="9" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
