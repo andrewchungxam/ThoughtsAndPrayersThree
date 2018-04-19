@@ -212,8 +212,12 @@ namespace ThoughtsAndPrayersThree.ViewModels
                 {
                     return;
                 }
+
+                App.PrayerSQLDatabase.UpdateNumberOfThoughts(specificCellPrayerRequest);
+
                 var index = ParentViewModelOfDetailPage.MyObservableCollectionOfUnderlyingData.IndexOf(originalItem);
                 ParentViewModelOfDetailPage.MyObservableCollectionOfUnderlyingData[index] = specificCellPrayerRequest;
+
 
                 this.OnThoughtClickActionAsync();
             }
@@ -235,6 +239,9 @@ namespace ThoughtsAndPrayersThree.ViewModels
                 {
                     return;
                 }
+                App.PrayerSQLDatabase.UpdateNumberOfPrayers(specificCellPrayerRequest);
+
+
                 var index = ParentViewModelOfDetailPage.MyObservableCollectionOfUnderlyingData.IndexOf(originalItem);
                 ParentViewModelOfDetailPage.MyObservableCollectionOfUnderlyingData[index] = specificCellPrayerRequest;
 
