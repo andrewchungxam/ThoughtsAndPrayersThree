@@ -14,3 +14,12 @@ This Xamarin Forms project will be split into distict parts that will build on t
 Part 1 plus
 1) a Detail page view with Lottie animation within a Grid
 2) Links to the Observable Collection in ListView 
+
+[Part 3: Thoughts + Prayers App with:](https://github.com/andrewchungxam/ThoughtsAndPrayersThree/tree/Branch-03-SQLite)
+Part 2 plus
+1) Saving data via SQLite
+
+[Part 4: Thoughts + Prayers App with:](https://github.com/andrewchungxam/ThoughtsAndPrayersThree/tree/Branch-03-SQLite)
+Part 3 plus
+1) Saving data to Cosmos DB
+2) Synchronization at startup between local and remote storage
