@@ -19,7 +19,7 @@ Part 1 plus
 Part 2 plus
 1) Saving data via SQLite
 
-[Part 4: Thoughts + Prayers App with:] (https://github.com/andrewchungxam/ThoughtsAndPrayersThree/tree/Branch-04-CosmosDB) <br />
+[Part 4: Thoughts + Prayers App with:](https://github.com/andrewchungxam/ThoughtsAndPrayersThree/tree/Branch-04-CosmosDB) <br />
 Part 3 plus
 1) Saving data to Cosmos DB (Adding and updating - only Post and Put verbs)
 
