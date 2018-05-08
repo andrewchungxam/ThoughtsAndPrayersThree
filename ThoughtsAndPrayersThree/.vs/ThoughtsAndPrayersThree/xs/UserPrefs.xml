@@ -1,13 +1,30 @@
 ﻿<Properties StartupConfiguration="{71C427FF-24AD-4770-BBDD-31D7A71C1534}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ThoughtsAndPrayersThree/ThoughtsAndPrayersApp.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ThoughtsAndPrayersThree/ViewModels/PrayerListViewModel.cs">
     <Files>
-      <File FileName="ThoughtsAndPrayersThree.CosmosDB/PrayerRequestConverter.cs" Line="24" Column="17" />
-      <File FileName="ThoughtsAndPrayersThree.CosmosDB/CosmosDBConstants.cs" Line="11" Column="53" />
-      <File FileName="ThoughtsAndPrayersThree/Pages/AddTapPage.cs" Line="87" Column="21" />
+      <File FileName="ThoughtsAndPrayersThree.CosmosDB/PrayerRequestConverter.cs" Line="10" Column="47" />
+      <File FileName="ThoughtsAndPrayersThree.CosmosDB/CosmosDBConstants.cs" Line="4" Column="42" />
+      <File FileName="ThoughtsAndPrayersThree/Pages/AddTapPage.cs" Line="92" Column="1" />
       <File FileName="ThoughtsAndPrayersThree/ThoughtsAndPrayersApp.cs" Line="1" Column="1" />
+      <File FileName="ThoughtsAndPrayersThree/ViewModels/PrayerListViewModel.cs" Line="221" Column="38" />
       <File FileName="ThoughtsAndPrayersThree/Models/PrayerRequest.cs" Line="50" Column="52" NotebookId="1" />
-      <File FileName="ThoughtsAndPrayersThree.CosmosDB/CosmosDBPrayerService.cs" Line="72" Column="9" NotebookId="1" />
+      <File FileName="ThoughtsAndPrayersThree.CosmosDB/CosmosDBPrayerService.cs" Line="25" Column="74" NotebookId="1" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="ThoughtsAndPrayersThree" expanded="True">
+            <Node name="ThoughtsAndPrayersThree" expanded="True">
+              <Node name="Models" expanded="True" />
+              <Node name="Pages" expanded="True" />
+              <Node name="ViewModels" expanded="True">
+                <Node name="PrayerListViewModel.cs" selected="True" />
+              </Node>
+            </Node>
+            <Node name="ThoughtsAndPrayersThree.CosmosDB" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

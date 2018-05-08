@@ -14,6 +14,7 @@ using ThoughtsAndPrayersThree.ViewModels.Base;
 using ThoughtsAndPrayersThree.Pages.ViewCells;
 
 using ThoughtsAndPrayersThree.Pages;
+using ThoughtsAndPrayersThree.CosmosDB;
 
 namespace ThoughtsAndPrayersThree.ViewModels
 {
@@ -198,6 +199,9 @@ namespace ThoughtsAndPrayersThree.ViewModels
                 cellPrayerRequest.StringTheNumberOfPrayers = "new and updated commanded";
                 cellPrayerRequest.NumberOfThoughts = cellPrayerRequest.NumberOfThoughts + 1;
 
+                var updatedCosmosPrayerRequest = PrayerRequestConverter.ConvertToCosmosPrayerRequest(cellPrayerRequest);
+                Task.Run(async () => await CosmosDBPrayerService.PutCosmosPrayerRequestsAsync(updatedCosmosPrayerRequest));
+
                 App.PrayerSQLDatabase.UpdateNumberOfThoughts(cellPrayerRequest);
 
                 this.ResetDataSource();
@@ -217,6 +221,10 @@ namespace ThoughtsAndPrayersThree.ViewModels
             {
                 cellPrayerRequest.StringTheNumberOfPrayers = "new and updated commanded";
                 cellPrayerRequest.NumberOfPrayers = cellPrayerRequest.NumberOfPrayers + 1;
+
+                var updatedCosmosPrayerRequest = PrayerRequestConverter.ConvertToCosmosPrayerRequest(cellPrayerRequest);
+                Task.Run(async () => await CosmosDBPrayerService.PutCosmosPrayerRequestsAsync(updatedCosmosPrayerRequest));
+
 
                 App.PrayerSQLDatabase.UpdateNumberOfPrayers(cellPrayerRequest);
 

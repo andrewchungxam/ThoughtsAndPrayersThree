@@ -43,10 +43,13 @@ namespace ThoughtsAndPrayersThree.Models
         public string StringTheNumberOfPrayers { get; set; }
     }
 
-	//LOCAL-COSMOSDB
+	//COSMOSDB
 	public class CosmosDBPrayerRequest
 	{
+
+        [JsonProperty(PropertyName = "id")]
 		public string Id { get; set; }
+//        public string id { get; set; } //THIS IS THE COSMOS DB  
 		public string CreatedDateTimeString { get; set; }
 		public DateTimeOffset CreatedDateTime { get; set; }
         public string StringOnlyDateTime { get; set; }
