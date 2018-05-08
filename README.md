@@ -19,9 +19,12 @@ Part 1 plus
 Part 2 plus
 1) Saving data via SQLite
 
-[Part 4: Thoughts + Prayers App with:](https://github.com/andrewchungxam/ThoughtsAndPrayersThree/tree/Branch-03-SQLite)
+[Part 4: Thoughts + Prayers App with:]
 Part 3 plus
-1) Saving data to Cosmos DB
-2) Synchronization at startup between local and remote storage
+1) Saving data to Cosmos DB (Adding and updating - only Post and Put verbs)
 
-For clarity and simplicity, all the code has been put into the most convenient and obvious places.  However with the introduction of both a web service and a local store - there needs to be some synchronization/coordination.  Code will need to become slightly more modular -- the entry point where you will begin to see this is in the OnAppearing of View Model of the List Page.
+[Part 5: Thoughts + Prayers App with:]
+Part 4 plus
+1) Synchronization at startup between local and remote storage
+
+For clarity and simplicity, all the code prior to Part 5 has been put into the most convenient and obvious places.  However with the introduction of both a web service and a local store - there needs to be some synchronization/coordination.  Code will need to become slightly more modular -- the entry point where you will begin to see this is in the OnAppearing of View Model of the List Page.
