@@ -21,11 +21,11 @@ Part 2 plus
 
 [Part 4: Thoughts + Prayers App with:](https://github.com/andrewchungxam/ThoughtsAndPrayersThree/tree/Branch-04-CosmosDB) <br />
 Part 3 plus
-1) Saving data to Cosmos DB (Adding and updating - only Post and Put verbs)
+1) Saving and updating data to Cosmos DB (For clarity/simplicity - only the functionality of Adding and Updating is reflected here - ie. only Post and Put Http verbs are coded in this branch)
 2) As you're doing this - please monitor what is happening in your CosmosDB.  Go to your Azure portal > click into the CosmosDB > Click Data Explorer > Click into the Database/Collection which in this case will be Xamarin > PrayerRequests > Click Documents to see the individual entries and notice they are being updated as you click the Thought or Prayer buttons
 
 [Part 5: Thoughts + Prayers App with:] <br />
 Part 4 plus
-1) Synchronization at startup between local and remote storage
+1) Synchronization at startup between local and remote storage (ie. Get/Post/Put HTTP verbs are coded here)
 
-For clarity and simplicity, all the code prior to Part 5 has been put into the most convenient and obvious places.  However with the introduction of both a web service and a local store - there needs to be some synchronization/coordination.  Code will need to become slightly more modular -- the entry point where you will begin to see this is in the OnAppearing of View Model of the List Page.
+For clarity and simplicity, all the code prior to Part 5 has been left in the most convenient and obvious places.  However with the introduction of both a web service and a local store - there needs to be some synchronization/coordination.  Code will need to become slightly more modular -- the entry point where you will begin to see this is in the OnAppearing of the ViewModel of the List Page.
