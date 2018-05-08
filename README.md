@@ -22,6 +22,7 @@ Part 2 plus
 [Part 4: Thoughts + Prayers App with:](https://github.com/andrewchungxam/ThoughtsAndPrayersThree/tree/Branch-04-CosmosDB) <br />
 Part 3 plus
 1) Saving data to Cosmos DB (Adding and updating - only Post and Put verbs)
+2) As you're doing this - please monitor what is happening in your CosmosDB.  Go to your Azure portal > click into the CosmosDB > Click Data Explorer > Click into the Database/Collection which in this case will be Xamarin > PrayerRequests > Click Documents to see the individual entries and notice they are being updated as you click the Thought or Prayer buttons
 
 [Part 5: Thoughts + Prayers App with:] <br />
 Part 4 plus
