@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThoughtsAndPrayersThree.Dro
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ThoughtsAndPrayersThree.LocalData", "ThoughtsAndPrayersThree.LocalData\ThoughtsAndPrayersThree.LocalData.shproj", "{681DCE9B-08C9-4D61-92E9-C02315B2142C}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ThoughtsAndPrayersThree.CosmosDB", "ThoughtsAndPrayersThree.CosmosDB\ThoughtsAndPrayersThree.CosmosDB.shproj", "{19C6B1BF-6640-4E73-AD6B-19F73A6F2EEF}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator

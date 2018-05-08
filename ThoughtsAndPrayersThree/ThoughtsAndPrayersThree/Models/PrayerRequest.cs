@@ -1,8 +1,8 @@
 ﻿using System;
-using System.ComponentModel;
-using System.Globalization;
-using Newtonsoft.Json;
 using SQLite;
+using Newtonsoft.Json;
+using System.Globalization;
+using System.ComponentModel;
 
 namespace ThoughtsAndPrayersThree.Models
 {
@@ -48,15 +48,20 @@ namespace ThoughtsAndPrayersThree.Models
 	{
 		public string Id { get; set; }
 		public string CreatedDateTimeString { get; set; }
-
 		public DateTimeOffset CreatedDateTime { get; set; }
+        public string StringOnlyDateTime { get; set; }
 
 		public string FirstName { get; set; }
 		public string LastName { get; set; }
 		public string FullName { get; set; }
+        public string FullNameAndDate { get; set; }
+
 		public string FBProfileUrl { get; set; }
 		public string PrayerRequestText { get; set; }
         public int NumberOfThoughts { get; set; }
         public int NumberOfPrayers { get; set; }
+
+        public string StringTheNumberOfPrayers { get; set; }
+
 	}
 }

@@ -1,12 +1,12 @@
 ﻿<Properties StartupConfiguration="{71C427FF-24AD-4770-BBDD-31D7A71C1534}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ThoughtsAndPrayersThree/ThoughtsAndPrayersApp.cs">
     <Files>
-      <File FileName="ThoughtsAndPrayersThree/ThoughtsAndPrayersApp.cs" Line="34" Column="93" />
-      <File FileName="ThoughtsAndPrayersThree/Pages/AddTapPage.cs" Line="64" Column="21" />
-      <File FileName="ThoughtsAndPrayersThree.LocalData/PrayerRequestDatabase.cs" Line="174" Column="1" />
-      <File FileName="ThoughtsAndPrayersThree/ViewModels/PrayerListViewModel.cs" Line="201" Column="38" />
-      <File FileName="ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" Line="1" Column="1" />
-      <File FileName="ThoughtsAndPrayersThree/Models/PrayerRequest.cs" Line="13" Column="30" />
+      <File FileName="ThoughtsAndPrayersThree.CosmosDB/PrayerRequestConverter.cs" Line="24" Column="17" />
+      <File FileName="ThoughtsAndPrayersThree.CosmosDB/CosmosDBConstants.cs" Line="11" Column="53" />
+      <File FileName="ThoughtsAndPrayersThree/Pages/AddTapPage.cs" Line="87" Column="21" />
+      <File FileName="ThoughtsAndPrayersThree/ThoughtsAndPrayersApp.cs" Line="1" Column="1" />
+      <File FileName="ThoughtsAndPrayersThree/Models/PrayerRequest.cs" Line="50" Column="52" NotebookId="1" />
+      <File FileName="ThoughtsAndPrayersThree.CosmosDB/CosmosDBPrayerService.cs" Line="72" Column="9" NotebookId="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
@@ -17,6 +17,7 @@
   <MonoDevelop.Ide.ItemProperties.ThoughtsAndPrayersThree.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.16895ACC-4C08-4F69-9D0B-FCF11635365F">
     <MonoDevelop.MacDev.AppleDevelopmentTeam />
   </MonoDevelop.Ide.ItemProperties.ThoughtsAndPrayersThree.iOS>
+  <MonoDevelop.Ide.ItemProperties.ThoughtsAndPrayersThree.CosmosDB FirstBuild="True" />
   <MultiItemStartupConfigurations />
   <DisabledProjects>
     <String>ThoughtsAndPrayersThree.CosmosDB/ThoughtsAndPrayersThree.CosmosDB.shproj</String>

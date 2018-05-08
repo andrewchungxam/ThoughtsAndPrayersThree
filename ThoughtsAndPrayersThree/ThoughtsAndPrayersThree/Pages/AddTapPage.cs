@@ -7,6 +7,8 @@ using ThoughtsAndPrayersThree.Constants;
 using ThoughtsAndPrayersThree.Pages.ViewHelpers;
 using ThoughtsAndPrayersThree.Models;
 using ThoughtsAndPrayersThree.ViewModels;
+using ThoughtsAndPrayersThree.CosmosDB;
+using System.Threading.Tasks;
 
 namespace ThoughtsAndPrayersThree.Pages
 {
@@ -83,6 +85,9 @@ namespace ThoughtsAndPrayersThree.Pages
                         NumberOfPrayers = 0,
                         StringTheNumberOfPrayers = "first test string"
                     };
+
+                    var newCosmosPrayerRequest = PrayerRequestConverter.ConvertToCosmosPrayerRequest(newPrayerRequest);
+                    Task.Run(async ()=> await CosmosDBPrayerService.PostCosmosPrayerRequestsAsync(newCosmosPrayerRequest));
 
                     ParentViewModelofAddTapPage.MyObservableCollectionOfUnderlyingData.Add(newPrayerRequest);
                     ParentViewModelofAddTapPage.ResetDataSource();
