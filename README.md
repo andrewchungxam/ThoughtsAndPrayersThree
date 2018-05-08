@@ -23,3 +23,5 @@ Part 2 plus
 Part 3 plus
 1) Saving data to Cosmos DB
 2) Synchronization at startup between local and remote storage
+
+For clarify and simplicity, all the code as been put into the most convenient and obvious places.  However, at this point, with the existance of both a web service and a local store - there needs to be some synchronization/coordination.  Code will need to become slightly more modular -- the entry point where you will begin to see this is in the OnAppearing of View Model of the List Page.
