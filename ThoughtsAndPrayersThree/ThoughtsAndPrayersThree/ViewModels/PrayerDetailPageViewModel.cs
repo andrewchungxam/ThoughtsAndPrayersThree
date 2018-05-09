@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using ThoughtsAndPrayersThree.CosmosDB;
 using ThoughtsAndPrayersThree.Models;
 using ThoughtsAndPrayersThree.ViewModels.Base;
 using Xamarin.Forms;
@@ -213,6 +215,16 @@ namespace ThoughtsAndPrayersThree.ViewModels
                     return;
                 }
 
+                try
+                {
+                    var updatedCosmosPrayerRequest = PrayerRequestConverter.ConvertToCosmosPrayerRequest(specificCellPrayerRequest);
+                    Task.Run(async () => await CosmosDBPrayerService.PutCosmosPrayerRequestsAsync(updatedCosmosPrayerRequest));
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine("DocumentClient Error: ", ex.Message);
+                }
+
                 App.PrayerSQLDatabase.UpdateNumberOfThoughts(specificCellPrayerRequest);
 
                 var index = ParentViewModelOfDetailPage.MyObservableCollectionOfUnderlyingData.IndexOf(originalItem);
@@ -239,6 +251,18 @@ namespace ThoughtsAndPrayersThree.ViewModels
                 {
                     return;
                 }
+
+                try
+                {
+                    var updatedCosmosPrayerRequest = PrayerRequestConverter.ConvertToCosmosPrayerRequest(specificCellPrayerRequest);
+                    Task.Run(async () => await CosmosDBPrayerService.PutCosmosPrayerRequestsAsync(updatedCosmosPrayerRequest));
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine("DocumentClient Error: ", ex.Message);
+                }
+
+
                 App.PrayerSQLDatabase.UpdateNumberOfPrayers(specificCellPrayerRequest);
 
 

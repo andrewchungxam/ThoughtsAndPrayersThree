@@ -199,8 +199,16 @@ namespace ThoughtsAndPrayersThree.ViewModels
                 cellPrayerRequest.StringTheNumberOfPrayers = "new and updated commanded";
                 cellPrayerRequest.NumberOfThoughts = cellPrayerRequest.NumberOfThoughts + 1;
 
-                var updatedCosmosPrayerRequest = PrayerRequestConverter.ConvertToCosmosPrayerRequest(cellPrayerRequest);
-                Task.Run(async () => await CosmosDBPrayerService.PutCosmosPrayerRequestsAsync(updatedCosmosPrayerRequest));
+                try
+                {
+                    var updatedCosmosPrayerRequest = PrayerRequestConverter.ConvertToCosmosPrayerRequest(cellPrayerRequest);
+                    Task.Run(async () => await CosmosDBPrayerService.PutCosmosPrayerRequestsAsync(updatedCosmosPrayerRequest));
+                }
+                        catch (Exception ex)
+                {
+                    Debug.WriteLine("DocumentClient Error: ", ex.Message);
+                }
+
 
                 App.PrayerSQLDatabase.UpdateNumberOfThoughts(cellPrayerRequest);
 
@@ -222,8 +230,15 @@ namespace ThoughtsAndPrayersThree.ViewModels
                 cellPrayerRequest.StringTheNumberOfPrayers = "new and updated commanded";
                 cellPrayerRequest.NumberOfPrayers = cellPrayerRequest.NumberOfPrayers + 1;
 
-                var updatedCosmosPrayerRequest = PrayerRequestConverter.ConvertToCosmosPrayerRequest(cellPrayerRequest);
-                Task.Run(async () => await CosmosDBPrayerService.PutCosmosPrayerRequestsAsync(updatedCosmosPrayerRequest));
+                try
+                {
+                    var updatedCosmosPrayerRequest = PrayerRequestConverter.ConvertToCosmosPrayerRequest(cellPrayerRequest);
+                    Task.Run(async () => await CosmosDBPrayerService.PutCosmosPrayerRequestsAsync(updatedCosmosPrayerRequest));
+                }
+                catch (Exception ex)
+                {
+                    Debug.WriteLine("DocumentClient Error: ", ex.Message);
+                }
 
 
                 App.PrayerSQLDatabase.UpdateNumberOfPrayers(cellPrayerRequest);

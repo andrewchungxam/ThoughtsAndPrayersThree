@@ -11,6 +11,8 @@ using Microsoft.Azure.Documents.Linq;
 using Microsoft.Azure.Documents.Client;
 
 using ThoughtsAndPrayersThree.Models;
+using System.Net;
+using System.Net.Http;
 
 namespace ThoughtsAndPrayersThree.CosmosDB
 {
@@ -63,22 +65,27 @@ namespace ThoughtsAndPrayersThree.CosmosDB
         }
 
         //POST
-        public static async Task PostCosmosPrayerRequestsAsync(CosmosDBPrayerRequest cosmosDBPrayerRequest)
+        public static async Task<HttpStatusCode>  PostCosmosPrayerRequestsAsync(CosmosDBPrayerRequest cosmosDBPrayerRequest)
         {
-            await myDocumentClient.CreateDocumentAsync(UriFactory.CreateDocumentCollectionUri(DatabaseId, CollectionId), cosmosDBPrayerRequest);
+            var result = await myDocumentClient.CreateDocumentAsync(UriFactory.CreateDocumentCollectionUri(DatabaseId, CollectionId), cosmosDBPrayerRequest);
+            return result?.StatusCode ?? throw new HttpRequestException("Post Failed");
 
         }
 
         //PUT
-        public static async Task PutCosmosPrayerRequestsAsync(CosmosDBPrayerRequest cosmosDBPrayerRequest)
+        public static async Task<HttpStatusCode>  PutCosmosPrayerRequestsAsync(CosmosDBPrayerRequest cosmosDBPrayerRequest)
         {
-            await myDocumentClient.ReplaceDocumentAsync(UriFactory.CreateDocumentUri(DatabaseId, CollectionId, cosmosDBPrayerRequest.Id), cosmosDBPrayerRequest);
+            var result = await myDocumentClient.ReplaceDocumentAsync(UriFactory.CreateDocumentUri(DatabaseId, CollectionId, cosmosDBPrayerRequest.Id), cosmosDBPrayerRequest);
+            return result?.StatusCode ?? throw new HttpRequestException("Put Failed");
         }
 
         //DELETE
-        public static async Task DeleteCosmosPrayerRequestsAsync(CosmosDBPrayerRequest deleteCosmosDBPrayerRequest)
+        public static async Task<HttpStatusCode> DeleteCosmosPrayerRequestsAsync(CosmosDBPrayerRequest deleteCosmosDBPrayerRequest)
         {
-            await myDocumentClient.DeleteDocumentAsync(UriFactory.CreateDocumentUri(DatabaseId, CollectionId, deleteCosmosDBPrayerRequest.Id));
+            var result = await myDocumentClient.DeleteDocumentAsync(UriFactory.CreateDocumentUri(DatabaseId, CollectionId, deleteCosmosDBPrayerRequest.Id));
+            return result?.StatusCode ?? throw new HttpRequestException("Delete Failed");
         }
+
+
     }
 }

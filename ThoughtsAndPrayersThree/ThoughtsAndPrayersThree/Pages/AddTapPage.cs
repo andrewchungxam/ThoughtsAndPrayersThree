@@ -9,6 +9,7 @@ using ThoughtsAndPrayersThree.Models;
 using ThoughtsAndPrayersThree.ViewModels;
 using ThoughtsAndPrayersThree.CosmosDB;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace ThoughtsAndPrayersThree.Pages
 {
@@ -86,15 +87,24 @@ namespace ThoughtsAndPrayersThree.Pages
                         StringTheNumberOfPrayers = "first test string"
                     };
 
-                    var newCosmosPrayerRequest = PrayerRequestConverter.ConvertToCosmosPrayerRequest(newPrayerRequest);
-                    Task.Run(async ()=> await CosmosDBPrayerService.PostCosmosPrayerRequestsAsync(newCosmosPrayerRequest));
+                    try 
+                    {
+                        var newCosmosPrayerRequest = PrayerRequestConverter.ConvertToCosmosPrayerRequest(newPrayerRequest);
+                        Task.Run(async ()=> await CosmosDBPrayerService.PostCosmosPrayerRequestsAsync(newCosmosPrayerRequest));
+                    }
+                    catch (Exception ex)
+                    {
+                        Debug.WriteLine("DocumentClient Error: ", ex.Message);
+                    }
+
+                    App.PrayerSQLDatabase.AddNewPrayerRequest(newPrayerRequest);
 
                     ParentViewModelofAddTapPage.MyObservableCollectionOfUnderlyingData.Add(newPrayerRequest);
+
                     ParentViewModelofAddTapPage.ResetDataSource();
 
                     //#TODO
                     //try//catch//async
-                    App.PrayerSQLDatabase.AddNewPrayerRequest(newPrayerRequest);
 
                     Navigation.PopModalAsync();
                 });

@@ -1,13 +1,11 @@
 ﻿<Properties StartupConfiguration="{71C427FF-24AD-4770-BBDD-31D7A71C1534}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ThoughtsAndPrayersThree/ViewModels/PrayerListViewModel.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ThoughtsAndPrayersThree/Pages/AddTapPage.cs">
     <Files>
-      <File FileName="ThoughtsAndPrayersThree.CosmosDB/PrayerRequestConverter.cs" Line="10" Column="47" />
-      <File FileName="ThoughtsAndPrayersThree.CosmosDB/CosmosDBConstants.cs" Line="4" Column="42" />
-      <File FileName="ThoughtsAndPrayersThree/Pages/AddTapPage.cs" Line="92" Column="1" />
-      <File FileName="ThoughtsAndPrayersThree/ThoughtsAndPrayersApp.cs" Line="1" Column="1" />
-      <File FileName="ThoughtsAndPrayersThree/ViewModels/PrayerListViewModel.cs" Line="221" Column="38" />
-      <File FileName="ThoughtsAndPrayersThree/Models/PrayerRequest.cs" Line="50" Column="52" NotebookId="1" />
-      <File FileName="ThoughtsAndPrayersThree.CosmosDB/CosmosDBPrayerService.cs" Line="25" Column="74" NotebookId="1" />
+      <File FileName="ThoughtsAndPrayersThree/ThoughtsAndPrayersApp.cs" Line="37" Column="48" />
+      <File FileName="ThoughtsAndPrayersThree.LocalData/PrayerRequestDatabase.cs" Line="80" Column="47" />
+      <File FileName="ThoughtsAndPrayersThree/ViewModels/PrayerListViewModel.cs" Line="211" Column="1" />
+      <File FileName="ThoughtsAndPrayersThree/Pages/AddTapPage.cs" Line="94" Column="1" />
+      <File FileName="ThoughtsAndPrayersThree/Models/PrayerRequest.cs" Line="10" Column="18" NotebookId="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -15,12 +13,12 @@
           <Node name="ThoughtsAndPrayersThree" expanded="True">
             <Node name="ThoughtsAndPrayersThree" expanded="True">
               <Node name="Models" expanded="True" />
-              <Node name="Pages" expanded="True" />
-              <Node name="ViewModels" expanded="True">
-                <Node name="PrayerListViewModel.cs" selected="True" />
+              <Node name="Pages" expanded="True">
+                <Node name="AddTapPage.cs" selected="True" />
               </Node>
+              <Node name="ViewModels" expanded="True" />
             </Node>
-            <Node name="ThoughtsAndPrayersThree.CosmosDB" expanded="True" />
+            <Node name="ThoughtsAndPrayersThree.LocalData" expanded="True" />
           </Node>
         </State>
       </Pad>

@@ -30,25 +30,6 @@ namespace ThoughtsAndPrayersThree.LocalData
                 {
                     this.AddNewPrayerRequest(item);
                 }
-
-                    //                    var tempDog = CosmosDB.DogConverter.ConvertToDog(item);
-
-                    //TODO: MW
-                    //App.MyDogListMVVMPage.MyViewModel._observableCollectionOfDogs.Add(tempDog);
-                    //_observableCollectionOfDogs.Add(item);
-                //}
-
-
-                //var myListOfCosmosDogs = Task.Run(async () => await CosmosDB.CosmosDBService.GetAllCosmosDogs()).Result;
-                //foreach (var item in myListOfCosmosDogs)
-                //{
-                //    var tempDog = CosmosDB.DogConverter.ConvertToDog(item);
-                //    this.AddNewDogPhotoSource(tempDog.Name, tempDog.FurColor, tempDog.DogPictureSource);
-
-                //    //TODO: MW
-                //    App.MyDogListMVVMPage.MyViewModel._observableCollectionOfDogs.Add(tempDog);
-                //    //_observableCollectionOfDogs.Add(item);
-                //}
             }
         }
 

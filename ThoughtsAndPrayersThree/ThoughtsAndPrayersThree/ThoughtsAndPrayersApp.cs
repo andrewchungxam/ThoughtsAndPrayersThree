@@ -31,7 +31,7 @@ namespace ThoughtsAndPrayersThree
 
         public App()
         {
-            string dbPath = LocalData.FileAccessHelper.GetLocalFilePath("ThoughtsAndPrayer11.db3");
+            string dbPath = LocalData.FileAccessHelper.GetLocalFilePath("ThoughtsAndPrayer15.db3");
 
             PrayerSQLDatabase = new PrayerRequestDatabase(dbPath);
             PrayerSQLDatabase.LoadSampleData();
