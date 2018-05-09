@@ -24,11 +24,11 @@ Part 3 plus
 1) Saving and updating data to Cosmos DB (For clarity/simplicity - only the functionality of Adding and Updating is reflected here - ie. only Post and Put Http verbs are coded in this branch)
 2) As you're doing this - please monitor what is happening in your CosmosDB.  Go to your Azure portal > click into the CosmosDB > Click Data Explorer > Click into the Database/Collection which in this case will be Xamarin > PrayerRequests > Click Documents to see the individual entries and notice they are being updated as you click the Thought or Prayer buttons
 
-[Part 5: Thoughts + Prayers App with:] (https://github.com/andrewchungxam/ThoughtsAndPrayersThree/tree/Branch-05-CosmosDB-GettingRemoteData) <br />
+[Part 5: Thoughts + Prayers App with:](https://github.com/andrewchungxam/ThoughtsAndPrayersThree/tree/Branch-05-CosmosDB-GettingRemoteData) <br />
 Part 4 plus
 1) Simple check of CosmosDB and downloading data (includes Get/Post/Put HTTP verbs are coded here)
 
-[Part 6: Thoughts + Prayers App with:] (https://github.com/andrewchungxam/ThoughtsAndPrayersThree/blob/Branch-06-SynchronizeLocalAndRemote/README.md)  <br />
+[Part 6: Thoughts + Prayers App with:](https://github.com/andrewchungxam/ThoughtsAndPrayersThree/blob/Branch-06-SynchronizeLocalAndRemote/README.md)  <br />
 Part 5 plus
 
 1) Synchronization at startup between local and remote storage
