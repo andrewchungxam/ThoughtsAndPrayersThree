@@ -1,23 +1,23 @@
 ﻿<Properties StartupConfiguration="{71C427FF-24AD-4770-BBDD-31D7A71C1534}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ThoughtsAndPrayersThree/Pages/AddTapPage.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ThoughtsAndPrayersThree/Pages/PrayerListPage.cs">
     <Files>
-      <File FileName="ThoughtsAndPrayersThree/ThoughtsAndPrayersApp.cs" Line="37" Column="48" />
-      <File FileName="ThoughtsAndPrayersThree.LocalData/PrayerRequestDatabase.cs" Line="80" Column="47" />
-      <File FileName="ThoughtsAndPrayersThree/ViewModels/PrayerListViewModel.cs" Line="211" Column="1" />
-      <File FileName="ThoughtsAndPrayersThree/Pages/AddTapPage.cs" Line="94" Column="1" />
-      <File FileName="ThoughtsAndPrayersThree/Models/PrayerRequest.cs" Line="10" Column="18" NotebookId="1" />
+      <File FileName="ThoughtsAndPrayersThree/Pages/AddTapPage.cs" Line="102" Column="1" />
+      <File FileName="ThoughtsAndPrayersThree/Pages/PrayerDetailPage.cs" Line="1" Column="1" />
+      <File FileName="ThoughtsAndPrayersThree/Pages/PrayerListPage.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ThoughtsAndPrayersThree" expanded="True">
             <Node name="ThoughtsAndPrayersThree" expanded="True">
+              <Node name="Helpers" expanded="True" />
               <Node name="Models" expanded="True" />
               <Node name="Pages" expanded="True">
-                <Node name="AddTapPage.cs" selected="True" />
+                <Node name="PrayerListPage.cs" selected="True" />
               </Node>
               <Node name="ViewModels" expanded="True" />
             </Node>
+            <Node name="ThoughtsAndPrayersThree.CosmosDB" expanded="True" />
             <Node name="ThoughtsAndPrayersThree.LocalData" expanded="True" />
           </Node>
         </State>
@@ -32,9 +32,5 @@
   <MonoDevelop.Ide.ItemProperties.ThoughtsAndPrayersThree.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.16895ACC-4C08-4F69-9D0B-FCF11635365F">
     <MonoDevelop.MacDev.AppleDevelopmentTeam />
   </MonoDevelop.Ide.ItemProperties.ThoughtsAndPrayersThree.iOS>
-  <MonoDevelop.Ide.ItemProperties.ThoughtsAndPrayersThree.CosmosDB FirstBuild="True" />
   <MultiItemStartupConfigurations />
-  <DisabledProjects>
-    <String>ThoughtsAndPrayersThree.CosmosDB/ThoughtsAndPrayersThree.CosmosDB.shproj</String>
-  </DisabledProjects>
 </Properties>

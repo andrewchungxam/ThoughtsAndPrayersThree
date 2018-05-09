@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using SQLite;
 
 using ThoughtsAndPrayersThree.Models;
+using ThoughtsAndPrayersThree.CosmosDB;
 
 namespace ThoughtsAndPrayersThree.LocalData
 {
@@ -31,6 +32,37 @@ namespace ThoughtsAndPrayersThree.LocalData
                     this.AddNewPrayerRequest(item);
                 }
             }
+        }
+
+        public void LoadSampleDataAndCheckForCosmosDB()  
+        {
+            var listFromSQLiteDB = new List<PrayerRequest> { };
+            listFromSQLiteDB = this.GetAllPrayerRequests();
+
+            //IF LOCAL SQL LIST == EMPTY
+            if (!listFromSQLiteDB.Any()) 
+            {
+
+                //GET WHATEVER YOU HAVE FROM COSMOS INTO A COSMOS DB LIST
+                List<CosmosDBPrayerRequest> listFromCosmosDB = Task.Run(async () => await CosmosDBPrayerService.GetAllCosmosPrayerRequests()).Result;
+
+                //CHECK TO SEE IF COSMOS HAS SOMETHING IN IT
+                if(listFromCosmosDB.Any())
+                {   //IF IT HAS SOMETHING, THEN CONVERT FROM COSMOS TO SQLITE DATA FORMAT AND THEN ADD LOCALLY TO SQLITE     
+                    foreach (var cosmosItem in listFromCosmosDB)
+                    {
+                        var tempPrayer = PrayerRequestConverter.ConvertToPrayerRequest(cosmosItem);
+                        this.AddNewPrayerRequest(tempPrayer);
+                    }
+                } 
+                else
+                {
+                    //IF EMPTY USE THE FIXED SAMPLE PRAYER REQUESTS
+                    //USE THE LOCAL SAMPLE DATA --> SAVE IT TO SQLITE
+                    this.LoadSampleData();
+                }
+            }
+            return;
         }
 
         private SQLiteConnection sqliteConnection;
@@ -149,7 +181,6 @@ namespace ThoughtsAndPrayersThree.LocalData
             return sqliteConnection.Table<PrayerRequest>().Where(x => x.Id.Equals(prayerRequest.Id)).FirstOrDefault();
         }
 
-
         public void UpdatePrayerRequest(PrayerRequest prayerRequest)
         {
             //var getPrayerRequest = this.GetPrayerRequestByIdAsync(prayerRequest);
@@ -166,9 +197,6 @@ namespace ThoughtsAndPrayersThree.LocalData
             sqliteConnection.Delete(prayerRequest);
             return;
         }
-
-
-
 
     }
 }

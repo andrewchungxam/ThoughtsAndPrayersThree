@@ -31,10 +31,11 @@ namespace ThoughtsAndPrayersThree
 
         public App()
         {
-            string dbPath = LocalData.FileAccessHelper.GetLocalFilePath("ThoughtsAndPrayer15.db3");
+            string dbPath = LocalData.FileAccessHelper.GetLocalFilePath("ThoughtsAndPrayer21.db3");
 
             PrayerSQLDatabase = new PrayerRequestDatabase(dbPath);
-            PrayerSQLDatabase.LoadSampleData();
+            //PrayerSQLDatabase.LoadSampleData();
+            PrayerSQLDatabase.LoadSampleDataAndCheckForCosmosDB();
             ListOfPrayers = PrayerSQLDatabase.GetAllPrayerRequests(); 
 
 #region Global styles

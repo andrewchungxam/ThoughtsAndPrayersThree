@@ -33,8 +33,9 @@ namespace ThoughtsAndPrayersThree.CosmosDB
             try
             {
 
-                var query = myDocumentClient.CreateDocumentQuery<CosmosDBPrayerRequest>(UriFactory.CreateDocumentCollectionUri(DatabaseId, CollectionId))
-                                            .AsDocumentQuery();
+                var query = myDocumentClient
+                    .CreateDocumentQuery<CosmosDBPrayerRequest>(UriFactory.CreateDocumentCollectionUri(DatabaseId, CollectionId))
+                    .AsDocumentQuery();
                 while (query.HasMoreResults)
                 {
                     MyListOfPrayerRequests.AddRange(await query.ExecuteNextAsync<CosmosDBPrayerRequest>());
