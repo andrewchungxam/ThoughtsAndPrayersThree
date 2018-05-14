@@ -34,3 +34,9 @@ Part 5 plus
 1) Synchronization at startup between local and remote storage
 
 For clarity and simplicity, all the code prior to Part 5 has been left in the most convenient and obvious places.  However with the introduction of both a web service and a local store - there needs to be some synchronization/coordination.  Code will need to become slightly more modular -- the entry point where you will begin to see this is in the OnAppearing of the ViewModel of the List Page.
+
+Part 7: Thoughts + Prayers App with: 
+Part 6 plus
+
+1) Using Functions as an intermediary between Client and CosmosDB
+
