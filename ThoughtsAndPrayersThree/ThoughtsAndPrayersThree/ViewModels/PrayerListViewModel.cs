@@ -15,6 +15,8 @@ using ThoughtsAndPrayersThree.Pages.ViewCells;
 
 using ThoughtsAndPrayersThree.Pages;
 using ThoughtsAndPrayersThree.CosmosDB;
+using ThoughtsAndPrayersThree.Services;
+using ThoughtsAndPrayersThree.LocalData;
 
 namespace ThoughtsAndPrayersThree.ViewModels
 {
@@ -89,6 +91,13 @@ namespace ThoughtsAndPrayersThree.ViewModels
             set { SetProperty(ref _combinedNumberOfThoughtsAndPrayers, value); }
         }
 
+        bool _isRefreshing;
+        public bool IsRefreshing
+        {
+            get => _isRefreshing;
+            set => SetProperty(ref _isRefreshing, value);
+        }
+
         public ResetableObservableCollection<PrayerRequest> MyObservableCollectionOfUnderlyingData
         {
             get;
@@ -127,6 +136,8 @@ namespace ThoughtsAndPrayersThree.ViewModels
         public ICommand AddThoughtClickCommand { get; set; }
         public ICommand AddPrayerClickCommand { get; set; }
 
+        public ICommand RefreshCommand { get; set; }
+
         public PrayerListViewModel()
         {
 
@@ -143,6 +154,9 @@ namespace ThoughtsAndPrayersThree.ViewModels
 
             //           DeletePrayerFromListCommand = new Command(DeletePrayerFromListAction);
 
+            RefreshCommand = new Command(
+                execute: async () => { await ExecuteRefreshCommand(); });
+
             ThoughtClickCommand = new Command(
                 execute: async () => { await OnThoughtClickActionAsync(); });
             //  canExecute: () => !IsBusy);
@@ -155,6 +169,39 @@ namespace ThoughtsAndPrayersThree.ViewModels
             AddThoughtClickCommand = new Command <PrayerRequest> (OnAddThoughtClickActionAsync);
 
             AddPrayerClickCommand = new Command<PrayerRequest>(OnAddPrayerClickActionAsync);
+        }
+
+        async Task ExecuteRefreshCommand()
+        {
+            IsRefreshing = true;
+
+            try
+            {
+                var minimumSpinnerTime = Task.Delay(1000);
+
+                await DatabaseSyncService.SyncRemoteAndLocalDatabases().ConfigureAwait(false);
+
+                var prayerRequestList = await PrayerRequestDatabase.GetAllPrayersAsync().ConfigureAwait(false);
+                //AllContactsList = contactList.Where(x => !x.IsDeleted).OrderBy(x => x.FullName).ToList();
+                //AllContactsList = prayerRequestList.OrderBy(x => x.CreatedDateTime).ToList();
+
+                MyObservableCollectionOfUnderlyingData.Clear();
+                foreach (var prayerRequest in prayerRequestList)
+                    MyObservableCollectionOfUnderlyingData.Add(prayerRequest);
+
+//                  MAY NEED THIS
+//                  this.ResetDataSource();
+
+                await minimumSpinnerTime;
+            }
+            catch (Exception e)
+            {
+                //AppCenterHelpers.LogException(e);
+            }
+            finally
+            {
+                IsRefreshing = false;
+            }
         }
 
 

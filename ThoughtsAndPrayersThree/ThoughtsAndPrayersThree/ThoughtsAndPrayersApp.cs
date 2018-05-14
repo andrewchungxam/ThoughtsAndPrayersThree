@@ -27,11 +27,14 @@ namespace ThoughtsAndPrayersThree
     public class App : Application
     {
         public static List<PrayerRequest> ListOfPrayers { get; set; } //= FixedPrayerRequests.ListOfPrayerRequests;
-        public static LocalData.PrayerRequestDatabase PrayerSQLDatabase { get; set; } 
+        public static LocalData.PrayerRequestDatabase PrayerSQLDatabase { get; set; }
+
+        public static string DBPathString { get; set; } = "";
 
         public App()
         {
             string dbPath = LocalData.FileAccessHelper.GetLocalFilePath("ThoughtsAndPrayer21.db3");
+            DBPathString = dbPath;
 
             PrayerSQLDatabase = new PrayerRequestDatabase(dbPath);
             //PrayerSQLDatabase.LoadSampleData();

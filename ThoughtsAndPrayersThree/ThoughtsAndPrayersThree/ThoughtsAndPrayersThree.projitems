@@ -26,6 +26,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Pages\AddTapPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\PrayerDetailPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PrayerDetailPageViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\DatabaseSyncService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\IBaseModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)ViewModels\" />
@@ -38,5 +40,6 @@
     <Folder Include="$(MSBuildThisFileDirectory)Constants\" />
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
     <Folder Include="$(MSBuildThisFileDirectory)Pages\ViewHelpers\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Services\" />
   </ItemGroup>
 </Project>

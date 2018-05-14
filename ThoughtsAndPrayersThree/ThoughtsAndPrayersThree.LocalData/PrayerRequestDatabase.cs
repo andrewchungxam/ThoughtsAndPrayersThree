@@ -3,10 +3,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Collections.Generic;
 
-using SQLite;
-
 using ThoughtsAndPrayersThree.Models;
 using ThoughtsAndPrayersThree.CosmosDB;
+using SQLite;
 
 namespace ThoughtsAndPrayersThree.LocalData
 {
@@ -66,11 +65,17 @@ namespace ThoughtsAndPrayersThree.LocalData
         }
 
         private SQLiteConnection sqliteConnection;
+        public SQLiteConnection SqliteConnectionProperty { get; set; }
+        private string _dbPath;
 
         public PrayerRequestDatabase(string dbPath)
         {
             sqliteConnection = new SQLiteConnection(dbPath);
             sqliteConnection.CreateTable<PrayerRequest>();
+
+            SqliteConnectionProperty = sqliteConnection;
+            _dbPath = dbPath;
+
         }
 
         public void DeletePrayerRequest(PrayerRequest prayerRequest)
@@ -96,17 +101,23 @@ namespace ThoughtsAndPrayersThree.LocalData
                 CreatedDateTimeString = prayerRequest.CreatedDateTimeString,
                 CreatedDateTime = prayerRequest.CreatedDateTime,
                 StringOnlyDateTime = prayerRequest.StringOnlyDateTime,
+
+                UpdatedAtString = prayerRequest.UpdatedAtString,
+                UpdatedAt = prayerRequest.UpdatedAt,
+
                 FirstName = prayerRequest.FirstName,
                 LastName = prayerRequest.LastName,
                 FullName = prayerRequest.FullName,
                 FullNameAndDate = prayerRequest.FullNameAndDate,
                 //GET-ONLY//NewCombinedNameAndDate = newCombinedNameAndDate,
                 FBProfileUrl = prayerRequest.FBProfileUrl,
+
                 PrayerRequestText = prayerRequest.PrayerRequestText,
                 NumberOfThoughts = prayerRequest.NumberOfThoughts,
                 NumberOfPrayers = prayerRequest.NumberOfPrayers,
                 //GET-ONLY//CombinedNumberOfThoughtsAndPrayers = combinedNumberOfThoughtsAndPrayers,
                 StringTheNumberOfPrayers = prayerRequest.StringTheNumberOfPrayers
+
             });
         }
 
@@ -197,6 +208,110 @@ namespace ThoughtsAndPrayersThree.LocalData
             sqliteConnection.Delete(prayerRequest);
             return;
         }
+
+
+/////////////////////
+
+        #region Constant Fields
+        //static readonly Lazy<SQLiteAsyncConnection> _databaseConnectionHolder = new Lazy<SQLiteAsyncConnection(_dbPath)>;
+
+        static readonly SQLiteAsyncConnection _nonLazy_databaseConnectionHolder = new SQLiteAsyncConnection(ThoughtsAndPrayersThree.App.DBPathString);
+
+        //var connectionFactory = new Func<SQLiteConnectionWithLock>(() => new SQLiteConnectionWithLock(new SQLitePlatformWinRT(), new SQLiteConnectionString(databasePath, storeDateTimeAsTicks: false)));
+        //var asyncConnection = new SQLiteAsyncConnection(connectionFactory);
+
+        public static Func<SQLiteAsyncConnection> connectionFunc2 = new Func<SQLiteAsyncConnection>(()=> new SQLiteAsyncConnection(ThoughtsAndPrayersThree.App.DBPathString));
+        static readonly Lazy<SQLiteAsyncConnection> _databaseConnectionHolder = new Lazy<SQLiteAsyncConnection>(connectionFunc2);
+
+        #endregion
+
+        #region Fields
+        static bool _isInitialized;
+        #endregion
+
+        #region Properties
+//        static SQLiteAsyncConnection DatabaseConnection => _databaseConnectionHolder.Value;
+        static SQLiteAsyncConnection DatabaseConnection 
+        { 
+            get
+            {
+                return _databaseConnectionHolder.Value; 
+            } 
+        } 
+  
+
+        #endregion
+
+        #region Methods
+        protected static async Task<SQLiteAsyncConnection> GetDatabaseConnectionAsync()
+        {
+            if (!_isInitialized)
+                await Initialize();
+
+            return DatabaseConnection;
+        }
+
+        static async Task Initialize()
+        {
+            await DatabaseConnection.CreateTableAsync<PrayerRequest>();
+            _isInitialized = true;
+        }
+        #endregion
+
+        #region Methods
+        public static async Task SavePrayerAsync(PrayerRequest prayerRequest)
+        {
+            var databaseConnection = await GetDatabaseConnectionAsync();
+            await databaseConnection.InsertOrReplaceAsync(prayerRequest);
+
+        }
+
+        public static async Task PatchPrayerModelAsync(PrayerRequest prayerRequest)
+        {
+            var databaseConnection = await GetDatabaseConnectionAsync();
+            await databaseConnection.UpdateAsync(prayerRequest);
+        }
+
+        public static async Task<int> GetPrayerCountAsync()
+        {
+            var databaseConnection = await GetDatabaseConnectionAsync();
+
+            return await databaseConnection.Table<PrayerRequest>().CountAsync();
+        }
+
+        public static async Task<List<PrayerRequest>> GetAllPrayersAsync()
+        {
+            var databaseConnection = await GetDatabaseConnectionAsync();
+
+            return await databaseConnection.Table<PrayerRequest>().ToListAsync();
+        }
+
+        public static async Task<PrayerRequest> GetPrayerAsync(string id)
+        {
+            var databaseConnection = await GetDatabaseConnectionAsync();
+
+            return await databaseConnection.Table<PrayerRequest>().Where(x => x.Id.Equals(id)).FirstOrDefaultAsync();
+        }
+
+        public static async Task DeletePrayerAsync(PrayerRequest prayerRequest)
+        {
+            var databaseConnection = await GetDatabaseConnectionAsync();
+
+            prayerRequest.IsDeleted = true;
+
+            await databaseConnection.UpdateAsync(prayerRequest);
+        }
+
+        #if DEBUG
+            public static async Task RemovePrayerAsync(PrayerRequest prayerRequest)
+                {
+                    var databaseConnection = await GetDatabaseConnectionAsync();
+
+                await databaseConnection.DeleteAsync(prayerRequest);
+                }
+        #endif  
+
+        #endregion
 
     }
 }

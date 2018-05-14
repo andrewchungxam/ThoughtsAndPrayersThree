@@ -74,6 +74,10 @@ namespace ThoughtsAndPrayersThree.Pages
                         Id = randomId,
                         CreatedDateTimeString = DateTime.Now.ToString("MMM d h:mm tt", new CultureInfo("en-US")),
                         CreatedDateTime = DateTimeOffset.UtcNow,
+
+                        UpdatedAtString = DateTime.Now.ToString("MMM d h:mm tt", new CultureInfo("en-US")),
+                        UpdatedAt = DateTimeOffset.UtcNow,
+
                         StringOnlyDateTime = "March 1, 2018",
                         FirstName = "Andrew",
                         LastName = "Kim",

@@ -148,3 +148,10 @@
 /Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.3/optimized/xamarin_logo@2x.png
 /Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.3/optimized/xamarin_logo@3x.png
 /Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/obj/iPhoneSimulator/Debug/device-builds/iphone10.3-11.3/optimized/
+/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/bin/iPhoneSimulator/Debug/SQLite-net.dll
+/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/bin/iPhoneSimulator/Debug/SQLitePCLRaw.batteries_green.dll
+/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/bin/iPhoneSimulator/Debug/SQLitePCLRaw.batteries_v2.dll
+/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/bin/iPhoneSimulator/Debug/SQLitePCLRaw.core.dll
+/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/bin/iPhoneSimulator/Debug/SQLitePCLRaw.provider.sqlite3.dll
+/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/bin/iPhoneSimulator/Debug/SQLite-net.pdb
+/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/bin/iPhoneSimulator/Debug/SQLite-net.xml

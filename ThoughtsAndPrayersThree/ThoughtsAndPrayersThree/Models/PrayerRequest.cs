@@ -7,13 +7,23 @@ using System.ComponentModel;
 namespace ThoughtsAndPrayersThree.Models
 {
     //LOCAL-SQLLITE
-    public class PrayerRequest 
+    public class PrayerRequest : IBaseModel
     {
         [PrimaryKey]
 		public int Id { get; set; }
+        public string SharedStringId
+        {
+            get
+            { return Id.ToString(); }
+        }
 		public string CreatedDateTimeString { get; set; }
         public DateTimeOffset CreatedDateTime { get; set; }
+
         public string StringOnlyDateTime { get; set; }
+
+
+        public string UpdatedAtString { get; set; }
+        public DateTimeOffset UpdatedAt { get; set; }
 
 		public string FirstName { get; set; }
 		public string LastName { get; set; }
@@ -41,18 +51,30 @@ namespace ThoughtsAndPrayersThree.Models
         }
 
         public string StringTheNumberOfPrayers { get; set; }
+
+        public bool IsDeleted { get; set; }
+ 
     }
 
 	//COSMOSDB
-	public class CosmosDBPrayerRequest
+    public class CosmosDBPrayerRequest : IBaseModel
 	{
 
         [JsonProperty(PropertyName = "id")]
 		public string Id { get; set; }
+        public string SharedStringId 
+        {get
+            { return Id;  }
+        }
+
 //        public string id { get; set; } //THIS IS THE COSMOS DB  
-		public string CreatedDateTimeString { get; set; }
+		
+        public string CreatedDateTimeString { get; set; }
 		public DateTimeOffset CreatedDateTime { get; set; }
         public string StringOnlyDateTime { get; set; }
+
+        public string UpdatedAtString { get; set; }
+        public DateTimeOffset UpdatedAt { get; set; }
 
 		public string FirstName { get; set; }
 		public string LastName { get; set; }
@@ -65,6 +87,8 @@ namespace ThoughtsAndPrayersThree.Models
         public int NumberOfPrayers { get; set; }
 
         public string StringTheNumberOfPrayers { get; set; }
+
+        public bool IsDeleted { get; set; }
 
 	}
 }

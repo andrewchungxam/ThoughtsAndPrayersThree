@@ -31,6 +31,11 @@ namespace ThoughtsAndPrayersThree.Pages
 
             _prayerListView = new ListView();
 
+            _prayerListView.IsPullToRefreshEnabled = true;
+            _prayerListView.SetBinding(ListView.RefreshCommandProperty, nameof(MyViewModel.RefreshCommand));
+
+            _prayerListView.SetBinding(ListView.IsRefreshingProperty, nameof(MyViewModel.IsRefreshing));
+
             _prayerListView.ItemTemplate = new DataTemplate(() => {
                 return new PrayerViewCell(); //(this)
             });
