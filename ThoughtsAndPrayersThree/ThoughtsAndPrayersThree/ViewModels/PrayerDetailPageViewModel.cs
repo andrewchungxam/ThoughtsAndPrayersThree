@@ -205,6 +205,9 @@ namespace ThoughtsAndPrayersThree.ViewModels
             if (specificCellPrayerRequest != null)
             {
                 specificCellPrayerRequest.NumberOfThoughts = specificCellPrayerRequest.NumberOfThoughts + 1;
+                specificCellPrayerRequest.UpdatedAtString = DateTime.Now.ToString("MMM d h:mm tt", new System.Globalization.CultureInfo("en-US"));
+                specificCellPrayerRequest.UpdatedAt = DateTimeOffset.UtcNow;
+
                 this.TheCombinedNumberOfThoughtsAndPrayers = this.SelectedPrayerRequest.CombinedNumberOfThoughtsAndPrayers;
 
                 ThoughtButtonPressed?.Invoke(this, new ThoughtButtonPressedEventArgs { EventArg1 = "Thought Event 1", EventArg2 = "Thought Event 2" });
@@ -242,6 +245,9 @@ namespace ThoughtsAndPrayersThree.ViewModels
             if (specificCellPrayerRequest != null)
             {
                 specificCellPrayerRequest.NumberOfPrayers = specificCellPrayerRequest.NumberOfPrayers + 1;
+                specificCellPrayerRequest.UpdatedAtString = DateTime.Now.ToString("MMM d h:mm tt", new System.Globalization.CultureInfo("en-US"));
+                specificCellPrayerRequest.UpdatedAt = DateTimeOffset.UtcNow;
+
                 this.TheCombinedNumberOfThoughtsAndPrayers = this.SelectedPrayerRequest.CombinedNumberOfThoughtsAndPrayers;
 
                 PrayerButtonPressed?.Invoke(this, new PrayerButtonPressedEventArgs { EventArg1 = "Thought Event 1", EventArg2 = "Thought Event 2" });

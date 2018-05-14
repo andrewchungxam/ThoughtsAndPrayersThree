@@ -1,29 +1,22 @@
 ﻿<Properties StartupConfiguration="{71C427FF-24AD-4770-BBDD-31D7A71C1534}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Main.cs">
-    <Files>
-      <File FileName="ThoughtsAndPrayersThree/Services/DatabaseSyncService.cs" Line="8" Column="40" />
-      <File FileName="ThoughtsAndPrayersThree.CosmosDB/CosmosDBPrayerService.cs" Line="17" Column="34" />
-      <File FileName="ThoughtsAndPrayersThree.LocalData/PrayerRequestDatabase.cs" Line="262" Column="34" />
-      <File FileName="ThoughtsAndPrayersThree/ViewModels/PrayerListViewModel.cs" Line="190" Column="1" />
-      <File FileName="ThoughtsAndPrayersThree/Models/PrayerRequest.cs" Line="20" Column="46" />
-      <File FileName="ThoughtsAndPrayersThree/Pages/PrayerListPage.cs" Line="37" Column="28" />
-      <File FileName="iOS/Main.cs" Line="17" Column="1" />
-    </Files>
+  <MonoDevelop.Ide.Workbench>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="ThoughtsAndPrayersThree" expanded="True">
             <Node name="ThoughtsAndPrayersThree" expanded="True">
+              <Node name="Constants" expanded="True" />
+              <Node name="CustomRenderers" expanded="True" />
+              <Node name="Helpers" expanded="True">
+                <Node name="NumberOfThoughtsIntToStringConverter.cs" selected="True" />
+              </Node>
               <Node name="Models" expanded="True" />
-              <Node name="Pages" expanded="True" />
-              <Node name="Services" expanded="True" />
-              <Node name="ViewModels" expanded="True" />
+              <Node name="Pages" expanded="True">
+                <Node name="Base" expanded="True" />
+                <Node name="ViewCells" expanded="True" />
+                <Node name="ViewHelpers" expanded="True" />
+              </Node>
             </Node>
-            <Node name="ThoughtsAndPrayersThree.CosmosDB" expanded="True" />
-            <Node name="ThoughtsAndPrayersThree.iOS" expanded="True">
-              <Node name="Main.cs" selected="True" />
-            </Node>
-            <Node name="ThoughtsAndPrayersThree.LocalData" expanded="True" />
           </Node>
         </State>
       </Pad>
@@ -31,12 +24,7 @@
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ViewModels/PrayerListViewModel.cs" relfile="ThoughtsAndPrayersThree/ViewModels/PrayerListViewModel.cs" line="183" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ViewModels/PrayerListViewModel.cs" relfile="ThoughtsAndPrayersThree/ViewModels/PrayerListViewModel.cs" line="188" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ViewModels/PrayerListViewModel.cs" relfile="ThoughtsAndPrayersThree/ViewModels/PrayerListViewModel.cs" line="189" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ViewModels/PrayerListViewModel.cs" relfile="ThoughtsAndPrayersThree/ViewModels/PrayerListViewModel.cs" line="190" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.ThoughtsAndPrayersThree.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.16895ACC-4C08-4F69-9D0B-FCF11635365F">

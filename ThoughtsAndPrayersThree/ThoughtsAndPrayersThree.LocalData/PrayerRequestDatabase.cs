@@ -194,9 +194,10 @@ namespace ThoughtsAndPrayersThree.LocalData
 
         public void UpdatePrayerRequest(PrayerRequest prayerRequest)
         {
+            //NO LONGER NECESSARY WITH THE UPDATE METHOD
             //var getPrayerRequest = this.GetPrayerRequestByIdAsync(prayerRequest);
-            //sqliteConnection.Insert(getPrayerRequest);
             //sqliteConnection.Delete(getPrayerRequest);
+            //sqliteConnection.Insert(getPrayerRequest);
 
             sqliteConnection.Update(prayerRequest);
 

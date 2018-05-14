@@ -245,6 +245,8 @@ namespace ThoughtsAndPrayersThree.ViewModels
             {
                 cellPrayerRequest.StringTheNumberOfPrayers = "new and updated commanded";
                 cellPrayerRequest.NumberOfThoughts = cellPrayerRequest.NumberOfThoughts + 1;
+                cellPrayerRequest.UpdatedAtString = DateTime.Now.ToString("MMM d h:mm tt", new System.Globalization.CultureInfo("en-US"));
+                cellPrayerRequest.UpdatedAt = DateTimeOffset.UtcNow;
 
                 try
                 {
@@ -256,26 +258,22 @@ namespace ThoughtsAndPrayersThree.ViewModels
                     Debug.WriteLine("DocumentClient Error: ", ex.Message);
                 }
 
-
                 App.PrayerSQLDatabase.UpdateNumberOfThoughts(cellPrayerRequest);
-
                 this.ResetDataSource();
-
                 this.OnThoughtClickActionAsync();
             }
-
             return;
         }
 
 
         void OnAddPrayerClickActionAsync(PrayerRequest cellPrayerRequest)
         {
-  
-
             if (cellPrayerRequest != null)
             {
                 cellPrayerRequest.StringTheNumberOfPrayers = "new and updated commanded";
                 cellPrayerRequest.NumberOfPrayers = cellPrayerRequest.NumberOfPrayers + 1;
+                cellPrayerRequest.UpdatedAtString = DateTime.Now.ToString("MMM d h:mm tt", new System.Globalization.CultureInfo("en-US"));
+                cellPrayerRequest.UpdatedAt = DateTimeOffset.UtcNow;
 
                 try
                 {
@@ -287,11 +285,8 @@ namespace ThoughtsAndPrayersThree.ViewModels
                     Debug.WriteLine("DocumentClient Error: ", ex.Message);
                 }
 
-
                 App.PrayerSQLDatabase.UpdateNumberOfPrayers(cellPrayerRequest);
-
                 this.ResetDataSource();
-
                 this.OnPrayerClickActionAsync();
 
             }
