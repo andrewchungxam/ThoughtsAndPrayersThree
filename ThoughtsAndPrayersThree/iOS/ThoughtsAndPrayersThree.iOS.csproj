@@ -243,6 +243,7 @@
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
   </ItemGroup>
+  <Import Project="..\ThoughtsAndPrayersThree.Shared\ThoughtsAndPrayersThree.Shared.projitems" Label="Shared" Condition="Exists('..\ThoughtsAndPrayersThree.Shared\ThoughtsAndPrayersThree.Shared.projitems')" />
   <Import Project="..\ThoughtsAndPrayersThree.CosmosDB\ThoughtsAndPrayersThree.CosmosDB.projitems" Label="Shared" Condition="Exists('..\ThoughtsAndPrayersThree.CosmosDB\ThoughtsAndPrayersThree.CosmosDB.projitems')" />
   <Import Project="..\ThoughtsAndPrayersThree.LocalData\ThoughtsAndPrayersThree.LocalData.projitems" Label="Shared" Condition="Exists('..\ThoughtsAndPrayersThree.LocalData\ThoughtsAndPrayersThree.LocalData.projitems')" />
   <Import Project="..\ThoughtsAndPrayersThree\ThoughtsAndPrayersThree.projitems" Label="Shared" Condition="Exists('..\ThoughtsAndPrayersThree\ThoughtsAndPrayersThree.projitems')" />

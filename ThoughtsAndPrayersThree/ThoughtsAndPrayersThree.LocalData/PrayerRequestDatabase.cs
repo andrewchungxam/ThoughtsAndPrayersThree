@@ -236,6 +236,7 @@ namespace ThoughtsAndPrayersThree.LocalData
         { 
             get
             {
+                
                 return _databaseConnectionHolder.Value; 
             } 
         } 

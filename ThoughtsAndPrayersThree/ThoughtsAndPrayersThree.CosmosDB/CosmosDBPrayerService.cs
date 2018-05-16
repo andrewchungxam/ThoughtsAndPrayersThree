@@ -32,7 +32,6 @@ namespace ThoughtsAndPrayersThree.CosmosDB
             MyListOfPrayerRequests = new List<CosmosDBPrayerRequest>();
             try
             {
-
                 var query = myDocumentClient
                     .CreateDocumentQuery<CosmosDBPrayerRequest>(UriFactory.CreateDocumentCollectionUri(DatabaseId, CollectionId))
                     .AsDocumentQuery();
