@@ -11,8 +11,6 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ThoughtsAndPrayersThree.Loc
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ThoughtsAndPrayersThree.CosmosDB", "ThoughtsAndPrayersThree.CosmosDB\ThoughtsAndPrayersThree.CosmosDB.shproj", "{19C6B1BF-6640-4E73-AD6B-19F73A6F2EEF}"
 EndProject
-Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ThoughtsAndPrayers.Functions", "ThoughtsAndPrayers.Functions\ThoughtsAndPrayers.Functions.shproj", "{8CE362E7-793D-46D8-B99A-0BAED3D1B07D}"
-EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "ThoughtsAndPrayersThree.Shared", "ThoughtsAndPrayersThree.Shared\ThoughtsAndPrayersThree.Shared.shproj", "{D554739B-61A3-4D65-85DE-6B2C06929343}"
 EndProject
 Global
