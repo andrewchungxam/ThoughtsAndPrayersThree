@@ -23,10 +23,12 @@ namespace ThoughtsAndPrayersThree.Services
             var (contactsToPatchToLocalDatabase, contactsToPatchToRemoteDatabase) 
                 = GetModelsThatNeedUpdating(contactListFromLocalDatabase, contactListFromRemoteDatabase, contactsInBothDatabases);
 
-            await SaveContacts( contactsToPatchToRemoteDatabase,
-                                contactsToPatchToLocalDatabase,
+            await SaveContacts( contactsToPatchToLocalDatabase, 
+                                contactsToPatchToRemoteDatabase,
                                 contactsInRemoteDatabaseButNotStoredLocally,   // contactsInRemoteDatabaseButNotStoredLocally.Concat(contactsToPatchToLocalDatabase).ToList(),
                                 contactsInLocalDatabaseButNotStoredRemotely).ConfigureAwait(false);
+
+            int test = 5;
         }
 
         static async Task<(List<PrayerRequest> contactListFromLocalDatabase, List<PrayerRequest> contactListFromRemoteDatabase)> 
@@ -85,6 +87,7 @@ namespace ThoughtsAndPrayersThree.Services
                 var modelFromLocalDatabase = modelListFromLocalDatabase.Where(x => x.SharedStringId.Equals(contact.SharedStringId)).FirstOrDefault();
                 var modelFromRemoteDatabase = modelListFromRemoteDatabase.Where(x => x.SharedStringId.Equals(contact.SharedStringId)).FirstOrDefault();
 
+
                 //IF LOCAL ITEM IS LATER THEN PATCH REMOTE TIME
                 // https://msdn.microsoft.com/en-us/library/system.datetimeoffset.compareto(v=vs.110).aspx
                 // Greater than zero - The current DateTimeOffset object is later than other.
@@ -101,26 +104,28 @@ namespace ThoughtsAndPrayersThree.Services
                     modelsToPatchToRemoteDatabase ?? new List<T>());
         }
 
-        static Task SaveContacts(List<PrayerRequest> contactsToPatchToRemoteDatabase,
-                                 List<PrayerRequest> contactsToPatchToLocalDatabase,
+        static Task SaveContacts(List<PrayerRequest> contactsToPatchToLocalDatabase,
+                                 List<PrayerRequest> contactsToPatchToRemoteDatabase,
                                  List<PrayerRequest> contactsToAddToLocalDatabase,
                                  List<PrayerRequest> contactsToPostToRemoteDatabase)
         {
             var saveContactTaskList = new List<Task>();
 
-            foreach (var contact in contactsToPatchToRemoteDatabase)
-            {
-                //COSMOS
-                //saveContactTaskList.Add(APIService.PatchContactModel(contact));saveContactTaskList.Add(CosmosDBPrayerService.PatchAndConvertPrayerRequestsAsync(contact));              
-                //saveContactTaskList.Add(FunctionPrayerService.PostAndConvertPrayerRequestsAsyncFunction(contact));         
-                saveContactTaskList.Add(FunctionPrayerService.PatchAndConvertPrayerRequestAsyncFunction(contact));                  
-            }
+
 
             foreach (var contact in contactsToPatchToLocalDatabase)
             {
                 //SQLITE
                 //saveContactTaskList.Add(ContactDatabase.PatchContactModel(contact));
                 saveContactTaskList.Add(PrayerRequestDatabase.PatchPrayerModelAsync(contact));
+            }
+
+            foreach (var contact in contactsToPatchToRemoteDatabase)
+            {
+                //COSMOS
+                //saveContactTaskList.Add(APIService.PatchContactModel(contact));saveContactTaskList.Add(CosmosDBPrayerService.PatchAndConvertPrayerRequestsAsync(contact));              
+                //saveContactTaskList.Add(FunctionPrayerService.PostAndConvertPrayerRequestsAsyncFunction(contact));         
+                saveContactTaskList.Add(FunctionPrayerService.PatchAndConvertPrayerRequestAsyncFunction(contact));
             }
 
             foreach (var contact in contactsToAddToLocalDatabase)

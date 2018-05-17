@@ -19,7 +19,11 @@ namespace ThoughtsAndPrayers.Services
     {
         #region Constant Fields
         static readonly Lazy<JsonSerializer> _serializerHolder = new Lazy<JsonSerializer>();
-        static readonly Lazy<HttpClient> _clientHolder = new Lazy<HttpClient>(() => CreateHttpClient(TimeSpan.FromSeconds(60)));
+        //static readonly Lazy<HttpClient> _clientHolder = new Lazy<HttpClient>(() =>  CreateHttpClient(TimeSpan.FromSeconds(60)));
+
+        public static Func<HttpClient> clientFunc = new Func<HttpClient>(() => new HttpClient());
+        static readonly Lazy<HttpClient> _clientHolder = new Lazy<HttpClient>(clientFunc);
+
         #endregion
 
         #region Fields
@@ -34,35 +38,89 @@ namespace ThoughtsAndPrayers.Services
         #region Methods
         protected static async Task<List<CosmosDBPrayerRequest>> GetAllCosmosPrayerRequests(string apiUrl)
         {
-            var stringPayload = string.Empty;
+            //SIMPLIFIED FORM CREATING NEW HTTP CLIENT
+            //var myHttpClient = new HttpClient();
+            //string clientString = await myHttpClient.GetStringAsync(apiUrl).ConfigureAwait(false);
+            //var deserializedListOfCosmosDBPrayerRequests = JsonConvert.DeserializeObject<List<CosmosDBPrayerRequest>>(clientString);
+            //return deserializedListOfCosmosDBPrayerRequests;
 
-            try
-            {
-                UpdateActivityIndicatorStatus(true);
+            ////SIMPLIFIED FORM WITH LAZY CLIENT LOADING
+            //string clientString = await Client.GetStringAsync(apiUrl).ConfigureAwait(false);
+            //var deserializedListOfCosmosDBPrayerRequests = JsonConvert.DeserializeObject<List<CosmosDBPrayerRequest>>(clientString);
+            //return deserializedListOfCosmosDBPrayerRequests;
 
-                using (var stream = await Client.GetStreamAsync(apiUrl).ConfigureAwait(false))
-                using (var reader = new StreamReader(stream))
-                using (var json = new JsonTextReader(reader))
-                {
-                    if (json == null)
-                        return default(List<CosmosDBPrayerRequest>);
-                    //Task.Run(async () => await Serializer.Deserialize<List<CosmosDBPrayerRequest>>(json))); // .ConfigureAwait(false);
-                    //var listCosmosDB =  Serializer.Deserialize<List<CosmosDBPrayerRequest>>(json))                    //return await Task.Run(async () => await Serializer.Deserialize<List<CosmosDBPrayerRequest>>(json))); // .ConfigureAwait(false);
-                    //return listCosmosDB;                                                                            //  await Task.Run(() => Serializer.Deserialize<List<CosmosDBPrayerRequest>>(json)).ConfigureAwait(false);
-                    //await Task.Run(() => Serializer.Deserialize<List<CosmosDBPrayerRequest>>(json)).ConfigureAwait(false);
-                    return await Task.Run(() => Serializer.Deserialize<List<CosmosDBPrayerRequest>>(json)).ConfigureAwait(false);
-                }
-            }
-            catch (Exception e)
+            //STREAMLINED FORM WITH LAZY CLIENT LOADING
+            using (var stream = await Client.GetStreamAsync(apiUrl).ConfigureAwait(false))
+            using (var reader = new StreamReader(stream))
+            using (var json = new JsonTextReader(reader))
             {
-                //AppCenterHelpers.LogException(e);
-                return default(List<CosmosDBPrayerRequest>);
-            }
-            finally
-            {
-                UpdateActivityIndicatorStatus(false);
+                if (json == null)
+                    return default(List<CosmosDBPrayerRequest>);
+                return await Task.Run(() => Serializer.Deserialize<List<CosmosDBPrayerRequest>>(json)).ConfigureAwait(false);
             }
         }
+
+
+            //Task.Run(async () => await Serializer.Deserialize<List<CosmosDBPrayerRequest>>(json))); // .ConfigureAwait(false);
+            //var listCosmosDB =  Serializer.Deserialize<List<CosmosDBPrayerRequest>>(json))                    //return await Task.Run(async () => await Serializer.Deserialize<List<CosmosDBPrayerRequest>>(json))); // .ConfigureAwait(false);
+            //return listCosmosDB;                                                                            //  await Task.Run(() => Serializer.Deserialize<List<CosmosDBPrayerRequest>>(json)).ConfigureAwait(false);
+            //await Task.Run(() => Serializer.Deserialize<List<CosmosDBPrayerRequest>>(json)).ConfigureAwait(false);
+
+
+            //string clientString = await Client.GetStringAsync(apiUrl).ConfigureAwait(false);
+            //return await Task.Run(() => Serializer.Deserialize<List<CosmosDBPrayerRequest>>(clientString)).ConfigureAwait(false);
+            //return JsonConvert.DeserializeObject<List<CosmosDBPrayerRequest>>(clientString);
+
+//        protected static async Task<List<CosmosDBPrayerRequest>> GetAllCosmosPrayerRequests(string apiUrl)
+//        {
+//            var stringPayload = string.Empty;
+
+//            try
+//            {
+//                UpdateActivityIndicatorStatus(true);
+
+//                string clientString = await Client.GetStringAsync(apiUrl).ConfigureAwait(false);
+//                //var listCosmosDB = Serializer.Deserialize<List<CosmosDBPrayerRequest>>(clientString);
+
+////                await Task.Run(() => Serializer.Deserialize<List<CosmosDBPrayerRequest>>((Newtonsoft.Json.JsonReader)clientString)).ConfigureAwait(false);
+
+
+        //        {
+        //            await Task.Run(() => Serializer.Deserialize<List<CosmosDBPrayerRequest>>(json)).ConfigureAwait(false);
+        //            var json = Serializer.Deserialize<List<CosmosDBPrayerRequest>>(clientString));
+        //            if (json == null)
+        //                return default(List<CosmosDBPrayerRequest>);
+        //            //Task.Run(async () => await Serializer.Deserialize<List<CosmosDBPrayerRequest>>(json))); // .ConfigureAwait(false);
+        //            //var listCosmosDB =  Serializer.Deserialize<List<CosmosDBPrayerRequest>>(json))                    //return await Task.Run(async () => await Serializer.Deserialize<List<CosmosDBPrayerRequest>>(json))); // .ConfigureAwait(false);
+        //            //return listCosmosDB;                                                                            //  await Task.Run(() => Serializer.Deserialize<List<CosmosDBPrayerRequest>>(json)).ConfigureAwait(false);
+        //            //await Task.Run(() => Serializer.Deserialize<List<CosmosDBPrayerRequest>>(json)).ConfigureAwait(false);
+        //            return await Task.Run(() => Serializer.Deserialize<List<CosmosDBPrayerRequest>>(json)).ConfigureAwait(false);
+        //        }
+
+
+        //        //using (var stream = await Client.GetStreamAsync(apiUrl).ConfigureAwait(false))
+        //        //using (var reader = new StreamReader(stream))
+        //        //using (var json = new JsonTextReader(reader))
+        //        //{
+        //        //    if (json == null)
+        //        //        return default(List<CosmosDBPrayerRequest>);
+        //        //    //Task.Run(async () => await Serializer.Deserialize<List<CosmosDBPrayerRequest>>(json))); // .ConfigureAwait(false);
+        //        //    //var listCosmosDB =  Serializer.Deserialize<List<CosmosDBPrayerRequest>>(json))                    //return await Task.Run(async () => await Serializer.Deserialize<List<CosmosDBPrayerRequest>>(json))); // .ConfigureAwait(false);
+        //        //    //return listCosmosDB;                                                                            //  await Task.Run(() => Serializer.Deserialize<List<CosmosDBPrayerRequest>>(json)).ConfigureAwait(false);
+        //        //    //await Task.Run(() => Serializer.Deserialize<List<CosmosDBPrayerRequest>>(json)).ConfigureAwait(false);
+        //        //    return await Task.Run(() => Serializer.Deserialize<List<CosmosDBPrayerRequest>>(json)).ConfigureAwait(false);
+        //        //}
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        //AppCenterHelpers.LogException(e);
+        //        return default(List<CosmosDBPrayerRequest>);
+        //    }
+        //    finally
+        //    {
+        //        UpdateActivityIndicatorStatus(false);
+        //    }
+        //}
 
         protected static async Task<List<PrayerRequest>> GetAllCosmosPrayerRequestsConvertedToPrayerRequests(string apiUrl)
         {
@@ -316,26 +374,26 @@ namespace ThoughtsAndPrayers.Services
             }
         }
 
-        static HttpClient CreateHttpClient(TimeSpan timeout)
-        {
-            HttpClient client;
+        //static HttpClient CreateHttpClient(TimeSpan timeout)
+        //{
+        //    HttpClient client;
 
-            switch (Device.RuntimePlatform)
-            {
-                case Device.iOS:
-                case Device.Android:
-                    client = new HttpClient();
-                    break;
-                default:
-                    client = new HttpClient(new HttpClientHandler { AutomaticDecompression = DecompressionMethods.GZip });
-                    break;
+        //    switch (Device.RuntimePlatform)
+        //    {
+        //        case Device.iOS:
+        //        case Device.Android:
+        //            client = new HttpClient();
+        //            break;
+        //        default:
+        //            client = new HttpClient(new HttpClientHandler { AutomaticDecompression = DecompressionMethods.GZip });
+        //            break;
 
-            }
-            client.Timeout = timeout;
-            client.DefaultRequestHeaders.AcceptEncoding.Add(new StringWithQualityHeaderValue("gzip"));
+        //    }
+        //    client.Timeout = timeout;
+        //    client.DefaultRequestHeaders.AcceptEncoding.Add(new StringWithQualityHeaderValue("gzip"));
 
-            return client;
-        }
+        //    return client;
+        //}
         #endregion
     }
 }

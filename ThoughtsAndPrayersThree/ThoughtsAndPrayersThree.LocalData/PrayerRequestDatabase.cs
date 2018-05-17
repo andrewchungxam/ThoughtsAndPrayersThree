@@ -44,7 +44,10 @@ namespace ThoughtsAndPrayersThree.LocalData
             {
 
                 //GET WHATEVER YOU HAVE FROM COSMOS INTO A COSMOS DB LIST
-                List<CosmosDBPrayerRequest> listFromCosmosDB = Task.Run(async () => await FunctionPrayerService.GetAllCosmosPrayerRequestsFunction()).Result;
+                //List<CosmosDBPrayerRequest> listFromCosmosDB = Task.Run(async () => await FunctionPrayerService.GetAllCosmosPrayerRequestsFunction()).Result;
+
+                List<CosmosDBPrayerRequest> listFromCosmosDB = Task.Run(() => FunctionPrayerService.GetAllCosmosPrayerRequestsFunction()).Result;
+
 
                 int intTest = 5;
 
