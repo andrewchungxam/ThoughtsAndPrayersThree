@@ -7,7 +7,7 @@ namespace ThoughtsAndPrayersThree.Models
 
         DateTimeOffset UpdatedAt { get; set; }
 
-        //THIS NEEDS TO BE DELETED
+        //THIS CAN BE DELETED
         DateTimeOffset CreatedDateTime { get; set; }
     }
 }

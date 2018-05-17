@@ -14,7 +14,7 @@ namespace ThoughtsAndPrayersThree.iOS
     {
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
-//            var ignore = new CircleTransformation();
+            //var ignore = new CircleTransformation();
 
             global::Xamarin.Forms.Forms.Init();
 

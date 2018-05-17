@@ -135,5 +135,12 @@ namespace ThoughtsAndPrayersThree.CosmosDB
         }
 
 
+        //DELETE-ID
+        public static async Task<HttpStatusCode> DeleteCosmosPrayerRequestsByIdAsync(string id)
+        {
+            var result = await myDocumentClient.DeleteDocumentAsync(UriFactory.CreateDocumentUri(DatabaseId, CollectionId, id));
+            return result?.StatusCode ?? throw new HttpRequestException("Delete Failed");
+        }
+
     }
 }

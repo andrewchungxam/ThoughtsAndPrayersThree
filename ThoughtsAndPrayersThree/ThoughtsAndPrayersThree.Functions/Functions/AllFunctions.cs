@@ -27,53 +27,17 @@ namespace ThoughtsAndPrayersThree.Functions
             log.Info("C# HTTP trigger function processed a request.");
 
             var listCosmosPrayer = await CosmosDBPrayerService.GetAllCosmosPrayerRequests();
-            //WORKS!!!
+
             if (listCosmosPrayer == null)
                 return req.CreateResponse(System.Net.HttpStatusCode.BadRequest, $"Did not return Get All Cosmos Prayers Request");
 
+            //OPTION 1
             return req.CreateResponse(System.Net.HttpStatusCode.OK, listCosmosPrayer);
 
-
-
-
-
-            // string returnedSerializedListCosmosPrayer = JsonConvert.SerializeObject(listCosmosPrayer);
-
-            //WORKS!!!!!
-            //return req.CreateResponse(System.Net.HttpStatusCode.OK, listCosmosPrayer);
-
-            //ALSO WORKS!!!
+            //OPTION 2
             //var responseMessage = new HttpResponseMessage(HttpStatusCode.OK);
             //responseMessage.Content = new StringContent(returnedSerializedListCosmosPrayer, Encoding.UTF8, "application/json");
             //return responseMessage;
-
-            ////WORKS!!!
-            //if (listCosmosPrayer == null)
-            //   return req.CreateResponse(System.Net.HttpStatusCode.BadRequest, $"Did not return Get All Cosmos Prayers Request");
-
-            //return req.CreateResponse(System.Net.HttpStatusCode.OK, returnedSerializedListCosmosPrayer);
-
-
-            //string returnedSerializedListCosmosPrayer = JsonConvert.SerializeObject(listCosmosPrayer.ToString(), Formatting.Indented);
-
-
-
-            //string returnedSerializedListCosmosPrayer = JsonConvert.DeserializeObject(listCosmosPrayer);
-
-
-
-
-
-            //req.Content = new StringContent(returnedSerializedListCosmosPrayer, Encoding.UTF8, "application/json");
-
-            //if (listCosmosPrayer == null)
-            //    return req.CreateResponse(System.Net.HttpStatusCode.BadRequest, $"Did not return Get All Cosmos Prayers Request");
-
-            //return req.CreateResponse(System.Net.HttpStatusCode.OK, returnedSerializedListCosmosPrayer);
-
-
-
-            //return req.CreateResponse(System.Net.HttpStatusCode.OK);
         }
 
 
@@ -90,16 +54,6 @@ namespace ThoughtsAndPrayersThree.Functions
                 return req.CreateResponse(System.Net.HttpStatusCode.BadRequest, $"Did not return Get All Prayers Request");
 
             return req.CreateResponse(System.Net.HttpStatusCode.OK, listPrayer);
-
-            //string returnedSerializedListPrayer = JsonConvert.SerializeObject(listPrayer);
-            //req.Content = new StringContent(returnedSerializedListPrayer, Encoding.UTF8, "application/json");
-
-            //if (listPrayer == null)
-            //    return req.CreateResponse(System.Net.HttpStatusCode.BadRequest, $"Did not return Get All Prayers Request");
-
-            //string returnedSerializedListPrayer = JsonConvert.SerializeObject(listPrayer);
-            //req.Content = new StringContent(returnedSerializedListPrayer, Encoding.UTF8, "application/json");
-            //return req.CreateResponse(System.Net.HttpStatusCode.OK);
         }
 
         [FunctionName("GetCosmosPrayerRequestsByIdAsyncFunction")]
@@ -116,10 +70,6 @@ namespace ThoughtsAndPrayersThree.Functions
                 return req.CreateResponse(System.Net.HttpStatusCode.BadRequest, $"Contact Id not found: Id: {id}");
 
             return req.CreateResponse(System.Net.HttpStatusCode.OK, listCosmosPrayer);
-
-            //string returnedSerializedListCosmosPrayer = JsonConvert.SerializeObject(listCosmosPrayer);
-            //req.Content = new StringContent(returnedSerializedListCosmosPrayer, Encoding.UTF8, "application/json");
-            //return req.CreateResponse(System.Net.HttpStatusCode.OK);
         }
 
 
@@ -325,17 +275,10 @@ namespace ThoughtsAndPrayersThree.Functions
         [FunctionName("DeleteCosmosPrayerRequestsByIdAsyncFunction")]
         public static async Task<HttpResponseMessage> RunDeleteCosmosPrayerRequestsByIdAsyncFunction([HttpTrigger(AuthorizationLevel.Anonymous, "delete", Route = "DeleteCosmosPrayerRequestsByIdAsyncFunction/{id}")]HttpRequestMessage req, string id, TraceWriter log)
         {
-
             //NOTE - THIS URL REQUIRES ID AT THE END
             // http://localhost:7071/api/DeleteCosmosPrayerRequestsAsyncFunction/921582759
 
-
             log.Info("C# HTTP trigger function processed a request.");
-
-            //var cosmosDBPrayerRequestResultJson = await req.Content.ReadAsStringAsync();
-            //var cosmosDBPrayerRequestResultObject = Newtonsoft.Json.JsonConvert.DeserializeObject<CosmosDBPrayerRequest>(cosmosDBPrayerRequestResultJson);
-            //var contactDeleted = await CosmosDBPrayerService.DeleteCosmosPrayerRequestsAsync(cosmosDBPrayerRequestResultObject);
-            //var contactDeletedId = cosmosDBPrayerRequestResultObject.Id;
 
             var contactDeleted = await CosmosDBPrayerService.DeleteCosmosPrayerRequestsByIdAsync(id);
 

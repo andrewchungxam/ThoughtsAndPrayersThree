@@ -220,8 +220,6 @@ namespace ThoughtsAndPrayersThree.LocalData
 /////////////////////
 
         #region Constant Fields
-        //static readonly Lazy<SQLiteAsyncConnection> _databaseConnectionHolder = new Lazy<SQLiteAsyncConnection(_dbPath)>;
-
         static readonly SQLiteAsyncConnection _nonLazy_databaseConnectionHolder = new SQLiteAsyncConnection(ThoughtsAndPrayersThree.App.DBPathString);
 
         //var connectionFactory = new Func<SQLiteConnectionWithLock>(() => new SQLiteConnectionWithLock(new SQLitePlatformWinRT(), new SQLiteConnectionString(databasePath, storeDateTimeAsTicks: false)));
@@ -237,7 +235,6 @@ namespace ThoughtsAndPrayersThree.LocalData
         #endregion
 
         #region Properties
-//        static SQLiteAsyncConnection DatabaseConnection => _databaseConnectionHolder.Value;
         static SQLiteAsyncConnection DatabaseConnection 
         { 
             get
