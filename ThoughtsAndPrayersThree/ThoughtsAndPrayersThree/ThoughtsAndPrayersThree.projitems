@@ -28,6 +28,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PrayerDetailPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\DatabaseSyncService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\IBaseModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\BaseFunctionPrayerService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\FunctionPrayerService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)ViewModels\" />

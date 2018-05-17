@@ -147,6 +147,8 @@ namespace ThoughtsAndPrayersThree.ViewModels
 
             var list = new List<PrayerRequest> { };
             //list = App.PrayerSQLDatabase.GetAllDogs();
+
+            //list = App.PrayerSQLDatabase.    LoadSampleDataAndCheckForCosmosDB();
             list = App.ListOfPrayers;
 
             foreach (var prayerRequest in list)
@@ -251,7 +253,7 @@ namespace ThoughtsAndPrayersThree.ViewModels
                 try
                 {
                     var updatedCosmosPrayerRequest = PrayerRequestConverter.ConvertToCosmosPrayerRequest(cellPrayerRequest);
-                    Task.Run(async () => await CosmosDBPrayerService.PutCosmosPrayerRequestsAsync(updatedCosmosPrayerRequest));
+                    Task.Run(async () => await FunctionPrayerService.PutCosmosPrayerRequestByAsyncFunction(updatedCosmosPrayerRequest));
                 }
                         catch (Exception ex)
                 {
@@ -278,7 +280,7 @@ namespace ThoughtsAndPrayersThree.ViewModels
                 try
                 {
                     var updatedCosmosPrayerRequest = PrayerRequestConverter.ConvertToCosmosPrayerRequest(cellPrayerRequest);
-                    Task.Run(async () => await CosmosDBPrayerService.PutCosmosPrayerRequestsAsync(updatedCosmosPrayerRequest));
+                    Task.Run(async () => await FunctionPrayerService.PutCosmosPrayerRequestByAsyncFunction(updatedCosmosPrayerRequest));
                 }
                 catch (Exception ex)
                 {

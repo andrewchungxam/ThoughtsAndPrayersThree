@@ -10,6 +10,8 @@ using ThoughtsAndPrayersThree.ViewModels;
 using ThoughtsAndPrayersThree.CosmosDB;
 using System.Threading.Tasks;
 using System.Diagnostics;
+using ThoughtsAndPrayers.Services;
+using ThoughtsAndPrayersThree.Services;
 
 namespace ThoughtsAndPrayersThree.Pages
 {
@@ -94,7 +96,7 @@ namespace ThoughtsAndPrayersThree.Pages
                     try 
                     {
                         var newCosmosPrayerRequest = PrayerRequestConverter.ConvertToCosmosPrayerRequest(newPrayerRequest);
-                        Task.Run(async ()=> await CosmosDBPrayerService.PostCosmosPrayerRequestsAsync(newCosmosPrayerRequest));
+                        Task.Run(async ()=> await FunctionPrayerService.PostCosmosPrayerRequestsAsyncFunction(newCosmosPrayerRequest));
                     }
                     catch (Exception ex)
                     {

@@ -15,15 +15,17 @@ namespace ThoughtsAndPrayersThree.Services
         {
             var (contactListFromLocalDatabase, contactListFromRemoteDatabase) = await GetAllSavedContacts().ConfigureAwait(false);
 
+            //SAVING NEW ITEMS
             var (contactsInLocalDatabaseButNotStoredRemotely, contactsInRemoteDatabaseButNotStoredLocally, contactsInBothDatabases) 
                 = GetMatchingModels(contactListFromLocalDatabase, contactListFromRemoteDatabase);
 
+            //PATCHING UPDATED ITEMS
             var (contactsToPatchToLocalDatabase, contactsToPatchToRemoteDatabase) 
                 = GetModelsThatNeedUpdating(contactListFromLocalDatabase, contactListFromRemoteDatabase, contactsInBothDatabases);
 
-            await SaveContacts(contactsToPatchToRemoteDatabase,
+            await SaveContacts( contactsToPatchToRemoteDatabase,
                                 contactsToPatchToLocalDatabase,
-                                contactsInRemoteDatabaseButNotStoredLocally.Concat(contactsToPatchToLocalDatabase).ToList(),
+                                contactsInRemoteDatabaseButNotStoredLocally,   // contactsInRemoteDatabaseButNotStoredLocally.Concat(contactsToPatchToLocalDatabase).ToList(),
                                 contactsInLocalDatabaseButNotStoredRemotely).ConfigureAwait(false);
         }
 
@@ -31,7 +33,7 @@ namespace ThoughtsAndPrayersThree.Services
         GetAllSavedContacts()
         {
             var contactListFromLocalDatabaseTask = PrayerRequestDatabase.GetAllPrayersAsync();                                          //var contactListFromLocalDatabaseTask = ThoughtsAndPrayersThree.App.PrayerSQLDatabase.GetAllPrayerRequests();
-            var contactListFromRemoteDatabaseTask = CosmosDBPrayerService.GetAllCosmosPrayerRequestsConvertedToPrayerRequests();        //APIService.GetAllContactModels();
+            var contactListFromRemoteDatabaseTask = FunctionPrayerService.GetAllCosmosPrayerRequestsConvertedToPrayerRequestsFunction();        //APIService.GetAllContactModels();
 
             await Task.WhenAll(contactListFromLocalDatabaseTask, contactListFromRemoteDatabaseTask).ConfigureAwait(false);
 
@@ -41,21 +43,23 @@ namespace ThoughtsAndPrayersThree.Services
         }
 
         //LET'S T == PRAYER REQUEST
-        static (List<T> contactsInLocalDatabaseButNotStoredRemotely, List<T> contactsInRemoteDatabaseButNotStoredLocally, List<T> contactsInBothDatabases) 
+        static (List<T> contactsInLocalDatabaseButNotStoredRemotely, 
+                List<T> contactsInRemoteDatabaseButNotStoredLocally, 
+                List<T> contactsInBothDatabases) 
 
         GetMatchingModels<T>(List<T> modelListFromLocalDatabase, List<T> modelListFromRemoteDatabase) 
 
             where T : IBaseModel
         {
-            var modelIdFromRemoteDatabaseList = modelListFromRemoteDatabase?.Select(x => x.SharedStringId).ToList() ?? new List<string>();
             var modelIdFromLocalDatabaseList = modelListFromLocalDatabase?.Select(x => x.SharedStringId).ToList() ?? new List<string>();
+            var modelIdFromRemoteDatabaseList = modelListFromRemoteDatabase?.Select(x => x.SharedStringId).ToList() ?? new List<string>();
 
-            var modelIdsInRemoteDatabaseButNotStoredLocally = modelIdFromRemoteDatabaseList?.Except(modelIdFromLocalDatabaseList)?.ToList() ?? new List<string>();
             var modelIdsInLocalDatabaseButNotStoredRemotely = modelIdFromLocalDatabaseList?.Except(modelIdFromRemoteDatabaseList)?.ToList() ?? new List<string>();
+            var modelIdsInRemoteDatabaseButNotStoredLocally = modelIdFromRemoteDatabaseList?.Except(modelIdFromLocalDatabaseList)?.ToList() ?? new List<string>();
             var modelIdsInBothDatabases = modelIdFromRemoteDatabaseList?.Where(x => modelIdFromLocalDatabaseList?.Contains(x) ?? false).ToList() ?? new List<string>();
 
-            var modelsInRemoteDatabaseButNotStoredLocally = modelListFromRemoteDatabase?.Where(x => modelIdsInRemoteDatabaseButNotStoredLocally?.Contains(x?.SharedStringId) ?? false).ToList() ?? new List<T>();
             var modelsInLocalDatabaseButNotStoredRemotely = modelListFromLocalDatabase?.Where(x => modelIdsInLocalDatabaseButNotStoredRemotely?.Contains(x?.SharedStringId) ?? false).ToList() ?? new List<T>();
+            var modelsInRemoteDatabaseButNotStoredLocally = modelListFromRemoteDatabase?.Where(x => modelIdsInRemoteDatabaseButNotStoredLocally?.Contains(x?.SharedStringId) ?? false).ToList() ?? new List<T>();
 
             var modelsInBothDatabases = modelListFromLocalDatabase?.Where(x => modelIdsInBothDatabases?.Contains(x?.SharedStringId) ?? false)
                                             .ToList() ?? new List<T>();
@@ -82,7 +86,8 @@ namespace ThoughtsAndPrayersThree.Services
                 var modelFromRemoteDatabase = modelListFromRemoteDatabase.Where(x => x.SharedStringId.Equals(contact.SharedStringId)).FirstOrDefault();
 
                 //IF LOCAL ITEM IS LATER THEN PATCH REMOTE TIME
-                // > for older
+                // https://msdn.microsoft.com/en-us/library/system.datetimeoffset.compareto(v=vs.110).aspx
+                // Greater than zero - The current DateTimeOffset object is later than other.
                 if (modelFromLocalDatabase?.UpdatedAt.CompareTo(modelFromRemoteDatabase?.UpdatedAt ?? default(DateTimeOffset)) > 0)
                     modelsToPatchToRemoteDatabase.Add(contact);
 
@@ -103,29 +108,33 @@ namespace ThoughtsAndPrayersThree.Services
         {
             var saveContactTaskList = new List<Task>();
 
-            foreach (var contact in contactsToPostToRemoteDatabase)
-            {
-                //COSMOS
-                //saveContactTaskList.Add(APIService.PostContactModel(contact));
-                saveContactTaskList.Add(CosmosDBPrayerService.PostAndConvertPrayerRequestsAsync(contact));              //PostContactModel(contact));
-            }
-            foreach (var contact in contactsToAddToLocalDatabase)
-            {
-                //SQLITE
-                //saveContactTaskList.Add(ContactDatabase.SaveContact(contact));
-                saveContactTaskList.Add(PrayerRequestDatabase.SavePrayerAsync(contact));
-
-            }
             foreach (var contact in contactsToPatchToRemoteDatabase)
             {
                 //COSMOS
                 //saveContactTaskList.Add(APIService.PatchContactModel(contact));saveContactTaskList.Add(CosmosDBPrayerService.PatchAndConvertPrayerRequestsAsync(contact));              
+                //saveContactTaskList.Add(FunctionPrayerService.PostAndConvertPrayerRequestsAsyncFunction(contact));         
+                saveContactTaskList.Add(FunctionPrayerService.PatchAndConvertPrayerRequestAsyncFunction(contact));                  
             }
+
             foreach (var contact in contactsToPatchToLocalDatabase)
             {
                 //SQLITE
                 //saveContactTaskList.Add(ContactDatabase.PatchContactModel(contact));
                 saveContactTaskList.Add(PrayerRequestDatabase.PatchPrayerModelAsync(contact));
+            }
+
+            foreach (var contact in contactsToAddToLocalDatabase)
+            {
+                //SQLITE
+                //saveContactTaskList.Add(ContactDatabase.SaveContact(contact));
+                saveContactTaskList.Add(PrayerRequestDatabase.SavePrayerAsync(contact));
+            }
+
+            foreach (var contact in contactsToPostToRemoteDatabase)
+            {
+                //COSMOS
+                //saveContactTaskList.Add(APIService.PostContactModel(contact));
+                saveContactTaskList.Add(FunctionPrayerService.PostAndConvertPrayerRequestsAsyncFunction(contact));              //PostContactModel(contact));
             }
 
             return Task.WhenAll(saveContactTaskList);

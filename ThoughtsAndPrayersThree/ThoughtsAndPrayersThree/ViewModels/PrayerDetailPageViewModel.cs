@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using ThoughtsAndPrayersThree.CosmosDB;
 using ThoughtsAndPrayersThree.Models;
+using ThoughtsAndPrayersThree.Services;
 using ThoughtsAndPrayersThree.ViewModels.Base;
 using Xamarin.Forms;
 
@@ -221,7 +222,7 @@ namespace ThoughtsAndPrayersThree.ViewModels
                 try
                 {
                     var updatedCosmosPrayerRequest = PrayerRequestConverter.ConvertToCosmosPrayerRequest(specificCellPrayerRequest);
-                    Task.Run(async () => await CosmosDBPrayerService.PutCosmosPrayerRequestsAsync(updatedCosmosPrayerRequest));
+                    Task.Run(async () => await FunctionPrayerService.PutCosmosPrayerRequestByAsyncFunction(updatedCosmosPrayerRequest));
                 }
                 catch (Exception ex)
                 {
@@ -261,7 +262,7 @@ namespace ThoughtsAndPrayersThree.ViewModels
                 try
                 {
                     var updatedCosmosPrayerRequest = PrayerRequestConverter.ConvertToCosmosPrayerRequest(specificCellPrayerRequest);
-                    Task.Run(async () => await CosmosDBPrayerService.PutCosmosPrayerRequestsAsync(updatedCosmosPrayerRequest));
+                    Task.Run(async () => await FunctionPrayerService.PutCosmosPrayerRequestByAsyncFunction(updatedCosmosPrayerRequest));
                 }
                 catch (Exception ex)
                 {

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using ThoughtsAndPrayersThree.Models;
 using ThoughtsAndPrayersThree.CosmosDB;
 using SQLite;
+using ThoughtsAndPrayersThree.Services;
 
 namespace ThoughtsAndPrayersThree.LocalData
 {
@@ -43,10 +44,12 @@ namespace ThoughtsAndPrayersThree.LocalData
             {
 
                 //GET WHATEVER YOU HAVE FROM COSMOS INTO A COSMOS DB LIST
-                List<CosmosDBPrayerRequest> listFromCosmosDB = Task.Run(async () => await CosmosDBPrayerService.GetAllCosmosPrayerRequests()).Result;
+                List<CosmosDBPrayerRequest> listFromCosmosDB = Task.Run(async () => await FunctionPrayerService.GetAllCosmosPrayerRequestsFunction()).Result;
+
+                int intTest = 5;
 
                 //CHECK TO SEE IF COSMOS HAS SOMETHING IN IT
-                if(listFromCosmosDB.Any())
+                if(listFromCosmosDB != null && listFromCosmosDB.Any())
                 {   //IF IT HAS SOMETHING, THEN CONVERT FROM COSMOS TO SQLITE DATA FORMAT AND THEN ADD LOCALLY TO SQLITE     
                     foreach (var cosmosItem in listFromCosmosDB)
                     {
@@ -265,7 +268,6 @@ namespace ThoughtsAndPrayersThree.LocalData
         {
             var databaseConnection = await GetDatabaseConnectionAsync();
             await databaseConnection.InsertOrReplaceAsync(prayerRequest);
-
         }
 
         public static async Task PatchPrayerModelAsync(PrayerRequest prayerRequest)
