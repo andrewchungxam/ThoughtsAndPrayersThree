@@ -5,6 +5,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 using ThoughtsAndPrayersThree.CosmosDB;
 using ThoughtsAndPrayersThree.Models;
 using ThoughtsAndPrayersThree.Services;
@@ -203,8 +205,11 @@ namespace ThoughtsAndPrayersThree.ViewModels
 
         void OnAddThoughtClickActionAsync(PrayerRequest specificCellPrayerRequest)
         {
+            Analytics.TrackEvent("Thought + 1");
+
             if (specificCellPrayerRequest != null)
             {
+
                 specificCellPrayerRequest.NumberOfThoughts = specificCellPrayerRequest.NumberOfThoughts + 1;
                 specificCellPrayerRequest.UpdatedAtString = DateTime.Now.ToString("MMM d h:mm tt", new System.Globalization.CultureInfo("en-US"));
                 specificCellPrayerRequest.UpdatedAt = DateTimeOffset.UtcNow;
@@ -226,6 +231,15 @@ namespace ThoughtsAndPrayersThree.ViewModels
                 }
                 catch (Exception ex)
                 {
+                    
+                    var properties = new Dictionary<string, string>
+                    {
+                    { "Class", "PrayerDetailPageModel" },
+                    { "Method", "OnAddThoughtClickActionAsync" }
+                    };
+
+                    Crashes.TrackError(ex, properties);
+
                     Debug.WriteLine("DocumentClient Error: ", ex.Message);
                 }
 
@@ -243,6 +257,8 @@ namespace ThoughtsAndPrayersThree.ViewModels
 
         void OnAddPrayerClickActionAsync(PrayerRequest specificCellPrayerRequest)
         {
+            Analytics.TrackEvent("Prayer + 1");
+
             if (specificCellPrayerRequest != null)
             {
                 specificCellPrayerRequest.NumberOfPrayers = specificCellPrayerRequest.NumberOfPrayers + 1;
@@ -266,6 +282,15 @@ namespace ThoughtsAndPrayersThree.ViewModels
                 }
                 catch (Exception ex)
                 {
+
+                    var properties = new Dictionary<string, string>
+                    {
+                    { "Class", "PrayerDetailPageModel" },
+                    { "Method", "OnAddPrayerClickActionAsync" }
+                    };
+
+                    Crashes.TrackError(ex, properties);
+
                     Debug.WriteLine("DocumentClient Error: ", ex.Message);
                 }
 

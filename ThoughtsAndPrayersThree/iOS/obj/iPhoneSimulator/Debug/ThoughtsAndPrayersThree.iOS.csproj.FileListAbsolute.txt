@@ -11,12 +11,6 @@
 /Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/bin/iPhoneSimulator/Debug/Lottie.Forms.iOS.dll
 /Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/bin/iPhoneSimulator/Debug/Lottie.iOS.dll
 /Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/bin/iPhoneSimulator/Debug/Microsoft.Azure.DocumentDB.Core.dll
-/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/bin/iPhoneSimulator/Debug/Microsoft.Azure.Mobile.Analytics.dll
-/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/bin/iPhoneSimulator/Debug/Microsoft.Azure.Mobile.Analytics.iOS.Bindings.dll
-/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/bin/iPhoneSimulator/Debug/Microsoft.Azure.Mobile.Crashes.dll
-/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/bin/iPhoneSimulator/Debug/Microsoft.Azure.Mobile.Crashes.iOS.Bindings.dll
-/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/bin/iPhoneSimulator/Debug/Microsoft.Azure.Mobile.dll
-/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/bin/iPhoneSimulator/Debug/Microsoft.Azure.Mobile.iOS.Bindings.dll
 /Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/bin/iPhoneSimulator/Debug/Microsoft.Data.Edm.dll
 /Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/bin/iPhoneSimulator/Debug/Microsoft.Data.OData.dll
 /Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/bin/iPhoneSimulator/Debug/Microsoft.WindowsAzure.Storage.dll
@@ -155,3 +149,9 @@
 /Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/bin/iPhoneSimulator/Debug/SQLitePCLRaw.provider.sqlite3.dll
 /Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/bin/iPhoneSimulator/Debug/SQLite-net.pdb
 /Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/bin/iPhoneSimulator/Debug/SQLite-net.xml
+/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/bin/iPhoneSimulator/Debug/Microsoft.AppCenter.Analytics.dll
+/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/bin/iPhoneSimulator/Debug/Microsoft.AppCenter.Analytics.iOS.Bindings.dll
+/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/bin/iPhoneSimulator/Debug/Microsoft.AppCenter.Crashes.dll
+/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/bin/iPhoneSimulator/Debug/Microsoft.AppCenter.Crashes.iOS.Bindings.dll
+/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/bin/iPhoneSimulator/Debug/Microsoft.AppCenter.dll
+/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/bin/iPhoneSimulator/Debug/Microsoft.AppCenter.iOS.Bindings.dll

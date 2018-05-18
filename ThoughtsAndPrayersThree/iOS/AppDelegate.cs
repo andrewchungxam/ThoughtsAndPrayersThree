@@ -1,11 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
+using System.Collections.Generic;
+
 using FFImageLoading.Forms.Touch;
 using FFImageLoading.Transformations;
-using Foundation;
+
 using Lottie.Forms.iOS.Renderers;
+
 using UIKit;
+using Foundation;
+
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Crashes;
+using Microsoft.AppCenter.Analytics;
 
 namespace ThoughtsAndPrayersThree.iOS
 {
@@ -16,16 +23,13 @@ namespace ThoughtsAndPrayersThree.iOS
         {
             //var ignore = new CircleTransformation();
 
+
             global::Xamarin.Forms.Forms.Init();
 
 			AnimationViewRenderer.Init();
             CachedImageRenderer.Init();
 
 			LoadApplication(new App());
-
-
-
-
 
             return base.FinishedLaunching(app, options);
         }

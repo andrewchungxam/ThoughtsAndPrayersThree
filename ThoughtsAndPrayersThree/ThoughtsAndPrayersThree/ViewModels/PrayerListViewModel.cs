@@ -17,6 +17,8 @@ using ThoughtsAndPrayersThree.Pages;
 using ThoughtsAndPrayersThree.CosmosDB;
 using ThoughtsAndPrayersThree.Services;
 using ThoughtsAndPrayersThree.LocalData;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 namespace ThoughtsAndPrayersThree.ViewModels
 {
@@ -179,6 +181,7 @@ namespace ThoughtsAndPrayersThree.ViewModels
 
             try
             {
+
                 var minimumSpinnerTime = Task.Delay(1000);
 
                 await DatabaseSyncService.SyncRemoteAndLocalDatabases().ConfigureAwait(false);
@@ -198,6 +201,14 @@ namespace ThoughtsAndPrayersThree.ViewModels
             }
             catch (Exception e)
             {
+                var properties = new Dictionary<string, string> 
+                {
+                    { "Class", "PrayerListViewModel" },
+                    { "Method", "ExecuteRefreshCommand" }
+                };
+
+                Crashes.TrackError(e, properties);
+
                 //AppCenterHelpers.LogException(e);
             }
             finally
@@ -209,6 +220,7 @@ namespace ThoughtsAndPrayersThree.ViewModels
 
         async Task OnThoughtClickActionAsync()
         {
+
             if (this.IsTheThoughtAnimationVisible == false)
             {
                 this.IsTheThoughtAnimationVisible = true;
@@ -243,6 +255,8 @@ namespace ThoughtsAndPrayersThree.ViewModels
 
         void OnAddThoughtClickActionAsync(PrayerRequest cellPrayerRequest)
         {
+            Analytics.TrackEvent("Thought + 1");
+
             if (cellPrayerRequest != null)
             {
                 cellPrayerRequest.StringTheNumberOfPrayers = "new and updated commanded";
@@ -255,8 +269,16 @@ namespace ThoughtsAndPrayersThree.ViewModels
                     var updatedCosmosPrayerRequest = PrayerRequestConverter.ConvertToCosmosPrayerRequest(cellPrayerRequest);
                     Task.Run(async () => await FunctionPrayerService.PutCosmosPrayerRequestByAsyncFunction(updatedCosmosPrayerRequest));
                 }
-                        catch (Exception ex)
+                catch (Exception ex)
                 {
+                    var properties = new Dictionary<string, string>
+                    {
+                    { "Class", "PrayerListViewModel" },
+                        { "Method", "OnAddThoughtClickActionAsync" }
+                    };
+
+                    Crashes.TrackError(ex, properties);
+
                     Debug.WriteLine("DocumentClient Error: ", ex.Message);
                 }
 
@@ -270,6 +292,8 @@ namespace ThoughtsAndPrayersThree.ViewModels
 
         void OnAddPrayerClickActionAsync(PrayerRequest cellPrayerRequest)
         {
+            Analytics.TrackEvent("Prayer + 1");
+
             if (cellPrayerRequest != null)
             {
                 cellPrayerRequest.StringTheNumberOfPrayers = "new and updated commanded";
@@ -284,6 +308,15 @@ namespace ThoughtsAndPrayersThree.ViewModels
                 }
                 catch (Exception ex)
                 {
+
+                    var properties = new Dictionary<string, string>
+                    {
+                    { "Class", "PrayerListViewModel" },
+                    { "Method", "OnAddPrayerClickActionAsync" }
+                    };
+
+                    Crashes.TrackError(ex, properties);
+
                     Debug.WriteLine("DocumentClient Error: ", ex.Message);
                 }
 

@@ -6,10 +6,6 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 
-using Microsoft.Azure.Mobile;
-using Microsoft.Azure.Mobile.Crashes;
-using Microsoft.Azure.Mobile.Analytics;
-
 using Microsoft.WindowsAzure.Storage.Blob;
 
 using ThoughtsAndPrayersThree.LocalData;
@@ -17,10 +13,12 @@ using ThoughtsAndPrayersThree.LocalData;
 using ThoughtsAndPrayersThree.Pages;
 using ThoughtsAndPrayersThree.Models;
 using ThoughtsAndPrayersThree.Constants;
-//using ThoughtsAndPrayersThree.BlobStorage;
 
 using ThoughtsAndPrayersThree.LocalData;
 using ThoughtsAndPrayersThree.Models;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 namespace ThoughtsAndPrayersThree
 {
@@ -140,6 +138,11 @@ namespace ThoughtsAndPrayersThree
 		protected override void OnStart()
 		{
 
+            AppCenter.Start(
+                "ios=b96ae0ab-a574-4be3-b325-001800d81cf3;" +
+                "uwp={Your UWP App secret here};" +
+                "android={Your Android App secret here}",
+                typeof(Analytics), typeof(Crashes));
 		}
 
 		protected override void OnSleep()
