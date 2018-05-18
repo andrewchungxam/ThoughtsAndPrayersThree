@@ -40,7 +40,13 @@ Part 6 plus
 
 1) Using Functions as an intermediary between Client and CosmosDB
 
-Part 8: Thoughts + Prayers App with:  Thoughts (https://github.com/andrewchungxam/ThoughtsAndPrayersThree/blob/Branch-08-AppCenter/README.md) <br />
+[Part 8: Thoughts + Prayers App with:] (https://github.com/andrewchungxam/ThoughtsAndPrayersThree/blob/Branch-08-AppCenter/README.md) <br />
 Part 7 plus
 
 1) Added App Center functionality
+
+[Part 9: Thoughts + Prayers App with:] (https://github.com/andrewchungxam/ThoughtsAndPrayersThree/blob/Branch-08-AppCenter/README.md) <br />
+Part 7 plus
+
+1) Incorporated Cognitive Services
+
