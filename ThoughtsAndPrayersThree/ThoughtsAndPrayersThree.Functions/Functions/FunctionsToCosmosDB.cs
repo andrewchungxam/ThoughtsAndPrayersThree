@@ -16,7 +16,7 @@ using ThoughtsAndPrayersThree.Models;
 
 namespace ThoughtsAndPrayersThree.Functions
 {
-    public static class AllFunctions
+    public static class FunctionsToCosmosDB
     {
 
 

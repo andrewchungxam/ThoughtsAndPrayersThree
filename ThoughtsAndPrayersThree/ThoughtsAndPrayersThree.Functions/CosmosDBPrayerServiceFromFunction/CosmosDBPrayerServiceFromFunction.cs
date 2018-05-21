@@ -97,6 +97,22 @@ namespace ThoughtsAndPrayersThree.Functions.CosmosDB
 
         }
 
+        //GET BY OBJECT
+        public static async Task<List<CosmosDBPrayerRequest>> GetSpecificCosmosPrayerRequestsAsync(CosmosDBPrayerRequest cosmosDBPrayerRequest)
+        {
+            var result = await myDocumentClient.ReadDocumentAsync<CosmosDBPrayerRequest>(UriFactory.CreateDocumentUri(DatabaseId, CollectionId, cosmosDBPrayerRequest.Id));
+
+            if (result.StatusCode != System.Net.HttpStatusCode.OK)
+            {
+                return null;
+            }
+
+            List<CosmosDBPrayerRequest> returnedListCosmosPrayer = new List<CosmosDBPrayerRequest>();
+            returnedListCosmosPrayer.Add(result);
+
+            return returnedListCosmosPrayer;
+        }
+
         //POST
         public static async Task<HttpStatusCode> PostCosmosPrayerRequestsAsync(CosmosDBPrayerRequest cosmosDBPrayerRequest)
         {
