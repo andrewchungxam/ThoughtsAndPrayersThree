@@ -21,24 +21,24 @@ using Newtonsoft.Json;
 using ThoughtsAndPrayersThree.Functions.CosmosDB;
 using ThoughtsAndPrayersThree.Models;
 
+using ThoughtsAndPrayersThree.Functions.Constants;
+
+
 namespace ThoughtsAndPrayersThree.Functions
 {
-
     class ApiServiceClientCredentials : ServiceClientCredentials
     {
         public override Task ProcessHttpRequestAsync(HttpRequestMessage request, CancellationToken cancellationToken)
         {
-            request.Headers.Add("Ocp-Apim-Subscription-Key", "885c6b53172b442c8877699a539617cf");
+
+            request.Headers.Add("Ocp-Apim-Subscription-Key", FunctionConstants.TextAnalyticsKey);
             return base.ProcessHttpRequestAsync(request, cancellationToken);
         }
-
     }
 
     //SAMPLE INCLUDING LANGUAGE DETECTION
     public class FunctionsToTextSentiment
     {
-
-
         [FunctionName("GetPrayerRequestSentimentById")]
         public static async Task<HttpResponseMessage> RunGetPrayerRequestSentimentById([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "GetPrayerRequestSentimentById/{id}")]HttpRequestMessage req, string id, TraceWriter log)
         {
