@@ -21,9 +21,10 @@ namespace ThoughtsAndPrayersThree.Services
         #endregion
 
 
+
         #region Methods
         public static Task<double> FunctionGetPrayerRequestSentimentById(string id)
-        => GetPrayerRequestSentimentById($"{AzureFunctionStringBase}{RouteGetPrayerRequestSentimentById}/id");
+        => GetPrayerRequestSentimentById($"{AzureFunctionStringBase}{RouteGetPrayerRequestSentimentById}/{id}");
         #endregion 
 
     }
