@@ -30,6 +30,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Models\IBaseModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\BaseFunctionPrayerService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\FunctionPrayerService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\FunctionSentimentService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\BaseFunctionSentimentService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)ViewModels\" />

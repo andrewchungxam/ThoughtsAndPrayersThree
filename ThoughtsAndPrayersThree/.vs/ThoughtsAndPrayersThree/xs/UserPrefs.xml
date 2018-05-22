@@ -1,5 +1,12 @@
 ﻿<Properties StartupConfiguration="{71C427FF-24AD-4770-BBDD-31D7A71C1534}|Default">
-  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workbench ActiveDocument="ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs">
+    <Files>
+      <File FileName="ThoughtsAndPrayersThree/ThoughtsAndPrayersApp.cs" Line="18" Column="6" />
+      <File FileName="ThoughtsAndPrayersThree/Pages/AddTapPage.cs" Line="101" Column="68" />
+      <File FileName="ThoughtsAndPrayersThree/Services/FunctionSentimentService.cs" Line="27" Column="41" />
+      <File FileName="ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs" Line="40" Column="74" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
