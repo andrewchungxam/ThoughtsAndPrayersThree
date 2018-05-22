@@ -95,8 +95,13 @@ namespace ThoughtsAndPrayersThree.Pages
 
                     try 
                     {
+
+
                         var newCosmosPrayerRequest = PrayerRequestConverter.ConvertToCosmosPrayerRequest(newPrayerRequest);
                         Task.Run(async ()=> await FunctionPrayerService.PostCosmosPrayerRequestsAsyncFunction(newCosmosPrayerRequest));
+                        string stringRandomId = randomId.ToString();
+                        Task.Run(async () => await FunctionSentimentService.FunctionGetPrayerRequestSentimentById(stringRandomId));
+
                     }
                     catch (Exception ex)
                     {
