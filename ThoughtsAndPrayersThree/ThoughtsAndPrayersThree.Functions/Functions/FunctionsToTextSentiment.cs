@@ -50,11 +50,37 @@ namespace ThoughtsAndPrayersThree.Functions
             var textToAnalyze = cosmosPrayerFromGet.PrayerRequestText;
             var sentimentDouble = await GetSentiment(textToAnalyze);
 
+            //create cosmos db prayer request and add sentiment
+            if (sentimentDouble != null) { 
+                double strictDouble = sentimentDouble.Value;
+                cosmosPrayerFromGet.SentimentScore = strictDouble;
+            }
+
+            CosmosDBPrayerService.PutCosmosPrayerRequestsAsync(cosmosPrayerFromGet);
+
             if (listCosmosPrayerFromGet == null | sentimentDouble == null)
                 return req.CreateResponse(System.Net.HttpStatusCode.BadRequest, $"Cosmos Prayer not found with the following Id: {cosmosPrayerFromGet.Id}");
 
             return req.CreateResponse(System.Net.HttpStatusCode.OK, sentimentDouble);
         }
+
+        [FunctionName("PutCosmosDBSentimentById")]
+        public static async Task<HttpResponseMessage> RunPutCosmosDBSentimentById([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "PutCosmosDBSentimentById/{id}")]HttpRequestMessage req, string id, TraceWriter log)
+        {
+            log.Info("C# HTTP trigger function processed a request.");
+
+            var listCosmosPrayerFromGet = await CosmosDBPrayerService.GetCosmosPrayerRequestsByIdAsync(id);
+            var cosmosPrayerFromGet = listCosmosPrayerFromGet.FirstOrDefault();
+
+            var textToAnalyze = cosmosPrayerFromGet.PrayerRequestText;
+            var sentimentDouble = await GetSentiment(textToAnalyze);
+
+            if (listCosmosPrayerFromGet == null | sentimentDouble == null)
+                return req.CreateResponse(System.Net.HttpStatusCode.BadRequest, $"Cosmos Prayer not found with the following Id: {cosmosPrayerFromGet.Id}");
+
+            return req.CreateResponse(System.Net.HttpStatusCode.OK, sentimentDouble);
+        }
+
 
         public static async Task<double?> GetSentiment(string text)
         {

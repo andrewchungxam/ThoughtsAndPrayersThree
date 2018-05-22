@@ -88,5 +88,6 @@ namespace ThoughtsAndPrayersThree.Models
 
         public bool IsDeleted { get; set; }
 
+        public double SentimentScore { get; set; } = -1.0;
 	}
 }

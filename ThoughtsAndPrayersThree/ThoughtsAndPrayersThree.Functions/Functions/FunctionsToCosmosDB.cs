@@ -18,9 +18,7 @@ namespace ThoughtsAndPrayersThree.Functions
 {
     public static class FunctionsToCosmosDB
     {
-
-
-
+        
         [FunctionName("GetAllCosmosPrayerRequestsFunction")]
         public static async Task<HttpResponseMessage> RunGetAllCosmosPrayerRequestsFunction([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "GetAllCosmosPrayerRequestsFunction")]HttpRequestMessage req, TraceWriter log)
         {
