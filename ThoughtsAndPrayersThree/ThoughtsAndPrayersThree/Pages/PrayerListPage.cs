@@ -94,11 +94,13 @@ namespace ThoughtsAndPrayersThree.Pages
             };
             contentView1.Content = _animation1;
             contentView1.SetBinding(IsVisibleProperty, nameof(MyViewModel.IsThePrayerAnimationVisible));
+
             AbsoluteLayout.SetLayoutFlags
             (
                 contentView1,
                 AbsoluteLayoutFlags.All
             );
+            
             AbsoluteLayout.SetLayoutBounds
             (
                 contentView1,
@@ -115,7 +117,6 @@ namespace ThoughtsAndPrayersThree.Pages
             (
                  _prayerListView,
                  AbsoluteLayoutFlags.PositionProportional
-
             );
 
             AbsoluteLayout.SetLayoutBounds
@@ -195,15 +196,15 @@ namespace ThoughtsAndPrayersThree.Pages
 
                 pdPage.MyViewModel.ThePrayerRequestText = selectedPrayerRequest.PrayerRequestText;
 
+                pdPage.MyViewModel.SentimentScore = selectedPrayerRequest.SentimentScore.ToString();
+
+                pdPage.MyViewModel.SentimentCategory = selectedPrayerRequest.SentimentScore;
 
                 await Navigation?.PushAsync(pdPage);
 
                 _prayerListView.SelectedItem = null;
             });
-
-
         }
-
     }
 }
 

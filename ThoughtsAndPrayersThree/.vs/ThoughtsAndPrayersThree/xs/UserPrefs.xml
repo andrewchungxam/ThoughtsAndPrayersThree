@@ -1,25 +1,13 @@
 ﻿<Properties StartupConfiguration="{71C427FF-24AD-4770-BBDD-31D7A71C1534}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs">
-    <Files>
-      <File FileName="ThoughtsAndPrayersThree/ThoughtsAndPrayersApp.cs" Line="18" Column="6" />
-      <File FileName="ThoughtsAndPrayersThree/Pages/AddTapPage.cs" Line="101" Column="68" />
-      <File FileName="ThoughtsAndPrayersThree/Services/FunctionSentimentService.cs" Line="27" Column="41" />
-      <File FileName="ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs" Line="40" Column="74" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/FunctionPrayerService.cs" relfile="ThoughtsAndPrayersThree/Services/FunctionPrayerService.cs" line="45" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/FunctionPrayerService.cs" relfile="ThoughtsAndPrayersThree/Services/FunctionPrayerService.cs" line="46" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" line="39" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" line="45" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" line="44" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" line="43" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" line="42" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/DatabaseSyncService.cs" relfile="ThoughtsAndPrayersThree/Services/DatabaseSyncService.cs" line="26" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/DatabaseSyncService.cs" relfile="ThoughtsAndPrayersThree/Services/DatabaseSyncService.cs" line="32" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/DatabaseSyncService.cs" relfile="ThoughtsAndPrayersThree/Services/DatabaseSyncService.cs" line="32" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/FunctionPrayerService.cs" relfile="ThoughtsAndPrayersThree/Services/FunctionPrayerService.cs" line="45" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" line="39" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/DatabaseSyncService.cs" relfile="ThoughtsAndPrayersThree/Services/DatabaseSyncService.cs" line="26" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/DatabaseSyncService.cs" relfile="ThoughtsAndPrayersThree/Services/DatabaseSyncService.cs" line="32" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/DatabaseSyncService.cs" relfile="ThoughtsAndPrayersThree/Services/DatabaseSyncService.cs" line="32" column="1" />
       <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" line="226" column="1" />
       <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" line="204" column="1" />
       <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" line="171" column="1" />

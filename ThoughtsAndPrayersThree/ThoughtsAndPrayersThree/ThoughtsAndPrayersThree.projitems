@@ -11,7 +11,6 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)ThoughtsAndPrayersApp.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)CustomRenderers\CustomNavigationPage.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\PrayerRequest.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\Base\BaseContentPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\ViewCells\PrayerViewCell.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Pages\PrayerListPage.cs" />
@@ -27,11 +26,14 @@
     <Compile Include="$(MSBuildThisFileDirectory)Pages\PrayerDetailPage.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\PrayerDetailPageViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\DatabaseSyncService.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\IBaseModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\MovedToSharedLibrary.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\BaseFunctionPrayerService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\FunctionPrayerService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\FunctionSentimentService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\BaseFunctionSentimentService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Constants\SentimentCategories.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\SentimentService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\SentimentCategoryConverter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)ViewModels\" />

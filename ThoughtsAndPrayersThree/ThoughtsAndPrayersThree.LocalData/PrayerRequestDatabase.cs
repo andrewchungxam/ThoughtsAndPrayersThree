@@ -48,7 +48,6 @@ namespace ThoughtsAndPrayersThree.LocalData
 
                 List<CosmosDBPrayerRequest> listFromCosmosDB = Task.Run(() => FunctionPrayerService.GetAllCosmosPrayerRequestsFunction()).Result;
 
-
                 int intTest = 5;
 
                 //CHECK TO SEE IF COSMOS HAS SOMETHING IN IT
@@ -122,49 +121,11 @@ namespace ThoughtsAndPrayersThree.LocalData
                 NumberOfThoughts = prayerRequest.NumberOfThoughts,
                 NumberOfPrayers = prayerRequest.NumberOfPrayers,
                 //GET-ONLY//CombinedNumberOfThoughtsAndPrayers = combinedNumberOfThoughtsAndPrayers,
-                StringTheNumberOfPrayers = prayerRequest.StringTheNumberOfPrayers
+                StringTheNumberOfPrayers = prayerRequest.StringTheNumberOfPrayers,
+                SentimentScore = prayerRequest.SentimentScore
 
             });
         }
-
-        //public void AddNewPrayerRequest
-        //(
-        //    int id, 
-        //    string createdDateTimeString, 
-        //    DateTimeOffset createdDateTime, 
-        //    string stringOnlyDateTime,
-        //    string firstName, 
-        //    string lastName, 
-        //    string fullName,
-        //    string fullNameAndDate,
-        //    string newCombinedNameAndDate,
-        //    string fbProfileUrl, 
-        //    string prayerRequestText,
-        //    int numberOfThoughts,
-        //    int numberOfPrayers,
-        //    string combinedNumberOfThoughtsAndPrayers,
-        //    string stringTheNumberOfPrayers 
-        //)
-        //{
-        //    sqliteConnection.Insert(new PrayerRequest
-        //    {
-        //        Id = id,
-        //        CreatedDateTimeString = createdDateTimeString,
-        //        CreatedDateTime = createdDateTime,
-        //        StringOnlyDateTime = stringOnlyDateTime,
-        //        FirstName = firstName,
-        //        LastName = lastName,
-        //        FullName = fullName,
-        //        FullNameAndDate = fullNameAndDate,
-        //        //GET-ONLY//NewCombinedNameAndDate = newCombinedNameAndDate,
-        //        FBProfileUrl = fbProfileUrl,
-        //        PrayerRequestText = prayerRequestText,
-        //        NumberOfThoughts = numberOfThoughts,
-        //        NumberOfPrayers = numberOfPrayers,
-        //        //GET-ONLY//CombinedNumberOfThoughtsAndPrayers = combinedNumberOfThoughtsAndPrayers,
-        //        StringTheNumberOfPrayers = stringTheNumberOfPrayers
-        //    });
-        //}
 
         public List<PrayerRequest> GetAllPrayerRequests()
         {

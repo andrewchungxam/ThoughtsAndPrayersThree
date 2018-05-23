@@ -148,15 +148,16 @@ namespace ThoughtsAndPrayersThree.ViewModels
             PrayerDetailPageViewModel.ParentViewModelOfDetailPage = this;
 
             var list = new List<PrayerRequest> { };
-            //list = App.PrayerSQLDatabase.GetAllDogs();
 
-            //list = App.PrayerSQLDatabase.    LoadSampleDataAndCheckForCosmosDB();
+            //list = App.PrayerSQLDatabase.GetAllDogs();
+            //list = App.PrayerSQLDatabase.LoadSampleDataAndCheckForCosmosDB();
+
             list = App.ListOfPrayers;
 
             foreach (var prayerRequest in list)
                 MyObservableCollectionOfUnderlyingData.Add(prayerRequest);
 
-            //           DeletePrayerFromListCommand = new Command(DeletePrayerFromListAction);
+            //DeletePrayerFromListCommand = new Command(DeletePrayerFromListAction);
 
             RefreshCommand = new Command(
                 execute: async () => { await ExecuteRefreshCommand(); });

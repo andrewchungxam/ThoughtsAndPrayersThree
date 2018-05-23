@@ -1,6 +1,4 @@
-﻿//TODO - UPDATE THIS ACCORDING TO NEW MODELS USED IN THIS THIS PROJECT
-
-//USED FOR TRANSLATION BETWEEN FORMATS REQUIRED FOR LOCAL STORAGE VS REMOTE STORAGE
+﻿//USED FOR TRANSLATION BETWEEN FORMATS REQUIRED FOR LOCAL STORAGE VS REMOTE STORAGE
 
 using System;
 using ThoughtsAndPrayersThree.Models;
@@ -27,7 +25,9 @@ namespace ThoughtsAndPrayersThree.CosmosDB
                 PrayerRequestText = prayerRequest.PrayerRequestText,
                 NumberOfThoughts = prayerRequest.NumberOfThoughts,
                 NumberOfPrayers = prayerRequest.NumberOfPrayers,
-                StringTheNumberOfPrayers = prayerRequest.StringTheNumberOfPrayers
+                StringTheNumberOfPrayers = prayerRequest.StringTheNumberOfPrayers,
+                SentimentScore = prayerRequest.SentimentScore
+                                                        
             };
             return myCosmosDBPrayerRequest;
         }
@@ -50,7 +50,9 @@ namespace ThoughtsAndPrayersThree.CosmosDB
                 PrayerRequestText = cosmosDBPrayerRequest.PrayerRequestText,
                 NumberOfThoughts = cosmosDBPrayerRequest.NumberOfThoughts,
                 NumberOfPrayers = cosmosDBPrayerRequest.NumberOfPrayers,
-                StringTheNumberOfPrayers = cosmosDBPrayerRequest.StringTheNumberOfPrayers
+                StringTheNumberOfPrayers = cosmosDBPrayerRequest.StringTheNumberOfPrayers,
+                SentimentScore = cosmosDBPrayerRequest.SentimentScore
+
             };
 
             return myPrayerRequest;

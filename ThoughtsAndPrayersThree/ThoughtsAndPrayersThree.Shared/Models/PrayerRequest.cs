@@ -53,7 +53,8 @@ namespace ThoughtsAndPrayersThree.Models
         public string StringTheNumberOfPrayers { get; set; }
 
         public bool IsDeleted { get; set; }
- 
+
+        public float SentimentScore { get; set; } 
     }
 
 	//COSMOSDB
@@ -88,6 +89,6 @@ namespace ThoughtsAndPrayersThree.Models
 
         public bool IsDeleted { get; set; }
 
-        public double SentimentScore { get; set; } = -1.0;
+        public float SentimentScore { get; set; } = -1.0F;
 	}
 }

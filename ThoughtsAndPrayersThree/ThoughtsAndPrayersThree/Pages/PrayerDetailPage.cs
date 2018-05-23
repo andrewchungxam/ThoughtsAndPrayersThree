@@ -43,6 +43,9 @@ namespace ThoughtsAndPrayersThree.Pages
             var myNameProperty = new Label() { };
             var myFullNameProperty = new Label() { };
             var myPrayerRequestProperty = new Label() { };
+            var mySentimentProperty = new Label() { };
+            var mySentimentCategoryProperty = new Label() { };
+
 
             var thoughtButton = new ReverseStyledButton(ReverseStyledButton.Borders.Thin, 1)
             {
@@ -60,6 +63,15 @@ namespace ThoughtsAndPrayersThree.Pages
             var theNumberOfThoughtLabel = new Label() { };
             var theNumberOfPrayersLabel = new Label() { };
 
+            var sentimentLabel = new Label { 
+                Text = "Sentiment Score:"
+            };
+
+            var sentimentCategoryLabel = new Label { 
+                Text = "Sentiment category"
+            };
+
+
             var theCombinedNumberOfThoughtsAndPrayersLabel = new Label();
 
             #region BINDINGS
@@ -75,6 +87,9 @@ namespace ThoughtsAndPrayersThree.Pages
 
             myFullNameProperty.SetBinding(Label.TextProperty, nameof(this.MyViewModel.TheNewCombinedNameAndDate), BindingMode.Default);
             myPrayerRequestProperty.SetBinding(Label.TextProperty, nameof(this.MyViewModel.ThePrayerRequestText));
+
+            mySentimentProperty.SetBinding(Label.TextProperty, nameof(this.MyViewModel.SentimentScore), BindingMode.Default);
+            mySentimentCategoryProperty.SetBinding(Label.TextProperty, nameof(this.MyViewModel.SentimentCategory), BindingMode.OneWay, new SentimentCategoryConverter());
 
             //////COMBINED-COMMANDING-NEW
             thoughtButton.SetBinding(Button.CommandParameterProperty, new Binding("SelectedPrayerRequest"));  //("BindingContext.SelectedPrayerRequest"));  //new Binding("."));
@@ -117,6 +132,10 @@ namespace ThoughtsAndPrayersThree.Pages
             grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
             grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
             grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+            grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+            grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+
+
 
             grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
             grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
@@ -157,18 +176,30 @@ namespace ThoughtsAndPrayersThree.Pages
             grid.Children.Add(myPrayerRequestProperty, 0, 2);
             Grid.SetColumnSpan(myPrayerRequestProperty, 16);
 
-            grid.Children.Add(sampleAnimationView, 0, 3);
+            grid.Children.Add(sentimentLabel, 0, 3);
+            Grid.SetColumnSpan(sentimentLabel, 8);
+
+            grid.Children.Add(mySentimentProperty, 7, 3);
+            Grid.SetColumnSpan(mySentimentProperty, 8);
+
+            grid.Children.Add(sentimentCategoryLabel, 0, 4);
+            Grid.SetColumnSpan(sentimentCategoryLabel, 8);
+
+            grid.Children.Add(mySentimentCategoryProperty, 7, 4);
+            Grid.SetColumnSpan(mySentimentCategoryProperty, 8);
+
+            grid.Children.Add(sampleAnimationView, 0, 5);
             Grid.SetColumnSpan(sampleAnimationView, 3);
-            grid.Children.Add(thoughtButton, 3, 3);
+            grid.Children.Add(thoughtButton, 3, 5);
             Grid.SetColumnSpan(thoughtButton, 5);
 
-            grid.Children.Add(sampleAnimationView2, 8, 3);
+            grid.Children.Add(sampleAnimationView2, 8, 5);
             Grid.SetColumnSpan(sampleAnimationView2, 3);
 
-            grid.Children.Add(sampleAnimationViewPlaceholder, 8, 3);
+            grid.Children.Add(sampleAnimationViewPlaceholder, 8, 5);
             Grid.SetColumnSpan(sampleAnimationViewPlaceholder, 3);
 
-            grid.Children.Add(prayerButton, 11, 3);
+            grid.Children.Add(prayerButton, 11, 5);
             Grid.SetColumnSpan(prayerButton, 5);
     
             Content = grid;
@@ -212,16 +243,7 @@ namespace ThoughtsAndPrayersThree.Pages
             base.OnDisappearing();
             MyViewModel.ThoughtButtonPressed -= MyViewModel_ThoughtButtonPressed;
             MyViewModel.PrayerButtonPressed -= MyViewModel_PrayerButtonPressed;
-
 		}
-
-
 	}
-
-
-
-
-
-
 }
 

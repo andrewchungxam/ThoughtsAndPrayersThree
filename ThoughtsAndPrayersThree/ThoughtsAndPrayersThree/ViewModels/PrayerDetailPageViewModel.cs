@@ -117,6 +117,20 @@ namespace ThoughtsAndPrayersThree.ViewModels
             set { SetProperty(ref _thePrayerRequestText, value); }
         }
 
+        string _sentimentScore;
+        public string SentimentScore
+        {
+            get { return _sentimentScore; }
+            set { SetProperty(ref _sentimentScore, value); }
+        }
+
+        float _sentimentCategory;
+        public float SentimentCategory
+        {
+            get { return _sentimentCategory; }
+            set { SetProperty(ref _sentimentCategory, value); }
+        }
+
         public ResetableObservableCollection<PrayerRequest> MyObservableCollectionOfUnderlyingData
         {
             get;
