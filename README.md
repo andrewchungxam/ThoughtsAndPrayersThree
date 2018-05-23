@@ -45,8 +45,13 @@ Part 7 plus
 
 1) Added App Center functionality
 
-[Part 9: Thoughts + Prayers App with:](https://github.com/andrewchungxam/ThoughtsAndPrayersThree/blob/Branch-08-AppCenter/README.md) <br />
-Part 7 plus
+[Part 9: Thoughts + Prayers App with:](https://github.com/andrewchungxam/ThoughtsAndPrayersThree/blob/Branch-09-Text-Sentiment/README.md) <br />
+Part 8 plus
 
-1) Incorporated Cognitive Services
+1) Incorporated Cognitive Services - results shown in the Detail Page and of course CosmosDB
+
+[Part 10: Thoughts + Prayers App with:] <br />
+Part 9 plus
+
+1) Notification Service
 
