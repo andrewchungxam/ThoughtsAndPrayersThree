@@ -34,6 +34,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Constants\SentimentCategories.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\SentimentService.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\SentimentCategoryConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Services\AzureModels\AzureNotificationHubRegistrationModels.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Constants\MessagingCenterKeys.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)ViewModels\" />
@@ -47,5 +49,6 @@
     <Folder Include="$(MSBuildThisFileDirectory)Helpers\" />
     <Folder Include="$(MSBuildThisFileDirectory)Pages\ViewHelpers\" />
     <Folder Include="$(MSBuildThisFileDirectory)Services\" />
+    <Folder Include="$(MSBuildThisFileDirectory)Services\AzureModels\" />
   </ItemGroup>
 </Project>

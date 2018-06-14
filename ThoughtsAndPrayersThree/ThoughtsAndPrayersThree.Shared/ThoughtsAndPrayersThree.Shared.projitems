@@ -14,5 +14,6 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Models\IBaseModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\PrayerRequest.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\AzureNotificationHubRegistrationModel.cs" />
   </ItemGroup>
 </Project>

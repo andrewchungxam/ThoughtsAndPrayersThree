@@ -24,6 +24,8 @@ namespace ThoughtsAndPrayersThree
 {
     public class App : Application
     {
+        public const string NotificationReceivedKey = "NotificationReceived";
+
         public static List<PrayerRequest> ListOfPrayers { get; set; } //= FixedPrayerRequests.ListOfPrayerRequests;
         public static LocalData.PrayerRequestDatabase PrayerSQLDatabase { get; set; }
 
