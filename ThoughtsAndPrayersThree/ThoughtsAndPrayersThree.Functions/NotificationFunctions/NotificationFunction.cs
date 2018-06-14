@@ -35,8 +35,8 @@ namespace ThoughtsAndPrayersThree.Functions.NotificationFunctions
             {
                 NotificationHubClient hubClient = Microsoft.Azure.NotificationHubs.NotificationHubClient.CreateClientFromConnectionString
                     (
-                        AzureNotificationHubConstants.ConsoleApplicationFullAccessConnectionString,
-                        AzureNotificationHubConstants.ConsoleApplicationNotificationHubName,
+                        AzureNotificationHubConstants.NotificationHubFullAccessConnectionString,
+                        AzureNotificationHubConstants.NotificationHubName,
                         true
                     );
                 // Create an array of breaking news categories.
@@ -92,8 +92,8 @@ namespace ThoughtsAndPrayersThree.Functions.NotificationFunctions
                 NotificationHubClient hubClient = Microsoft.Azure.NotificationHubs.NotificationHubClient.CreateClientFromConnectionString
                     (
 
-                        AzureNotificationHubConstants.ConsoleApplicationFullAccessConnectionString,
-                        AzureNotificationHubConstants.ConsoleApplicationNotificationHubName,
+                        AzureNotificationHubConstants.NotificationHubFullAccessConnectionString,
+                        AzureNotificationHubConstants.NotificationHubName,
                         true
                     );
                 // Create an array of breaking news categories.
@@ -135,8 +135,8 @@ namespace ThoughtsAndPrayersThree.Functions.NotificationFunctions
             {
                 NotificationHubClient hubClient = Microsoft.Azure.NotificationHubs.NotificationHubClient.CreateClientFromConnectionString
                     (
-                        AzureNotificationHubConstants.ConsoleApplicationFullAccessConnectionString,
-                        AzureNotificationHubConstants.ConsoleApplicationNotificationHubName,
+                        AzureNotificationHubConstants.NotificationHubFullAccessConnectionString,
+                        AzureNotificationHubConstants.NotificationHubName,
                         true
                     );
                 // Create an array of breaking news categories.

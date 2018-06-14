@@ -45,8 +45,8 @@ namespace ThoughtsAndPrayersThree.Functions.NotificationRegistrationFunctions
 
         private static NotificationHubClient _notificationHubClient = Microsoft.Azure.NotificationHubs.NotificationHubClient.CreateClientFromConnectionString
         (
-            AzureNotificationHubConstants.ConsoleApplicationFullAccessConnectionString,
-            AzureNotificationHubConstants.ConsoleApplicationNotificationHubName,
+            AzureNotificationHubConstants.NotificationHubFullAccessConnectionString,
+            AzureNotificationHubConstants.NotificationHubName,
             true
         );
 
