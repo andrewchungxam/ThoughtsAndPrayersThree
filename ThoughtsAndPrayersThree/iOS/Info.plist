@@ -5,13 +5,11 @@
 	<key>CFBundleDisplayName</key>
 	<string>ThoughtsAndPrayersThree</string>
 	<key>CFBundleName</key>
-	<string>ThoughtsAndPrayersThree</string>
-	<key>CFBundleIdentifier</key>
-	<string>com.chung.xamarin.ThoughtsAndPrayersThree</string>
+	<string>ThoughtsAndPrayersThreeNotifications</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.1</string>
 	<key>CFBundleVersion</key>
-	<string>1.0</string>
+	<string>1.1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>MinimumOSVersion</key>
@@ -46,5 +44,11 @@
 	<string>UIStatusBarStyleLightContent</string>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>remote-notification</string>
+	</array>
+	<key>CFBundleIdentifier</key>
+	<string>com.chung.xamarin.ThoughtsAndPrayersThreeNotifications</string>
 </dict>
 </plist>

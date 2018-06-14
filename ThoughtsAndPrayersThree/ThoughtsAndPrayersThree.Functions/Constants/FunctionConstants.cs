@@ -18,14 +18,17 @@ namespace ThoughtsAndPrayersThree.Functions.Constants
         //public const string ConsoleApplicationNotificationHubName = ;
 
         //STRINGS
-        public const string ConsoleApplicationFullAccessConnectionString = "Endpoint=sb://samplenotifhubtwonamespace.servicebus.windows.net/;SharedAccessKeyName=ConsoleApplicationFullAccess;SharedAccessKey=DivOPPwrOoRsXhdDpTGBLE+iW4COfUeX4OY96yRVX5Y=";
-        public const string ConsoleApplicationNotificationHubName = "MySampleNotificationHub";
+        //public const string ConsoleApplicationFullAccessConnectionString = "Endpoint=sb://samplenotifhubtwonamespace.servicebus.windows.net/;SharedAccessKeyName=ConsoleApplicationFullAccess;SharedAccessKey=DivOPPwrOoRsXhdDpTGBLE+iW4COfUeX4OY96yRVX5Y=";
+        //public const string ConsoleApplicationNotificationHubName = "MySampleNotificationHub";
+
+        public const string NotificationHubFullAccessConnectionString = "Endpoint=sb://thandprayerthreenotihubnamespace.servicebus.windows.net/;SharedAccessKeyName=NotificationHubFullAccessConnectionString;SharedAccessKey=iU/Miur4KTrML7l+XUVU/WXO1awdVGj8wsnNTaxgpYE=";
+        public const string NotificationHubName = "ThAndPrayerThreeNotiHub";
     }
 
     public class AzureNotificationsViaFunctionsURLS
     {
-        public const string NativeApiURL = "https://xamarinformsnotificationfunction.azurewebsites.net/" + "api/NotificationFunctionNative";
-        public const string TemplateApiURL = "https://xamarinformsnotificationfunction.azurewebsites.net/" + "api/NotificationFunctionTemplate";
-        public const string MultipleTemplateApiURL = "https://xamarinformsnotificationfunction.azurewebsites.net/" + "api/NotificationFunctionTemplateMultiple";
+        public const string NativeApiURL = "https://thoughtsandprayersthreefunction.azurewebsites.net" + "/api/NotificationFunctionNative";
+        public const string TemplateApiURL = "https://thoughtsandprayersthreefunction.azurewebsites.net" + "/api/NotificationFunctionTemplate";
+        public const string MultipleTemplateApiURL = "https://thoughtsandprayersthreefunction.azurewebsites.net" + "/api/NotificationFunctionTemplateMultiple";
     }
 }

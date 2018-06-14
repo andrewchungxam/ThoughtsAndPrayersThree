@@ -32,7 +32,8 @@ using Foundation;
 using Xamarin.Forms;
 using UserNotifications;
 using WindowsAzure.Messaging;
-using ThoughtsAndPrayersThree.Services.AzureModels;
+using ThoughtsAndPrayersThree.Shared.Models;
+//using ThoughtsAndPrayersThree.Services.AzureModels;
 
 namespace ThoughtsAndPrayersThree.iOS
 {
