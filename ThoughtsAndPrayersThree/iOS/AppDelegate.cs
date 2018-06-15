@@ -33,6 +33,7 @@ using Xamarin.Forms;
 using UserNotifications;
 using WindowsAzure.Messaging;
 using ThoughtsAndPrayersThree.Shared.Models;
+using ThoughtsAndPrayersThree.Shared.Constants;
 //using ThoughtsAndPrayersThree.Services.AzureModels;
 
 namespace ThoughtsAndPrayersThree.iOS
@@ -194,7 +195,7 @@ namespace ThoughtsAndPrayersThree.iOS
         {
             var myHttpClient = new HttpClient();
             string deviceTokenString = deviceToken.Description.Replace("<", "").Replace(">", "").Replace(" ", "");
-            string MyApiURL = String.Format("https://notificationregistrationviafunctionstwo.azurewebsites.net/api/GetRegistrationIdPassingHandle/{0}", deviceTokenString);
+            string MyApiURL = String.Format("{0}/api/GetRegistrationIdPassingHandle/{1}", AzureNotificationHubRegistrationConstants.AzureNotificationFunctionBaseUrl, deviceTokenString);
 
             var _deviceRegistration = new DeviceRegistration()
             {
@@ -233,7 +234,7 @@ namespace ThoughtsAndPrayersThree.iOS
         {
             var myHttpClient = new HttpClient();
             string deviceTokenString = deviceToken.Description.Replace("<", "").Replace(">", "").Replace(" ", "");
-            string MyApiURLTemplate = String.Format("https://notificationregistrationviafunctionstwo.azurewebsites.net/api/GetTemplateRegistrationWithTags/{0}", deviceTokenString);
+            string MyApiURLTemplate = String.Format("{0}/api/GetTemplateRegistrationWithTags/{1}", AzureNotificationHubRegistrationConstants.AzureNotificationFunctionBaseUrl , deviceTokenString);
 
             var _deviceRegistration = new DeviceRegistrationWithTemplate()
             {
