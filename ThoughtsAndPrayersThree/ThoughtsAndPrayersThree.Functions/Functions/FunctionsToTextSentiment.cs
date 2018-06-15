@@ -53,7 +53,7 @@ namespace ThoughtsAndPrayersThree.Functions
             //create cosmos db prayer request and add sentiment
             if (sentimentDouble != null) { 
                 double strictDouble = sentimentDouble.Value;
-                cosmosPrayerFromGet.SentimentScore = strictDouble;
+                cosmosPrayerFromGet.SentimentScore = (float)strictDouble;
             }
 
             CosmosDBPrayerService.PutCosmosPrayerRequestsAsync(cosmosPrayerFromGet);
