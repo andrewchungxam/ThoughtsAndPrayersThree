@@ -286,6 +286,29 @@ namespace ThoughtsAndPrayersThree.iOS
             completionHandler(UIBackgroundFetchResult.NoData);
         }
 
+        //void PresentNotification(NSDictionary dict)
+        //{
+        //    // Check to see if the dictionary has the aps key.  This is the notification payload you would have sent
+        //    if (null != dict && dict.ContainsKey(new NSString("aps")))
+        //    {
+        //        // Extract some data from the notifiation and display it using an alert view.
+        //        NSDictionary aps = dict.ObjectForKey(new NSString("aps")) as NSDictionary;
+
+        //        var msg = string.Empty;
+        //        if (aps.ContainsKey(new NSString("alert")))
+        //        {
+        //            msg = (aps[new NSString("alert")] as NSString).ToString();
+        //        }
+
+        //        if (string.IsNullOrEmpty(msg))
+        //        {
+        //            msg = "(unable to parse)";
+        //        }
+
+        //        MessagingCenter.Send<object, string>(this, App.NotificationReceivedKey, msg);
+        //    }
+        //}
+
         void PresentNotification(NSDictionary dict)
         {
             // Check to see if the dictionary has the aps key.  This is the notification payload you would have sent
@@ -293,6 +316,11 @@ namespace ThoughtsAndPrayersThree.iOS
             {
                 // Extract some data from the notifiation and display it using an alert view.
                 NSDictionary aps = dict.ObjectForKey(new NSString("aps")) as NSDictionary;
+
+                //TRY THIS
+                string alertInNotification = string.Empty;
+                if (aps.ContainsKey(new NSString("alert")))
+                    alertInNotification = (aps[new NSString("alert")] as NSString).ToString();
 
                 var msg = string.Empty;
                 if (aps.ContainsKey(new NSString("alert")))
@@ -305,8 +333,18 @@ namespace ThoughtsAndPrayersThree.iOS
                     msg = "(unable to parse)";
                 }
 
+                var thinkingFace = "\U0001F914";
+                var prayerHands = "\U0001F64F";
+
+                var response = thinkingFace + " + " + prayerHands;  //this.Title = thinkingFace +"s" + " + " + prayerHands + "s";
+
+
+                UIAlertView avAlert = new UIAlertView("Thoughts And Prayers", alertInNotification, null, response, null);
+                avAlert.Show();
+
                 MessagingCenter.Send<object, string>(this, App.NotificationReceivedKey, msg);
             }
         }
+
     }
 }

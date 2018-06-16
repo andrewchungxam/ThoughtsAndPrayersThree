@@ -49,25 +49,25 @@ namespace ThoughtsAndPrayersThree.Services
         => GetAllCosmosPrayerRequestsConvertedToPrayerRequests($"{AzureFunctionStringBase}{RouteGetAllPrayerRequestsFunction}");
 
         public static Task<List<CosmosDBPrayerRequest>> GetCosmosPrayerRequestsByIdAsyncFunction(string apiUrl, PrayerRequest data)
-        => GetCosmosPrayerRequestsByIdAsync($"{AzureFunctionStringBase}{RouteGetCosmosPrayerRequestsByIdAsyncFunction}apiUrl",  data);
+        => GetCosmosPrayerRequestsByIdAsync($"{AzureFunctionStringBase}{RouteGetCosmosPrayerRequestsByIdAsyncFunction}apiUrl", data);
 
         public static Task<HttpResponseMessage> PostCosmosPrayerRequestsAsyncFunction(CosmosDBPrayerRequest data)
-        => PostCosmosPrayerRequestsAsync( $"{AzureFunctionStringBase}{RoutePostCosmosPrayerRequestsAsyncFunction}", data);
+        => PostCosmosPrayerRequestsAsync($"{AzureFunctionStringBase}{RoutePostCosmosPrayerRequestsAsyncFunction}", data);
 
-        public static Task<HttpResponseMessage> PostAndConvertPrayerRequestsAsyncFunction( PrayerRequest data)
-        => PostAndConvertPrayerRequestsAsync( $"{AzureFunctionStringBase}{RoutePostAndConvertPrayerRequestsAsyncFunction}",  data);
+        public static Task<HttpResponseMessage> PostAndConvertPrayerRequestsAsyncFunction(PrayerRequest data)
+        => PostAndConvertPrayerRequestsAsync($"{AzureFunctionStringBase}{RoutePostAndConvertPrayerRequestsAsyncFunction}", data);
 
         public static Task<HttpResponseMessage> PutCosmosPrayerRequestByAsyncFunction(CosmosDBPrayerRequest data)
-        => PutCosmosPrayerRequestByAsync( $"{AzureFunctionStringBase}{RoutePutCosmosPrayerRequestsAsyncFunction}",  data);
+        => PutCosmosPrayerRequestByAsync($"{AzureFunctionStringBase}{RoutePutCosmosPrayerRequestsAsyncFunction}", data);
 
         public static Task<HttpResponseMessage> PatchAndConvertPrayerRequestAsyncFunction(PrayerRequest data)
-        => PatchAndConvertPrayerRequestAsync( $"{AzureFunctionStringBase}{RoutePatchAndConvertPrayerRequestsAsyncFunction}",  data);
+        => PatchAndConvertPrayerRequestAsync($"{AzureFunctionStringBase}{RoutePatchAndConvertPrayerRequestsAsyncFunction}", data);
 
         public static Task<HttpResponseMessage> DeleteCosmosPrayerRequestsAsyncFunction(CosmosDBPrayerRequest data)
-        => DeleteCosmosPrayerRequestsAsync( $"{AzureFunctionStringBase}{RouteDeleteCosmosPrayerRequestsAsyncFunction}",  data);
+        => DeleteCosmosPrayerRequestsAsync($"{AzureFunctionStringBase}{RouteDeleteCosmosPrayerRequestsAsyncFunction}", data);
 
         public static Task<HttpResponseMessage> DeleteCosmosPrayerRequestByIdAsyncFunction(string apiUrl)
-        => DeleteCosmosPrayerRequestByIdAsync( $"{AzureFunctionStringBase}{RouteDeleteCosmosPrayerRequestsByIdAsyncFunction}/apiUrl");  
+        => DeleteCosmosPrayerRequestByIdAsync($"{AzureFunctionStringBase}{RouteDeleteCosmosPrayerRequestsByIdAsyncFunction}/apiUrl");
     }
 }
 
@@ -332,4 +332,7 @@ namespace ThoughtsAndPrayersThree.Services
 //        #endregion
 //    }
 //}
+
+
+
 

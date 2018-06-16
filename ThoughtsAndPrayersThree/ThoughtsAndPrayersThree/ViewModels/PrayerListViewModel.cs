@@ -36,11 +36,11 @@ namespace ThoughtsAndPrayersThree.ViewModels
             get { return _heightRequestDoubleValue; }
             set { SetProperty(ref _heightRequestDoubleValue, value); }
         }
-        
+
         bool _isTheThoughtAnimationVisible;
-        public bool IsTheThoughtAnimationVisible 
+        public bool IsTheThoughtAnimationVisible
         {
-            get { return _isTheThoughtAnimationVisible; } 
+            get { return _isTheThoughtAnimationVisible; }
             set { SetProperty(ref _isTheThoughtAnimationVisible, value); }
         }
 
@@ -62,8 +62,9 @@ namespace ThoughtsAndPrayersThree.ViewModels
         public int TheNumberOfThoughts
         {
             get { return _theNumberOfThoughts; }
-            set { 
-                SetProperty(ref _theNumberOfThoughts, value); 
+            set
+            {
+                SetProperty(ref _theNumberOfThoughts, value);
                 OnPropertyChanged(nameof(this.CombinedNumberOfThoughtsAndPrayers));
             }
         }
@@ -72,7 +73,8 @@ namespace ThoughtsAndPrayersThree.ViewModels
         public int TheNumberOfPrayers
         {
             get { return _theNumberOfPrayers; }
-            set { 
+            set
+            {
                 SetProperty(ref _theNumberOfPrayers, value);
                 OnPropertyChanged(nameof(this.CombinedNumberOfThoughtsAndPrayers));
             }
@@ -98,6 +100,20 @@ namespace ThoughtsAndPrayersThree.ViewModels
         {
             get => _isRefreshing;
             set => SetProperty(ref _isRefreshing, value);
+        }
+
+        string _sentimentScore;
+        public string SentimentScore
+        {
+            get { return _sentimentScore; }
+            set { SetProperty(ref _sentimentScore, value); }
+        }
+
+        float _sentimentCategory;
+        public float SentimentCategory
+        {
+            get { return _sentimentCategory; }
+            set { SetProperty(ref _sentimentCategory, value); }
         }
 
         public ResetableObservableCollection<PrayerRequest> MyObservableCollectionOfUnderlyingData
@@ -169,9 +185,9 @@ namespace ThoughtsAndPrayersThree.ViewModels
             //ThoughtClickCommand = new Command <PrayerRequest>(OnThoughtClickActionAsync2);
 
             PrayerClickCommand = new Command(
-                execute: async() => { await OnPrayerClickActionAsync(); });
+                execute: async () => { await OnPrayerClickActionAsync(); });
 
-            AddThoughtClickCommand = new Command <PrayerRequest> (OnAddThoughtClickActionAsync);
+            AddThoughtClickCommand = new Command<PrayerRequest>(OnAddThoughtClickActionAsync);
 
             AddPrayerClickCommand = new Command<PrayerRequest>(OnAddPrayerClickActionAsync);
         }
@@ -195,14 +211,14 @@ namespace ThoughtsAndPrayersThree.ViewModels
                 foreach (var prayerRequest in prayerRequestList)
                     MyObservableCollectionOfUnderlyingData.Add(prayerRequest);
 
-//                  MAY NEED THIS
-//                  this.ResetDataSource();
+                //                  MAY NEED THIS
+                //                  this.ResetDataSource();
 
                 await minimumSpinnerTime;
             }
             catch (Exception e)
             {
-                var properties = new Dictionary<string, string> 
+                var properties = new Dictionary<string, string>
                 {
                     { "Class", "PrayerListViewModel" },
                     { "Method", "ExecuteRefreshCommand" }
@@ -243,7 +259,7 @@ namespace ThoughtsAndPrayersThree.ViewModels
             {
                 this.IsThePrayerAnimationVisible = true;
                 PrayerButtonPressed?.Invoke(this, new PrayerButtonPressedEventArgs { EventArg1 = "Event arg 3", EventArg2 = "Event arg 4" });
-                await Task.Delay(2100); 
+                await Task.Delay(2100);
                 this.IsThePrayerAnimationVisible = false;
             }
             else
@@ -260,34 +276,75 @@ namespace ThoughtsAndPrayersThree.ViewModels
 
             if (cellPrayerRequest != null)
             {
-                cellPrayerRequest.StringTheNumberOfPrayers = "new and updated commanded";
-                cellPrayerRequest.NumberOfThoughts = cellPrayerRequest.NumberOfThoughts + 1;
-                cellPrayerRequest.UpdatedAtString = DateTime.Now.ToString("MMM d h:mm tt", new System.Globalization.CultureInfo("en-US"));
-                cellPrayerRequest.UpdatedAt = DateTimeOffset.UtcNow;
 
-                try
+                if (cellPrayerRequest.SentimentScore != null)
                 {
-                    var updatedCosmosPrayerRequest = PrayerRequestConverter.ConvertToCosmosPrayerRequest(cellPrayerRequest);
-                    Task.Run(async () => await FunctionPrayerService.PutCosmosPrayerRequestByAsyncFunction(updatedCosmosPrayerRequest));
+                    switch (cellPrayerRequest.SentimentScore)
+                    {
+                        case float number when (number > 0.7):
+                            //await SentimentCategories.HappySentiment;
+                            Debug.WriteLine("SentimentCategories.HappySentiment");
+                            NotificationTriggerService.TriggerHappyNotificationFunction();
+
+                            break;
+
+                        case float number when (number >= 0.3 && number <= 0.7):
+                            //return SentimentCategories.NeutralSentiment;
+                            Debug.WriteLine("SentimentCategories.NeutralSentiment");
+                            NotificationTriggerService.TriggerHappyNotificationFunction();
+                            break;
+
+                        case float number when (number >= 0 && number < 0.3):
+                            //return SentimentCategories.SadSentiment;
+                            Debug.WriteLine("SentimentCategories.SadSentiment");
+                            NotificationTriggerService.TriggerSadAssuranceNotificationFunction();
+                            break;
+
+                        default:
+                            //return string.Empty;
+                            Debug.WriteLine("string.Empty");
+                            NotificationTriggerService.TriggerHappyNotificationFunction();
+                            break;
+                    }
                 }
-                catch (Exception ex)
+                else  //this is ( SentimentCategory == null)
                 {
-                    var properties = new Dictionary<string, string>
+                    //return SentimentCategories.UncategorizedSentiment;
+                    Debug.WriteLine("SentimentCategories.UncategorizedSentiment");
+                }
+
+
+                if (cellPrayerRequest != null)
+                {
+                    cellPrayerRequest.StringTheNumberOfPrayers = "new and updated commanded";
+                    cellPrayerRequest.NumberOfThoughts = cellPrayerRequest.NumberOfThoughts + 1;
+                    cellPrayerRequest.UpdatedAtString = DateTime.Now.ToString("MMM d h:mm tt", new System.Globalization.CultureInfo("en-US"));
+                    cellPrayerRequest.UpdatedAt = DateTimeOffset.UtcNow;
+
+                    try
+                    {
+                        var updatedCosmosPrayerRequest = PrayerRequestConverter.ConvertToCosmosPrayerRequest(cellPrayerRequest);
+                        Task.Run(async () => await FunctionPrayerService.PutCosmosPrayerRequestByAsyncFunction(updatedCosmosPrayerRequest));
+                    }
+                    catch (Exception ex)
+                    {
+                        var properties = new Dictionary<string, string>
                     {
                     { "Class", "PrayerListViewModel" },
                         { "Method", "OnAddThoughtClickActionAsync" }
                     };
 
-                    Crashes.TrackError(ex, properties);
+                        Crashes.TrackError(ex, properties);
 
-                    Debug.WriteLine("DocumentClient Error: ", ex.Message);
+                        Debug.WriteLine("DocumentClient Error: ", ex.Message);
+                    }
+
+                    App.PrayerSQLDatabase.UpdateNumberOfThoughts(cellPrayerRequest);
+                    this.ResetDataSource();
+                    this.OnThoughtClickActionAsync();
                 }
-
-                App.PrayerSQLDatabase.UpdateNumberOfThoughts(cellPrayerRequest);
-                this.ResetDataSource();
-                this.OnThoughtClickActionAsync();
+                return;
             }
-            return;
         }
 
 
@@ -297,36 +354,77 @@ namespace ThoughtsAndPrayersThree.ViewModels
 
             if (cellPrayerRequest != null)
             {
-                cellPrayerRequest.StringTheNumberOfPrayers = "new and updated commanded";
-                cellPrayerRequest.NumberOfPrayers = cellPrayerRequest.NumberOfPrayers + 1;
-                cellPrayerRequest.UpdatedAtString = DateTime.Now.ToString("MMM d h:mm tt", new System.Globalization.CultureInfo("en-US"));
-                cellPrayerRequest.UpdatedAt = DateTimeOffset.UtcNow;
 
-                try
+                if (cellPrayerRequest.SentimentScore != null)
                 {
-                    var updatedCosmosPrayerRequest = PrayerRequestConverter.ConvertToCosmosPrayerRequest(cellPrayerRequest);
-                    Task.Run(async () => await FunctionPrayerService.PutCosmosPrayerRequestByAsyncFunction(updatedCosmosPrayerRequest));
+                    switch (cellPrayerRequest.SentimentScore)
+                    {
+                        case float number when (number > 0.7):
+                            //await SentimentCategories.HappySentiment;
+                            Debug.WriteLine("SentimentCategories.HappySentiment");
+                            NotificationTriggerService.TriggerHappyNotificationFunction();
+
+                            break;
+
+                        case float number when (number >= 0.3 && number <= 0.7):
+                            //return SentimentCategories.NeutralSentiment;
+                            Debug.WriteLine("SentimentCategories.NeutralSentiment");
+                            NotificationTriggerService.TriggerHappyNotificationFunction();
+                            break;
+
+                        case float number when (number >= 0 && number < 0.3):
+                            //return SentimentCategories.SadSentiment;
+                            Debug.WriteLine("SentimentCategories.SadSentiment");
+                            NotificationTriggerService.TriggerSadAssuranceNotificationFunction();
+                            break;
+
+                        default:
+                            //return string.Empty;
+                            Debug.WriteLine("string.Empty");
+                            NotificationTriggerService.TriggerHappyNotificationFunction();
+                            break;
+                    }
                 }
-                catch (Exception ex)
+                else  //this is ( SentimentCategory == null)
                 {
+                    //return SentimentCategories.UncategorizedSentiment;
+                    Debug.WriteLine("SentimentCategories.UncategorizedSentiment");
+                }
 
-                    var properties = new Dictionary<string, string>
+
+                if (cellPrayerRequest != null)
+                {
+                    cellPrayerRequest.StringTheNumberOfPrayers = "new and updated commanded";
+                    cellPrayerRequest.NumberOfPrayers = cellPrayerRequest.NumberOfPrayers + 1;
+                    cellPrayerRequest.UpdatedAtString = DateTime.Now.ToString("MMM d h:mm tt", new System.Globalization.CultureInfo("en-US"));
+                    cellPrayerRequest.UpdatedAt = DateTimeOffset.UtcNow;
+
+                    try
+                    {
+                        var updatedCosmosPrayerRequest = PrayerRequestConverter.ConvertToCosmosPrayerRequest(cellPrayerRequest);
+                        Task.Run(async () => await FunctionPrayerService.PutCosmosPrayerRequestByAsyncFunction(updatedCosmosPrayerRequest));
+                    }
+                    catch (Exception ex)
+                    {
+
+                        var properties = new Dictionary<string, string>
                     {
                     { "Class", "PrayerListViewModel" },
                     { "Method", "OnAddPrayerClickActionAsync" }
                     };
 
-                    Crashes.TrackError(ex, properties);
+                        Crashes.TrackError(ex, properties);
 
-                    Debug.WriteLine("DocumentClient Error: ", ex.Message);
+                        Debug.WriteLine("DocumentClient Error: ", ex.Message);
+                    }
+
+                    App.PrayerSQLDatabase.UpdateNumberOfPrayers(cellPrayerRequest);
+                    this.ResetDataSource();
+                    this.OnPrayerClickActionAsync();
+
                 }
-
-                App.PrayerSQLDatabase.UpdateNumberOfPrayers(cellPrayerRequest);
-                this.ResetDataSource();
-                this.OnPrayerClickActionAsync();
-
+                return;
             }
-            return;
         }
     }
 }

@@ -29,6 +29,15 @@ namespace ThoughtsAndPrayersThree.Pages
                 Navigation.PushModalAsync(addTapPage);
             }));
 
+            var myEmoji = "\U0001F600";
+
+            var thinkingFace = "\U0001F914";
+            var prayerHands = "\U0001F64F";
+
+            this.Title = thinkingFace + " + " + prayerHands;  //this.Title = thinkingFace +"s" + " + " + prayerHands + "s";
+
+    
+
             _prayerListView = new ListView();
 
             _prayerListView.IsPullToRefreshEnabled = true;
@@ -160,7 +169,41 @@ namespace ThoughtsAndPrayersThree.Pages
 
             _prayerListView.ItemSelected += OnListViewItemSelected;
 
+            MessagingCenter.Subscribe<object, string>(this, App.NotificationReceivedKey, OnMessageReceived);
         }
+
+        private void OnMessageReceived(object arg1, string arg2)
+        {
+            //Device.BeginInvokeOnMainThread(() =>
+            //{
+            //    //lblMsg.Text = msg;
+            //});
+        }
+
+        //protected override void OnAppearing()
+        //{
+        //    base.OnAppearing();
+
+        //    MessagingCenter.Subscribe<object, string>(this, App.NotificationReceivedKey, OnMessageReceived);
+        //    //btnSend_Native.Clicked += OnBtnSendClicked_Native;
+        //    //btnSend_Template.Clicked += OnBtnSendClicked_Template;
+        //    //btnSend_MultipleTemplate.Clicked += OnBtnSendClicked_MultipleTemplate;
+        //}
+
+        //protected override void OnDisappearing()
+        //{
+        //    base.OnDisappearing();
+
+        //    MessagingCenter.Unsubscribe<object>(this, App.NotificationReceivedKey);
+        //}
+
+        //void OnMessageReceived(object sender, string msg)
+        //{
+        //    Device.BeginInvokeOnMainThread(() =>
+        //    {
+        //        //lblMsg.Text = msg;
+        //    });
+        //}
 
         protected override void OnDisappearing()
         {
@@ -171,6 +214,7 @@ namespace ThoughtsAndPrayersThree.Pages
 
             _prayerListView.ItemSelected -= OnListViewItemSelected;
 
+            MessagingCenter.Unsubscribe<object>(this, App.NotificationReceivedKey);
         }
 
         private void OnListViewItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -205,6 +249,11 @@ namespace ThoughtsAndPrayersThree.Pages
                 _prayerListView.SelectedItem = null;
             });
         }
+
+
+
+
+
     }
 }
 

@@ -1,15 +1,8 @@
 ﻿<Properties StartupConfiguration="{71C427FF-24AD-4770-BBDD-31D7A71C1534}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ThoughtsAndPrayersThree.Functions/NotificationFunctions/NotificationForPrayerRequests.cs">
-    <Files>
-      <File FileName="ThoughtsAndPrayersThree.Functions/NotificationRegistrationFunctions/NotificationRegistrationFuction.cs" Line="1" Column="1" />
-      <File FileName="ThoughtsAndPrayersThree.Functions/NotificationFunctions/NotificationFunction.cs" Line="171" Column="1" />
-      <File FileName="ThoughtsAndPrayersThree.Functions/NotificationFunctions/NotificationForPrayerRequests.cs" Line="5" Column="3" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/FunctionPrayerService.cs" relfile="ThoughtsAndPrayersThree/Services/FunctionPrayerService.cs" line="45" column="1" />
       <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" line="39" column="1" />
       <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/DatabaseSyncService.cs" relfile="ThoughtsAndPrayersThree/Services/DatabaseSyncService.cs" line="26" column="1" />
       <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/DatabaseSyncService.cs" relfile="ThoughtsAndPrayersThree/Services/DatabaseSyncService.cs" line="32" column="1" />
@@ -21,6 +14,6 @@
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.ThoughtsAndPrayersThree.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.A9E936F5-0C16-47F0-ABF9-6D453296B2F9" automaticSigning="False" />
+  <MonoDevelop.Ide.ItemProperties.ThoughtsAndPrayersThree.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.e435c6b4820d96cd23a20cc7372a846c2d5b2d4e" automaticSigning="False" />
   <MultiItemStartupConfigurations />
 </Properties>

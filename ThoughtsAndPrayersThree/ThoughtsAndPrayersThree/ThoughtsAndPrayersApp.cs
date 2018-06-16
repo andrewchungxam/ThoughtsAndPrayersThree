@@ -156,5 +156,8 @@ namespace ThoughtsAndPrayersThree
 		{
 			// Handle when your app resumes
 		}
+
 	}
 }
+
+

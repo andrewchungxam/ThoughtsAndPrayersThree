@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Input;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
+using ThoughtsAndPrayersThree.Constants;
 using ThoughtsAndPrayersThree.CosmosDB;
 using ThoughtsAndPrayersThree.Models;
 using ThoughtsAndPrayersThree.Services;
@@ -224,6 +225,61 @@ namespace ThoughtsAndPrayersThree.ViewModels
             if (specificCellPrayerRequest != null)
             {
 
+                //public static string GetSentimentCategory(float? sentimentScore)
+                //{
+                //    switch (sentimentScore)
+                //    {
+                //        case float number when (number > 0.7):
+                //            return SentimentCategories.HappySentiment;
+
+                //        case float number when (number >= 0.3 && number <= 0.7):
+                //            return SentimentCategories.NeutralSentiment;
+
+                //        case float number when (number >= 0 && number < 0.3):
+                //            return SentimentCategories.SadSentiment;
+
+                //        case null:
+                //            return SentimentCategories.UncategorizedSentiment;
+                //        default:
+                //            return string.Empty;
+                //    }
+                //}
+
+                if(this.SentimentCategory!=null)
+                {
+                    switch (this.SentimentCategory)
+                    {
+                        case float number when (number > 0.7):
+                            //await SentimentCategories.HappySentiment;
+                            Debug.WriteLine("SentimentCategories.HappySentiment");
+                            NotificationTriggerService.TriggerHappyNotificationFunction();
+
+                            break;
+
+                        case float number when (number >= 0.3 && number <= 0.7):
+                            //return SentimentCategories.NeutralSentiment;
+                            Debug.WriteLine("SentimentCategories.NeutralSentiment");
+                            NotificationTriggerService.TriggerHappyNotificationFunction();
+                            break;
+
+                        case float number when (number >= 0 && number < 0.3):
+                            //return SentimentCategories.SadSentiment;
+                            Debug.WriteLine("SentimentCategories.SadSentiment");
+                            NotificationTriggerService.TriggerSadAssuranceNotificationFunction();
+                            break;
+
+                        default:
+                            //return string.Empty;
+                            Debug.WriteLine("string.Empty");
+                            NotificationTriggerService.TriggerHappyNotificationFunction();
+                            break;
+                    }
+                } else  //this is ( SentimentCategory == null)
+                {
+                    //return SentimentCategories.UncategorizedSentiment;
+                    Debug.WriteLine("SentimentCategories.UncategorizedSentiment");
+                }
+
                 specificCellPrayerRequest.NumberOfThoughts = specificCellPrayerRequest.NumberOfThoughts + 1;
                 specificCellPrayerRequest.UpdatedAtString = DateTime.Now.ToString("MMM d h:mm tt", new System.Globalization.CultureInfo("en-US"));
                 specificCellPrayerRequest.UpdatedAt = DateTimeOffset.UtcNow;
@@ -275,6 +331,48 @@ namespace ThoughtsAndPrayersThree.ViewModels
 
             if (specificCellPrayerRequest != null)
             {
+
+                if (this.SentimentCategory != null)
+                {
+                    switch (this.SentimentCategory)
+                    {
+                        case float number when (number > 0.7):
+                            //await SentimentCategories.HappySentiment;
+                            Debug.WriteLine("SentimentCategories.HappySentiment");
+                            NotificationTriggerService.TriggerHappyNotificationFunction();
+
+                            break;
+
+                        case float number when (number >= 0.3 && number <= 0.7):
+                            //return SentimentCategories.NeutralSentiment;
+                            Debug.WriteLine("SentimentCategories.NeutralSentiment");
+                            NotificationTriggerService.TriggerHappyNotificationFunction();
+                            break;
+
+                        case float number when (number >= 0 && number < 0.3):
+                            //return SentimentCategories.SadSentiment;
+                            Debug.WriteLine("SentimentCategories.SadSentiment");
+                            NotificationTriggerService.TriggerSadAssuranceNotificationFunction();
+                            break;
+
+                        default:
+                            //return string.Empty;
+                            Debug.WriteLine("string.Empty");
+                            NotificationTriggerService.TriggerHappyNotificationFunction();
+                            break;
+                    }
+                }
+                else  //this is ( SentimentCategory == null)
+                {
+                    //return SentimentCategories.UncategorizedSentiment;
+                    Debug.WriteLine("SentimentCategories.UncategorizedSentiment");
+                }
+
+
+
+
+
+
                 specificCellPrayerRequest.NumberOfPrayers = specificCellPrayerRequest.NumberOfPrayers + 1;
                 specificCellPrayerRequest.UpdatedAtString = DateTime.Now.ToString("MMM d h:mm tt", new System.Globalization.CultureInfo("en-US"));
                 specificCellPrayerRequest.UpdatedAt = DateTimeOffset.UtcNow;
