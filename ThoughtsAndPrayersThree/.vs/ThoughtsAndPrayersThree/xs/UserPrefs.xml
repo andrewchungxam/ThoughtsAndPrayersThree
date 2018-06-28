@@ -2,22 +2,7 @@
   <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/FunctionPrayerService.cs" relfile="ThoughtsAndPrayersThree/Services/FunctionPrayerService.cs" line="45" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/FunctionPrayerService.cs" relfile="ThoughtsAndPrayersThree/Services/FunctionPrayerService.cs" line="46" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" line="39" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" line="45" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" line="44" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" line="43" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" line="42" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/DatabaseSyncService.cs" relfile="ThoughtsAndPrayersThree/Services/DatabaseSyncService.cs" line="26" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/DatabaseSyncService.cs" relfile="ThoughtsAndPrayersThree/Services/DatabaseSyncService.cs" line="32" column="1" />
-      <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/DatabaseSyncService.cs" relfile="ThoughtsAndPrayersThree/Services/DatabaseSyncService.cs" line="32" column="1" />
-      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" line="226" column="1" />
-      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" line="204" column="1" />
-      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" line="171" column="1" />
-      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" line="125" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.ItemProperties.ThoughtsAndPrayersThree.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.A9E936F5-0C16-47F0-ABF9-6D453296B2F9" />
