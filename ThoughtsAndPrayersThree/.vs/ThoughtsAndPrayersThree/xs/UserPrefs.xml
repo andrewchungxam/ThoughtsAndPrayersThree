@@ -1,24 +1,10 @@
-﻿<Properties StartupConfiguration="{71C427FF-24AD-4770-BBDD-31D7A71C1534}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs">
-    <Files>
-      <File FileName="ThoughtsAndPrayersThree/ThoughtsAndPrayersApp.cs" Line="34" Column="93" />
-      <File FileName="ThoughtsAndPrayersThree/Pages/AddTapPage.cs" Line="64" Column="21" />
-      <File FileName="ThoughtsAndPrayersThree.LocalData/PrayerRequestDatabase.cs" Line="174" Column="1" />
-      <File FileName="ThoughtsAndPrayersThree/ViewModels/PrayerListViewModel.cs" Line="201" Column="38" />
-      <File FileName="ThoughtsAndPrayersThree/ViewModels/PrayerDetailPageViewModel.cs" Line="1" Column="1" />
-      <File FileName="ThoughtsAndPrayersThree/Models/PrayerRequest.cs" Line="13" Column="30" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhoneSimulator" />
+﻿<Properties StartupConfiguration="{8627EEFC-0C1D-44A3-BCB0-A514A7720B84}|Default">
+  <MonoDevelop.Ide.Workbench />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.ThoughtsAndPrayersThree.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.16895ACC-4C08-4F69-9D0B-FCF11635365F">
-    <MonoDevelop.MacDev.AppleDevelopmentTeam />
-  </MonoDevelop.Ide.ItemProperties.ThoughtsAndPrayersThree.iOS>
   <MultiItemStartupConfigurations />
-  <DisabledProjects>
-    <String>ThoughtsAndPrayersThree.CosmosDB/ThoughtsAndPrayersThree.CosmosDB.shproj</String>
-  </DisabledProjects>
+  <MonoDevelop.Ide.ItemProperties.ThoughtsAndPrayersThree.Droid PreferredExecutionTarget="Android.98892a36464b325643" />
 </Properties>

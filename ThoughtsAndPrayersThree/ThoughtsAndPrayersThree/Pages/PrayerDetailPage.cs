@@ -44,6 +44,23 @@ namespace ThoughtsAndPrayersThree.Pages
             var myFullNameProperty = new Label() { };
             var myPrayerRequestProperty = new Label() { };
 
+
+#if __ANDROID__
+            var thoughtButton = new ReverseStyledButton(ReverseStyledButton.Borders.Thin, 1)
+            {
+                Text = "Thought",
+                FontSize = 16
+            };
+            var prayerButton = new ReverseStyledButton(ReverseStyledButton.Borders.Thin, 1)
+            {
+                Text = "Prayer",
+                FontSize = 16
+            };
+
+#endif
+
+#if __IOS__
+
             var thoughtButton = new ReverseStyledButton(ReverseStyledButton.Borders.Thin, 1)
             {
                 Text = "Thought"
@@ -52,6 +69,8 @@ namespace ThoughtsAndPrayersThree.Pages
             {
                 Text = "Prayer"
             };
+
+#endif
 
             var dateString = new Label()
             {
@@ -107,7 +126,85 @@ namespace ThoughtsAndPrayersThree.Pages
 
             #endregion
 
-            #region GRID DEFINITION
+#region GRID DEFINITION
+            #if __ANDROID__
+            var grid = new Grid()
+            {
+                Padding = new Thickness(10, 10, 10, 10)
+            };
+
+            grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+            grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+            grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+            grid.RowDefinitions.Add(new RowDefinition { Height = GridLength.Auto });
+
+            grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+            grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+            grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+            grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+            grid.RowDefinitions.Add(new RowDefinition { Height = new GridLength(1, GridUnitType.Star) });
+
+            grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+            grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+            grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+            grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+
+            grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+            grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+            grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+            grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+
+            grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+            grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+            grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+            grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+
+            grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+            grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+            grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+            grid.ColumnDefinitions.Add(new ColumnDefinition { Width = new GridLength(1, GridUnitType.Star) });
+
+            grid.Children.Add(cachedImage, 0, 0);
+            Grid.SetRowSpan(cachedImage, 2);
+            Grid.SetColumnSpan(cachedImage, 4);
+
+            grid.Children.Add(myFullNameProperty, 4, 0);
+            Grid.SetColumnSpan(myFullNameProperty, 12);
+
+            grid.Children.Add(theCombinedNumberOfThoughtsAndPrayersLabel, 4, 1);
+            Grid.SetColumnSpan(theCombinedNumberOfThoughtsAndPrayersLabel, 12);
+
+            grid.Children.Add(myPrayerRequestProperty, 0, 2);
+            Grid.SetColumnSpan(myPrayerRequestProperty, 16);
+
+            //THOUGHT HEART ANIMATION
+            grid.Children.Add(sampleAnimationView, 0, 3);
+            Grid.SetColumnSpan(sampleAnimationView, 3);
+            Grid.SetRowSpan(sampleAnimationView, 2);
+
+            //THOUGHT BUTTON
+            grid.Children.Add(thoughtButton, 3, 3);
+            Grid.SetColumnSpan(thoughtButton, 5);
+            Grid.SetRowSpan(thoughtButton, 2);
+
+            //PRAYER HEART ANIMATION
+            grid.Children.Add(sampleAnimationView2, 8, 3);
+            Grid.SetColumnSpan(sampleAnimationView2, 3);
+            Grid.SetRowSpan(sampleAnimationView2, 2);
+
+            grid.Children.Add(sampleAnimationViewPlaceholder, 8, 3);
+            Grid.SetColumnSpan(sampleAnimationViewPlaceholder, 3);
+            Grid.SetRowSpan(sampleAnimationViewPlaceholder, 2);
+
+            //PRAYER BUTTON
+            grid.Children.Add(prayerButton, 11, 3);
+            Grid.SetColumnSpan(prayerButton, 5);
+            Grid.SetRowSpan(prayerButton, 2);
+
+            Content = grid;
+#endif
+
+#if __IOS__
             var grid = new Grid()
             {
                 Padding = new Thickness(10, 10, 10, 10)
@@ -172,7 +269,9 @@ namespace ThoughtsAndPrayersThree.Pages
             Grid.SetColumnSpan(prayerButton, 5);
     
             Content = grid;
-            #endregion
+#endif
+
+#endregion
 
         }
 
