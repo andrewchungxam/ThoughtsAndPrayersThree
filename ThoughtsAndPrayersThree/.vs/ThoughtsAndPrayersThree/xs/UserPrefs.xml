@@ -1,6 +1,6 @@
 ﻿<Properties StartupConfiguration="{71C427FF-24AD-4770-BBDD-31D7A71C1534}|Default">
   <MonoDevelop.Ide.Workbench />
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
       <Breakpoint enabled="false" file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/FunctionPrayerService.cs" relfile="ThoughtsAndPrayersThree/Services/FunctionPrayerService.cs" line="45" column="1" />
@@ -20,7 +20,7 @@
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.ThoughtsAndPrayersThree.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.A9E936F5-0C16-47F0-ABF9-6D453296B2F9" />
+  <MonoDevelop.Ide.ItemProperties.ThoughtsAndPrayersThree.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneDeviceTarget.e435c6b4820d96cd23a20cc7372a846c2d5b2d4e" />
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.ThoughtsAndPrayersThree.Droid PreferredExecutionTarget="Android.98892a36464b325643" />
 </Properties>
