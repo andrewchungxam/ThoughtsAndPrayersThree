@@ -1,9 +1,5 @@
 ﻿<Properties StartupConfiguration="{8627EEFC-0C1D-44A3-BCB0-A514A7720B84}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="ThoughtsAndPrayersThree/Pages/PrayerDetailPage.cs">
-    <Files>
-      <File FileName="ThoughtsAndPrayersThree/Pages/PrayerDetailPage.cs" Line="1" Column="1" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
