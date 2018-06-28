@@ -50,8 +50,12 @@ Part 8 plus
 
 1) Incorporated Cognitive Services - results shown in the Detail Page and of course CosmosDB
 
-[Part 10: Thoughts + Prayers App with:] <br />
+[Part 10: Thoughts + Prayers App with:](https://github.com/andrewchungxam/ThoughtsAndPrayersThree/tree/Branch-10-NotificationHub) <br />
 Part 9 plus
 
-1) Notification Service
+1) Notification Service - iOS (Android coming soon)
 
+[Part 11: Thoughts + Prayers App with:]
+<br />
+Part 10 plus
+1) Getting ready for initial app store submission
