@@ -1,11 +1,18 @@
 ﻿<Properties StartupConfiguration="{8627EEFC-0C1D-44A3-BCB0-A514A7720B84}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Source Not Available">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ThoughtsAndPrayers.FunctionsTwo/CosmosDBPrayerServiceFromFunction/CosmosDBPrayerServiceFromFunction.cs">
     <Files>
+      <File FileName="ThoughtsAndPrayersThree.LocalData/FileAccessHelper.cs" Line="1" Column="1" />
+      <File FileName="ThoughtsAndPrayersThree.LocalData/FixedPrayerRequest.cs" Line="1" Column="1" />
       <File FileName="ThoughtsAndPrayersThree.LocalData/PrayerRequestDatabase.cs" Line="1" Column="1" />
-      <File FileName="iOS/AppDelegate.cs" Line="1" Column="1" />
-      <File FileName="ThoughtsAndPrayersThree/ThoughtsAndPrayersApp.cs" Line="131" Column="29" />
-      <File FileName="Droid/MainActivity.cs" Line="35" Column="10" />
       <File FileName="Source Not Available" />
+      <File FileName="ThoughtsAndPrayersThree.Functions/Constants/FunctionConstants.cs" Line="1" Column="1" />
+      <File FileName="ThoughtsAndPrayersThree.Functions/Functions/FunctionsToCosmosDB.cs" Line="1" Column="1" />
+      <File FileName="ThoughtsAndPrayersThree.Functions/Functions/FunctionsToTextSentiment.cs" Line="1" Column="1" />
+      <File FileName="ThoughtsAndPrayers.FunctionsTwo/Constants/FunctionConstants.cs" Line="1" Column="1" />
+      <File FileName="ThoughtsAndPrayers.FunctionsTwo/CosmosDBPrayerServiceFromFunction/CosmosDBConstantsFromFunction.cs" Line="1" Column="1" />
+      <File FileName="ThoughtsAndPrayers.FunctionsTwo/Functions/FunctionsToCosmosDB.cs" Line="1" Column="1" />
+      <File FileName="ThoughtsAndPrayers.FunctionsTwo/Functions/FunctionsToTextSentiment.cs" Line="1" Column="1" />
+      <File FileName="ThoughtsAndPrayers.FunctionsTwo/CosmosDBPrayerServiceFromFunction/CosmosDBPrayerServiceFromFunction.cs" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
