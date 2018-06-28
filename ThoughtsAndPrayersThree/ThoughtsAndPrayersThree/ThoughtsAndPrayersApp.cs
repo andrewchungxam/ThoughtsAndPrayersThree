@@ -128,7 +128,7 @@ namespace ThoughtsAndPrayersThree
             //INITIAL
             //MainPage = new NavigationPage(new MainPage());
 
-            //SECOND ATTEMPT
+            //SECOND VERSION
             var np = new NavigationPage(new PrayerListPage());
             np.BarBackgroundColor = MyColors.MyBlue1;
             np.BarTextColor = Color.White;
