@@ -33,7 +33,7 @@ namespace ThoughtsAndPrayersThree
 
         public App()
         {
-            string dbPath = LocalData.FileAccessHelper.GetLocalFilePath("ThoughtsAndPrayer32.db3");
+            string dbPath = LocalData.FileAccessHelper.GetLocalFilePath("ThoughtsAndPrayer33.db3");
             DBPathString = dbPath;
 
             PrayerSQLDatabase = new PrayerRequestDatabase(dbPath);
@@ -124,7 +124,13 @@ namespace ThoughtsAndPrayersThree
 
 
 #if __ANDROID__
-            MainPage = new NavigationPage(new MainPage());
+            //MainPage = new NavigationPage(new MainPage());
+
+            var np = new NavigationPage(new PrayerListPage());
+            np.BarBackgroundColor = MyColors.MyBlue1;
+            np.BarTextColor = Color.White;
+
+            MainPage = np;
 #endif
 
 #if __IOS__
