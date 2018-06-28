@@ -28,7 +28,9 @@ namespace ThoughtsAndPrayersThree.Droid
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
 			AnimationViewRenderer.Init();
-            CachedImageRenderer.Init();
+			//CachedImageRenderer.Init();
+            CachedImageRenderer.Init(false);    
+
 
 			LoadApplication(new App());
         }

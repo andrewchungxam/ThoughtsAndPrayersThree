@@ -1,20 +1,14 @@
-﻿<Properties StartupConfiguration="{71C427FF-24AD-4770-BBDD-31D7A71C1534}|Default">
-  <MonoDevelop.Ide.Workbench />
+﻿<Properties StartupConfiguration="{8627EEFC-0C1D-44A3-BCB0-A514A7720B84}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="ThoughtsAndPrayersThree/Pages/PrayerDetailPage.cs">
+    <Files>
+      <File FileName="ThoughtsAndPrayersThree/Pages/PrayerDetailPage.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/FunctionPrayerService.cs" relfile="ThoughtsAndPrayersThree/Services/FunctionPrayerService.cs" line="45" column="1" />
-      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" line="39" column="1" />
-      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/DatabaseSyncService.cs" relfile="ThoughtsAndPrayersThree/Services/DatabaseSyncService.cs" line="26" column="1" />
-      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/DatabaseSyncService.cs" relfile="ThoughtsAndPrayersThree/Services/DatabaseSyncService.cs" line="32" column="1" />
-      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/DatabaseSyncService.cs" relfile="ThoughtsAndPrayersThree/Services/DatabaseSyncService.cs" line="32" column="1" />
-      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" line="226" column="1" />
-      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" line="204" column="1" />
-      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" line="171" column="1" />
-      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" line="125" column="1" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.ThoughtsAndPrayersThree.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.16895ACC-4C08-4F69-9D0B-FCF11635365F" />
   <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.ThoughtsAndPrayersThree.Droid PreferredExecutionTarget="Android.98892a36464b325643" />
 </Properties>
