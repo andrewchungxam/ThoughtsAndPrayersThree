@@ -53,7 +53,7 @@ Part 8 plus
 [Part 10: Thoughts + Prayers App with:](https://github.com/andrewchungxam/ThoughtsAndPrayersThree/tree/Branch-10-NotificationHub) <br />
 Part 9 plus
 
-1) Notification Service - iOS (Android coming soon)
+1) Notification Service
 
 [Part 11: Thoughts + Prayers App with:]
 <br />
