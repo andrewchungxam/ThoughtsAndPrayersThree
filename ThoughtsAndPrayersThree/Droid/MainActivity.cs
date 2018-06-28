@@ -28,9 +28,11 @@ namespace ThoughtsAndPrayersThree.Droid
             global::Xamarin.Forms.Forms.Init(this, bundle);
 
 			AnimationViewRenderer.Init();
-            CachedImageRenderer.Init();
+            //CachedImageRenderer.Init();
+            CachedImageRenderer.Init(false);    
 
-			LoadApplication(new App());
+
+            LoadApplication(new App());
         }
 
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
