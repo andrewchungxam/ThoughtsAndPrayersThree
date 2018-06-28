@@ -31,7 +31,6 @@ using Foundation;
 
 using Xamarin.Forms;
 using UserNotifications;
-using WindowsAzure.Messaging;
 using ThoughtsAndPrayersThree.Shared.Models;
 using ThoughtsAndPrayersThree.Shared.Constants;
 //using ThoughtsAndPrayersThree.Services.AzureModels;
@@ -42,7 +41,10 @@ namespace ThoughtsAndPrayersThree.iOS
     public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
     {
 
-        private SBNotificationHub Hub { get; set; }
+        //Please note 
+        //using WindowsAzure.Messaging;
+
+  //      private SBNotificationHub Hub { get; set; }
 
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
