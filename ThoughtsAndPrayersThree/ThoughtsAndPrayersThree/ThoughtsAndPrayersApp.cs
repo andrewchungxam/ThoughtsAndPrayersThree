@@ -121,7 +121,13 @@ namespace ThoughtsAndPrayersThree
 
 
 #if __ANDROID__
-            MainPage = new NavigationPage(new MainPage());
+//            MainPage = new NavigationPage(new MainPage());
+
+            var np = new NavigationPage(new PrayerListPage());
+            np.BarBackgroundColor = MyColors.MyBlue1;
+            np.BarTextColor = Color.White;
+
+            MainPage = np;
 #endif
 
 #if __IOS__
