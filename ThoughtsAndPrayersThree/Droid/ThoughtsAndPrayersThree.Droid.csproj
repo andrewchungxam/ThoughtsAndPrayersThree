@@ -239,6 +239,10 @@
     <AndroidResource Include="Resources\layout\Tabbar.axml" />
     <AndroidResource Include="Resources\layout\Toolbar.axml" />
     <AndroidResource Include="Resources\values\styles.xml" />
+    <AndroidResource Include="Resources\drawable-xhdpi\Android_ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\Android_ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\Android_ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable\Android_ic_launcher.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\beating_heart.json" />
