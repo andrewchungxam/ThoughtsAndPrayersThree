@@ -48,6 +48,9 @@ namespace ThoughtsAndPrayersThree.iOS
 
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
+            //REQURED IF YOU WANT YOUR STATUS BAR BACK AFTER LAUNCH
+            UIApplication.SharedApplication.SetStatusBarHidden(false, false);
+
             global::Xamarin.Forms.Forms.Init();
 
             AnimationViewRenderer.Init();

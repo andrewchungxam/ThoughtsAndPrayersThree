@@ -229,6 +229,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="SplashActivity.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\icon.png" />
@@ -243,6 +244,11 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\Android_ic_launcher.png" />
     <AndroidResource Include="Resources\drawable-hdpi\Android_ic_launcher.png" />
     <AndroidResource Include="Resources\drawable\Android_ic_launcher.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\AndroidSplashScreen..png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\AndroidSplashScreen.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\AndroidSplashScreen..png" />
+    <AndroidResource Include="Resources\drawable\AndroidSplashScreen.png" />
+    <AndroidResource Include="Resources\drawable\splash_background.xml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\beating_heart.json" />

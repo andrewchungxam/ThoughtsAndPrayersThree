@@ -1,7 +1,10 @@
 ﻿<Properties StartupConfiguration="{8627EEFC-0C1D-44A3-BCB0-A514A7720B84}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Droid/MainActivity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Droid/Resources/drawable/splash_background.xml">
     <Files>
-      <File FileName="Droid/MainActivity.cs" Line="1" Column="1" />
+      <File FileName="Droid/Resources/values/styles.xml" Line="30" Column="9" />
+      <File FileName="Droid/SplashActivity.cs" Line="36" Column="47" />
+      <File FileName="Droid/MainActivity.cs" Line="15" Column="2" />
+      <File FileName="Droid/Resources/drawable/splash_background.xml" Line="1" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
@@ -24,7 +27,7 @@
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.ThoughtsAndPrayersThree.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.52565D12-303B-4CDA-A42B-DCE8BB2DC0B0" automaticSigning="False" />
+  <MonoDevelop.Ide.ItemProperties.ThoughtsAndPrayersThree.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.A9E936F5-0C16-47F0-ABF9-6D453296B2F9" automaticSigning="False" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.ThoughtsAndPrayersThree.Droid PreferredExecutionTarget="Android.20160711_Nexus_API_23" />
+  <MonoDevelop.Ide.ItemProperties.ThoughtsAndPrayersThree.Droid PreferredExecutionTarget="Android.98892a36464b325643" />
 </Properties>
