@@ -1,10 +1,9 @@
 ﻿<Properties StartupConfiguration="{8627EEFC-0C1D-44A3-BCB0-A514A7720B84}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="Droid/Resources/drawable/splash_background.xml">
     <Files>
-      <File FileName="Droid/Resources/values/styles.xml" Line="30" Column="9" />
-      <File FileName="Droid/SplashActivity.cs" Line="36" Column="47" />
-      <File FileName="Droid/MainActivity.cs" Line="15" Column="2" />
-      <File FileName="Droid/Resources/drawable/splash_background.xml" Line="1" Column="1" />
+      <File FileName="Droid/Resources/values/styles.xml" Line="29" Column="32" />
+      <File FileName="Droid/SplashActivity.cs" Line="57" Column="1" />
+      <File FileName="Droid/Resources/drawable/splash_background.xml" Line="5" Column="49" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

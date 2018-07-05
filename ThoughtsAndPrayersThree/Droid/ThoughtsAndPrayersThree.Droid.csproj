@@ -244,11 +244,19 @@
     <AndroidResource Include="Resources\drawable-xxhdpi\Android_ic_launcher.png" />
     <AndroidResource Include="Resources\drawable-hdpi\Android_ic_launcher.png" />
     <AndroidResource Include="Resources\drawable\Android_ic_launcher.png" />
-    <AndroidResource Include="Resources\drawable-hdpi\AndroidSplashScreen..png" />
+    <AndroidResource Include="Resources\drawable-hdpi\AndroidSplashScreen.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\AndroidSplashScreen.png" />
-    <AndroidResource Include="Resources\drawable-xxhdpi\AndroidSplashScreen..png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\AndroidSplashScreen.png" />
     <AndroidResource Include="Resources\drawable\AndroidSplashScreen.png" />
     <AndroidResource Include="Resources\drawable\splash_background.xml" />
+    <AndroidResource Include="Resources\drawable-hdpi\AndroidBackground.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\AndroidBackground.png" />
+    <AndroidResource Include="Resources\drawable\AndroidBackground.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\AndroidBackground.png" />
+    <AndroidResource Include="Resources\drawable\AndroidSplashIcon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\AndroidSplashIcon.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\AndroidSplashIcon.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\AndroidSplashIcon.png" />
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="Assets\beating_heart.json" />

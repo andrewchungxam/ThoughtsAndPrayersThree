@@ -1,15 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <layer-list xmlns:android="http://schemas.android.com/apk/res/android">
-  <item>
-    <bitmap
-        android:src="@drawable/AndroidSplashScreen"
+    <item>
+       <bitmap
+        android:src="@drawable/AndroidBackground"
         android:tileMode="disabled"/>
-  </item>
+    </item>
     <item>
     <bitmap
         android:name="DrawableLogoSample"
-        android:src="@drawable/icon"
+        android:src="@drawable/AndroidSplashIcon"
         android:tileMode="disabled"
         android:gravity="center"/>
-  </item>
+    </item>
 </layer-list>
