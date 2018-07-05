@@ -13,7 +13,9 @@ namespace ThoughtsAndPrayersThree.Services
 
         #region Constants
         //AZURE FUNCTION STRING BASE
-        public const string AzureFunctionStringBase = "https://thoughtsandprayersthreefunction.azurewebsites.net";
+        public const string AzureFunctionStringBase = AzureFunctionConstants.AzureFunctionBaseUrl;
+
+
         //http://localhost:7071/api/GetPrayerRequestSentimentById/921582730
 
         //RouteGetPrayerRequestSentimentById

@@ -11,7 +11,7 @@ namespace ThoughtsAndPrayersThree.Services
     public class FunctionPrayerService : BaseFunctionPrayerService
     {
         //AZURE-BASE
-        public const string AzureFunctionStringBase = "https://thoughtsandprayersthreefunction.azurewebsites.net";
+        public const string AzureFunctionStringBase = AzureFunctionConstants.AzureFunctionBaseUrl;
 
         //GetAllCosmosPrayerRequestsFunction: http://localhost:7071/api/GetAllCosmosPrayerRequestsFunction
         //GetAllPrayerRequestsFunction: http://localhost:7071/api/GetAllPrayerRequestsFunction

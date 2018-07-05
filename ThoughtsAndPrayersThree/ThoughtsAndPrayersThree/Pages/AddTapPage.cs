@@ -86,7 +86,7 @@ namespace ThoughtsAndPrayersThree.Pages
                         FullName = "Andrew Kim",
                         FullNameAndDate = "Andrew Kim\r\nMarch 1, 2018",
                         //FBProfileUrl = "http://loremflickr.com/600/600/nature?filename=simple.jpg",
-                        FBProfileUrl = "http://graph.facebook.com/450/picture?type=normal",
+                        FBProfileUrl = "http://graph.facebook.com/100013997640988/picture?type=normal",
                         PrayerRequestText = mySharedText.Text,
                         NumberOfThoughts = 0,
                         NumberOfPrayers = 0,
