@@ -11,7 +11,7 @@ namespace ThoughtsAndPrayersThree.Services
     public class NotificationTriggerService : BaseFunctionNotificationTriggersService
     {
         //AZURE-BASE
-        public const string AzureFunctionStringBase = AzureFunctionConstants.AzureFunctionBaseUrl;
+        public const string NotificationAzureFunctionStringBase = AzureFunctionConstants.AzureFunctionBaseUrl;
 
         //GetAllCosmosPrayerRequestsFunction: http://localhost:7071/api/GetAllCosmosPrayerRequestsFunction
         //GetAllPrayerRequestsFunction: http://localhost:7071/api/GetAllPrayerRequestsFunction
