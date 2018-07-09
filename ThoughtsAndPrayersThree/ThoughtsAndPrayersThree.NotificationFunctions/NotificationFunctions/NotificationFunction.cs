@@ -43,7 +43,7 @@ namespace ThoughtsAndPrayersThree.Functions.NotificationFunctions
                 var categories = new string[] { "World", "Politics", "Business", "Technology", "Science", "Sports" };
 
                 Array.Resize(ref categories, categories.Length + 1);
-                var nativeUsername = "NativeUser101";
+                var nativeUsername = "NewUser101";
                 categories[categories.Length - 1] = "username:" + nativeUsername;
 
                 for (int i = 0; i < categories.Length; i++)
@@ -100,7 +100,7 @@ namespace ThoughtsAndPrayersThree.Functions.NotificationFunctions
                 var categories = new string[] { "World", "Politics", "Business", "Technology", "Science", "Sports" };
 
                 Array.Resize(ref categories, categories.Length + 1);
-                var templateUsername = "TemplateUser101";
+                var templateUsername = "NewUser101";
                 categories[categories.Length - 1] = "username:" + templateUsername;
 
                 Dictionary<string, string> templateParams = new Dictionary<string, string>();
@@ -143,7 +143,7 @@ namespace ThoughtsAndPrayersThree.Functions.NotificationFunctions
                 var categories = new string[] { "World", "Politics", "Business", "Technology", "Science", "Sports" };
 
                 Array.Resize(ref categories, categories.Length + 1);
-                var templateUsername = "TemplateUser101";
+                var templateUsername = "NewUser101";
                 categories[categories.Length - 1] = "username:" + templateUsername;
 
                 Dictionary<string, string> templateParams = new Dictionary<string, string>();

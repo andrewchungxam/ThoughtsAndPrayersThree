@@ -13,6 +13,7 @@ using Microsoft.Azure.Documents.Client;
 using ThoughtsAndPrayersThree.Models;
 using System.Net;
 using System.Net.Http;
+using ThoughtsAndPrayersThree.CosmosDB;
 
 using ThoughtsAndPrayersThree.Functions.CosmosDBPrayerServiceFromFunction;
 
@@ -25,7 +26,7 @@ namespace ThoughtsAndPrayersThree.Functions.CosmosDB
         static readonly string CollectionId = "PrayerRequests";
 
         //CLIENT
-        static readonly DocumentClient myDocumentClient = new DocumentClient(new Uri(CosmosDB.CosmosDBConstantsFromFunctions.myEndPoint), CosmosDB.CosmosDBConstantsFromFunctions.myKey);
+        static readonly DocumentClient myDocumentClient = new DocumentClient(new Uri(CosmosDBConstants.myEndPoint), CosmosDBConstants.myKey);
         public static List<CosmosDBPrayerRequest> MyListOfPrayerRequests;
 
         //GETALL
@@ -73,7 +74,7 @@ namespace ThoughtsAndPrayersThree.Functions.CosmosDB
 
             foreach (var cosmosDBItem in MyListOfPrayerRequests)
             {
-                var tempConvertedItem = PrayerRequestConverter.ConvertToPrayerRequest(cosmosDBItem);
+                var tempConvertedItem = ThoughtsAndPrayersThree.Functions.CosmosDBPrayerServiceFromFunction.PrayerRequestConverter.ConvertToPrayerRequest(cosmosDBItem);
                 listOfConvertedPrayerRequests.Add(tempConvertedItem);
 
             }
@@ -125,7 +126,7 @@ namespace ThoughtsAndPrayersThree.Functions.CosmosDB
 
         public static async Task<HttpStatusCode> PostAndConvertPrayerRequestsAsync(PrayerRequest prayerRequest)
         {
-            var cosmosDBPrayerRequest = PrayerRequestConverter.ConvertToCosmosPrayerRequest(prayerRequest);
+            var cosmosDBPrayerRequest = ThoughtsAndPrayersThree.Functions.CosmosDBPrayerServiceFromFunction.PrayerRequestConverter.ConvertToCosmosPrayerRequest(prayerRequest);
             var result = await myDocumentClient.CreateDocumentAsync(UriFactory.CreateDocumentCollectionUri(DatabaseId, CollectionId), cosmosDBPrayerRequest);
             return result?.StatusCode ?? throw new HttpRequestException("Post Failed");
         }
@@ -140,7 +141,7 @@ namespace ThoughtsAndPrayersThree.Functions.CosmosDB
         //CONVERT + PUT
         public static async Task<HttpStatusCode> PatchAndConvertPrayerRequestsAsync(PrayerRequest prayerRequest)
         {
-            var cosmosDBPrayerRequest = PrayerRequestConverter.ConvertToCosmosPrayerRequest(prayerRequest);
+            var cosmosDBPrayerRequest = ThoughtsAndPrayersThree.Functions.CosmosDBPrayerServiceFromFunction.PrayerRequestConverter.ConvertToCosmosPrayerRequest(prayerRequest);
             var result = await myDocumentClient.ReplaceDocumentAsync(UriFactory.CreateDocumentUri(DatabaseId, CollectionId, cosmosDBPrayerRequest.Id), cosmosDBPrayerRequest);
             return result?.StatusCode ?? throw new HttpRequestException("Put Failed");
         }

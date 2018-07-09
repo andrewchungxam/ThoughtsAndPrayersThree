@@ -73,7 +73,7 @@ namespace ThoughtsAndPrayersThree.Functions.NotificationFunctions
 
                 Dictionary<string, string> templateParams = new Dictionary<string, string>();
 
-                var templateUsername = "TemplateUser101";
+                var templateUsername = "NewUser101";
                 var tagTemplateUsername = "username:" + templateUsername;
 
                 Random rnd = new Random();
@@ -120,7 +120,7 @@ namespace ThoughtsAndPrayersThree.Functions.NotificationFunctions
 
                 Dictionary<string, string> templateParams = new Dictionary<string, string>();
 
-                var templateUsername = "TemplateUser101";
+                var templateUsername = "NewUser101";
                 var tagTemplateUsername = "username:" + templateUsername;
 
                 Random rnd = new Random();
