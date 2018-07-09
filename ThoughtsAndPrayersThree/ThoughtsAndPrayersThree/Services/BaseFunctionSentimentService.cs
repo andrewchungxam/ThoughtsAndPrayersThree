@@ -17,51 +17,137 @@ namespace ThoughtsAndPrayers.Services
 {
     public abstract class BaseFunctionSentimentService  //FunctionPrayerService
     {
-        #region Constant Fields
-        static readonly Lazy<JsonSerializer> _serializerHolder = new Lazy<JsonSerializer>();
-        //static readonly Lazy<HttpClient> _clientHolder = new Lazy<HttpClient>(() =>  CreateHttpClient(TimeSpan.FromSeconds(60)));
 
-        public static Func<HttpClient> clientFunc = new Func<HttpClient>(() => new HttpClient());
-        static readonly Lazy<HttpClient> _clientHolder = new Lazy<HttpClient>(clientFunc);
+        //SOMETHING MAY HAVE CHANGED WITH THE LATEST UPDATE (WHICH MAY HAVE INCREASED/CHANGED C#)
+        //#region Constant Fields
+        //static readonly Lazy<JsonSerializer> _serializerHolder = new Lazy<JsonSerializer>();
+        ////static readonly Lazy<HttpClient> _clientHolder = new Lazy<HttpClient>(() =>  CreateHttpClient(TimeSpan.FromSeconds(60)));
 
-        #endregion
+        //public static Func<HttpClient> clientFunc = new Func<HttpClient>(() => new HttpClient());
+        //static readonly Lazy<HttpClient> _clientHolder = new Lazy<HttpClient>(clientFunc);
+        //#endregion
 
-        #region Fields
-        static int _networkIndicatorCount = 0;
-        #endregion
+        //#region Fields
+        //static int _networkIndicatorCount = 0;
+        //#endregion
 
-        #region Properties
-        static HttpClient Client => _clientHolder.Value;
-        static JsonSerializer Serializer => _serializerHolder.Value;
-        #endregion
+        //#region Properties
+        //static HttpClient Client => _clientHolder.Value;
+        //static JsonSerializer Serializer => _serializerHolder.Value;
+        //#endregion
+
+        //#region Constant Fields
+        //static readonly Lazy<JsonSerializer> _serializerHolder = new Lazy<JsonSerializer>();
+        //static readonly Lazy<HttpClient> _clientHolder = new Lazy<HttpClient>(() => CreateHttpClient(TimeSpan.FromSeconds(60)));
+        //#endregion
+
+        //static HttpClient CreateHttpClient(TimeSpan timeout)
+        //{
+        //    HttpClient client;
+        //    switch (Device.RuntimePlatform)
+        //    {
+        //        case Device.iOS:
+        //        case Device.Android:
+        //            client = new HttpClient();
+        //            break;
+        //        default:
+        //            client = new HttpClient(new HttpClientHandler { AutomaticDecompression = DecompressionMethods.GZip });
+        //            break;
+        //    }
+
+        //    client.Timeout = timeout;
+        //    //client.DefaultRequestHeaders.AcceptEncoding.Add(new StringWithQualityHeaderValue("gzip"));
+        //    //client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+        //    return client;
+        //}
+
+        //#region Fields
+        //static int _networkIndicatorCount = 0;
+        //#endregion
+
+        //#region Properties
+        //static HttpClient Client => _clientHolder.Value;
+        //static JsonSerializer Serializer => _serializerHolder.Value;
+        //#endregion
 
         #region Methods
-
         protected static async Task<double> GetPrayerRequestSentimentById(string apiUrl)
         {
             try
             {
-                UpdateActivityIndicatorStatus(true);
 
-                using (var stream = await Client.GetStreamAsync(apiUrl).ConfigureAwait(false))
-                using (var reader = new StreamReader(stream))
-                using (var json = new JsonTextReader(reader))
+                using (HttpClient client = new HttpClient())
+                using (HttpResponseMessage response = await client.GetAsync(apiUrl))
+                using (HttpContent content = response.Content)
                 {
-                    if (json == null)
-                        return default(double);
-                    return await Task.Run(() => Serializer.Deserialize<double>(json)).ConfigureAwait(false);
+                    var resultString = await content.ReadAsStringAsync();
+                    double doubleResult = Convert.ToDouble(resultString);
+                    return doubleResult;
                 }
+
+                //var myHttpClient = new HttpClient();
+                ////string returnClientString = await myHttpClient.GetStringAsync(apiUrl).ConfigureAwait(false);     
+
+                //var httpResponseMessage = await myHttpClient.GetAsync(apiUrl).ConfigureAwait(false);
+
+                //returnDouble = httpResponseMessage.Content;
+
+                ////if (returnClientString == null)
+                //if (returnDouble == null)
+                //    return default(double);
+
+                //return returnDouble;
+
+                //var returnedAndDeserialized = Newtonsoft.Json.JsonConvert.DeserializeObject<double>(returnClientString);
+                //return returnedAndDeserialized;
+
+                //await Task.Run(() => Serializer.Deserialize<double>(json)).ConfigureAwait(false);
             }
             catch (Exception e)
             {
-                //AppCenterHelpers.LogException(e);
                 return default(double);
             }
             finally
             {
-                UpdateActivityIndicatorStatus(false);
             }
         }
+
+
+
+
+
+//        protected static async Task<double> GetPrayerRequestSentimentById(string apiUrl)
+//        {
+//            try
+//            {
+//                //UpdateActivityIndicatorStatus(true);
+
+//                using (var stream = await Client.GetStreamAsync(apiUrl).ConfigureAwait(false))
+//                using (var reader = new StreamReader(stream))
+//                using (var json = new JsonTextReader(reader))
+//                {
+//                    if (json == null)
+//                        return default(double);
+//                    //return await Task.Run(() => Serializer.Deserialize<double>(json)).ConfigureAwait(false);
+
+//                    double sentimentScoreDouble;
+//                    sentimentScoreDouble = Serializer.Deserialize<double>(json);
+//                    return sentimentScoreDouble;
+
+////                    await Task.Run(() => sentimentScoreDouble = Serializer.Deserialize<double>(json)).ConfigureAwait(false);
+        //        }
+        //    }
+        //    catch (Exception e)
+        //    {
+        //        //AppCenterHelpers.LogException(e);
+        //        return default(double);
+        //    }
+        //    finally
+        //    {
+        //        //UpdateActivityIndicatorStatus(false);
+        //    }
+        //}
 
 
 
@@ -297,19 +383,19 @@ namespace ThoughtsAndPrayers.Services
         //    }
         //}
 
-        static void UpdateActivityIndicatorStatus(bool isActivityIndicatorDisplayed)
-        {
-            if (isActivityIndicatorDisplayed)
-            {
-                Device.BeginInvokeOnMainThread(() => Application.Current.MainPage.IsBusy = true);
-                _networkIndicatorCount++;
-            }
-            else if (--_networkIndicatorCount <= 0)
-            {
-                Device.BeginInvokeOnMainThread(() => Application.Current.MainPage.IsBusy = false);
-                _networkIndicatorCount = 0;
-            }
-        }
+        //static void UpdateActivityIndicatorStatus(bool isActivityIndicatorDisplayed)
+        //{
+        //    if (isActivityIndicatorDisplayed)
+        //    {
+        //        Device.BeginInvokeOnMainThread(() => Application.Current.MainPage.IsBusy = true);
+        //        _networkIndicatorCount++;
+        //    }
+        //    else if (--_networkIndicatorCount <= 0)
+        //    {
+        //        Device.BeginInvokeOnMainThread(() => Application.Current.MainPage.IsBusy = false);
+        //        _networkIndicatorCount = 0;
+        //    }
+        //}
 
         //static HttpClient CreateHttpClient(TimeSpan timeout)
         //{

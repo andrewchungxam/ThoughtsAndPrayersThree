@@ -1,9 +1,5 @@
 ﻿<Properties StartupConfiguration="{71C427FF-24AD-4770-BBDD-31D7A71C1534}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="iOS/Info.plist">
-    <Files>
-      <File FileName="iOS/Info.plist" />
-    </Files>
-  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workbench />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
@@ -21,10 +17,50 @@
       <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" line="204" column="1" />
       <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" line="171" column="1" />
       <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionPrayerService.cs" line="125" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/AppDelegate.cs" relfile="iOS/AppDelegate.cs" line="238" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/AppDelegate.cs" relfile="iOS/AppDelegate.cs" line="244" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/AppDelegate.cs" relfile="iOS/AppDelegate.cs" line="252" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/AppDelegate.cs" relfile="iOS/AppDelegate.cs" line="254" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/AppDelegate.cs" relfile="iOS/AppDelegate.cs" line="253" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/AppDelegate.cs" relfile="iOS/AppDelegate.cs" line="257" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/AppDelegate.cs" relfile="iOS/AppDelegate.cs" line="259" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/AppDelegate.cs" relfile="iOS/AppDelegate.cs" line="258" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/AppDelegate.cs" relfile="iOS/AppDelegate.cs" line="255" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/AppDelegate.cs" relfile="iOS/AppDelegate.cs" line="266" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/AppDelegate.cs" relfile="iOS/AppDelegate.cs" line="271" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/AppDelegate.cs" relfile="iOS/AppDelegate.cs" line="272" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/AppDelegate.cs" relfile="iOS/AppDelegate.cs" line="317" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/AppDelegate.cs" relfile="iOS/AppDelegate.cs" line="320" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/AppDelegate.cs" relfile="iOS/AppDelegate.cs" line="326" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/AppDelegate.cs" relfile="iOS/AppDelegate.cs" line="327" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/AppDelegate.cs" relfile="iOS/AppDelegate.cs" line="330" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/AppDelegate.cs" relfile="iOS/AppDelegate.cs" line="331" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/iOS/AppDelegate.cs" relfile="iOS/AppDelegate.cs" line="336" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs" line="120" column="45" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs" line="126" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs" line="126" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs" line="126" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs" line="127" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs" line="129" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs" line="130" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs" line="128" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs" line="131" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs" line="135" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs" line="141" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs" line="144" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs" line="144" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs" line="147" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs" line="149" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Pages/AddTapPage.cs" relfile="ThoughtsAndPrayersThree/Pages/AddTapPage.cs" line="18" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs" line="84" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs" line="85" column="1" />
+      <Breakpoint file="/Users/andrewc/Github/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs" relfile="ThoughtsAndPrayersThree/Services/BaseFunctionSentimentService.cs" line="86" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.ThoughtsAndPrayersThree.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.A9E936F5-0C16-47F0-ABF9-6D453296B2F9" automaticSigning="False" />
+  <MonoDevelop.Ide.ItemProperties.ThoughtsAndPrayersThree.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.A9E936F5-0C16-47F0-ABF9-6D453296B2F9" automaticSigning="True">
+    <MonoDevelop.MacDev.AppleDevelopmentTeam DeveloperId="XWXCCJYCVY" TeamId="L889VRN2XS" />
+  </MonoDevelop.Ide.ItemProperties.ThoughtsAndPrayersThree.iOS>
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.ThoughtsAndPrayersThree.Droid PreferredExecutionTarget="Android.20160711_Nexus_API_23" />
 </Properties>
