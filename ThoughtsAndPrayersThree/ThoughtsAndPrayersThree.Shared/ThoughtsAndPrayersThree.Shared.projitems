@@ -10,12 +10,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Models\" />
-    <Folder Include="$(MSBuildThisFileDirectory)Constants\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Models\IBaseModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\PrayerRequest.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Models\AzureNotificationHubRegistrationModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Constants\AzureNotificationHubRegistrationConstants.cs" />
   </ItemGroup>
 </Project>

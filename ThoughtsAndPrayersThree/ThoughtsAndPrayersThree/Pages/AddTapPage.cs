@@ -96,9 +96,21 @@ namespace ThoughtsAndPrayersThree.Pages
                     try 
                     {
                         var newCosmosPrayerRequest = PrayerRequestConverter.ConvertToCosmosPrayerRequest(newPrayerRequest);
-                        Task.Run(async ()=> await FunctionPrayerService.PostCosmosPrayerRequestsAsyncFunction(newCosmosPrayerRequest));
+                        //Task.Run(async ()=> await FunctionPrayerService.PostCosmosPrayerRequestsAsyncFunction(newCosmosPrayerRequest));
+                        //string stringRandomId = randomId.ToString();
+                        //Task.Run(async () => await FunctionSentimentService.FunctionGetPrayerRequestSentimentById(stringRandomId));
+
                         string stringRandomId = randomId.ToString();
-                        Task.Run(async () => await FunctionSentimentService.FunctionGetPrayerRequestSentimentById(stringRandomId));
+
+                        Task.Run(async () => await SaveInCosmosThenDoSentimentAnalysis(newCosmosPrayerRequest, stringRandomId));
+
+                        //Task.Run()
+                        //Task.Run(async () => 
+                                //    FunctionPrayerService.PostCosmosPrayerRequestsAsyncFunction(newCosmosPrayerRequest);
+                                //    string stringRandomId = randomId.ToString();
+                                //    await FunctionSentimentService.FunctionGetPrayerRequestSentimentById(stringRandomId);
+                                //);
+
                     }
                     catch (Exception ex)
                     {
@@ -185,6 +197,12 @@ namespace ThoughtsAndPrayersThree.Pages
             Content = grid;
             #endregion
 
+        }
+
+        async Task SaveInCosmosThenDoSentimentAnalysis(CosmosDBPrayerRequest cosmosDBPrayerRequest, string inputStringId)
+        {
+            await FunctionPrayerService.PostCosmosPrayerRequestsAsyncFunction(cosmosDBPrayerRequest);
+            await FunctionSentimentService.FunctionGetPrayerRequestSentimentById(inputStringId);
         }
 
         private void myQuestion_Focused(object sender, FocusEventArgs e) //triggered when the user taps on the Editor to interact with it
