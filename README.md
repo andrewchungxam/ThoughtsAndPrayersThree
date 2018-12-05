@@ -1,5 +1,5 @@
 # ThoughtsAndPrayersThree
-Thoughts and Prayers done with MVVM and CosmosDB
+Thoughts and Prayers mobile application done with Xamarin.Forms, MVVM and CosmosDB
 
 This Xamarin Forms project will be split into distict parts that will build on top of each other.
 
